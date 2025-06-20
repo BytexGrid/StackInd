@@ -1,0 +1,3158 @@
+{
+  "android_development_stack": {
+  "IDEs": [
+    {
+      "name": "Android Studio",
+      "publisher": "Google",
+      "description": "The official Integrated Development Environment (IDE) for Android app development, providing everything needed to build, test, and debug Android applications.",
+      "versions": [
+        {
+          "version_name": "Latest Stable Release (e.g., Jellyfish | 2023.3.1)",
+          "release_date": "Constantly updated, refer to official Android Developers site",
+          "supported_oses": ["Windows (x64, ARM64)", "macOS (Intel, Apple Silicon)", "Linux (x64, ARM64)"],
+          "notes": "Always recommended for Android development. Includes SDK Manager, Emulator, Profilers, and more.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Visit the official Android Studio download page: https://developer.android.com/studio/install",
+                "2. Download the latest `.exe` installer for your Windows architecture (64-bit).",
+                "3. Run the installer and follow the on-screen prompts. Choose a standard installation path.",
+                "4. During setup, the wizard will guide you to download necessary SDK components."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "supported_oses": ["Windows (x64)"],
+              "notes": "Requires Scoop to be installed. Installs Android Studio directly. Less official than direct download but convenient.",
+              "instructions": [
+                "1. Ensure Scoop is installed (run `irm get.scoop.sh | iex` in PowerShell if not).",
+                "2. Add the JetBrains bucket: `scoop bucket add jetbrains`",
+                "3. Install Android Studio: `scoop install android-studio`",
+                "4. Launch Android Studio and complete the SDK setup."
+              ],
+              "installation_query": "scoop bucket add jetbrains && scoop install android-studio"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "supported_oses": ["Windows (x64)"],
+              "notes": "Requires Chocolatey to be installed. Run PowerShell as Administrator for installation.",
+              "instructions": [
+                "1. Ensure Chocolatey is installed (refer to official docs at `choco.org/install`).",
+                "2. Open PowerShell as Administrator.",
+                "3. Install Android Studio: `choco install androidstudio`",
+                "4. Launch Android Studio and complete the SDK setup."
+              ],
+              "installation_query": "choco install androidstudio"
+            },
+            {
+              "method_name": "Direct Download (macOS - .dmg)",
+              "type": "DMG Installer",
+              "instructions": [
+                "1. Visit the official Android Studio download page: https://developer.android.com/studio/install",
+                "2. Download the latest `.dmg` installer for your macOS architecture (Intel or Apple Silicon).",
+                "3. Open the `.dmg` file. Drag 'Android Studio.app' to your **Applications** folder.",
+                "4. Launch Android Studio and follow the setup wizard to download SDK components."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Direct Download (Linux - .tar.gz)",
+              "type": "Archive Extraction",
+              "instructions": [
+                "1. Visit the official Android Studio download page: https://developer.android.com/studio/install",
+                "2. Download the latest `.tar.gz` archive for Linux (x64 or ARM64).",
+                "3. Open a terminal and navigate to your download directory.",
+                "4. Extract the archive: `tar -xzf android-studio-*.tar.gz -C /opt/` (or your preferred installation directory, e.g., `$HOME/android-studio`).",
+                "5. Navigate into the extracted `android-studio/bin` directory: `cd /opt/android-studio/bin`",
+                "6. Run the IDE: `./studio.sh`",
+                "7. Follow the setup wizard to download SDK components. Consider creating a desktop entry for easier launch."
+              ],
+              "installation_query": "wget https://redirector.gvt1.com/edgedl/android/studio/install/YYYY.M.X.X/android-studio-YYYY.M.X.X-linux.tar.gz -O /tmp/android-studio.tar.gz && sudo tar -xzf /tmp/android-studio.tar.gz -C /opt/ && /opt/android-studio/bin/studio.sh"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager / Software Store",
+              "notes": "Often lags behind the official direct download version but offers easy installation and updates.",
+              "instructions": [
+                "1. Ensure Snap is installed on your Linux distribution (`sudo apt install snapd` or similar).",
+                "2. Install Android Studio via Snap:",
+                "   `sudo snap install android-studio --classic`",
+                "3. Launch Android Studio and complete the SDK setup."
+              ],
+              "installation_query": "sudo snap install android-studio --classic"
+            },
+            {
+              "method_name": "Flatpak (Linux)",
+              "type": "Package Manager / Software Store",
+              "notes": "Often lags behind the official direct download version but offers easy installation and sandboxing.",
+              "instructions": [
+                "1. Ensure Flatpak is installed and Flathub remote is added (`flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`).",
+                "2. Install Android Studio via Flatpak:",
+                "   `flatpak install flathub com.google.AndroidStudio`",
+                "3. Launch Android Studio and complete the SDK setup."
+              ],
+              "installation_query": "flatpak install flathub com.google.AndroidStudio"
+            },
+            {
+              "method_name": "JetBrains Toolbox App (Cross-platform)",
+              "type": "Centralized Manager",
+              "instructions": [
+                "1. Download and install the JetBrains Toolbox App: https://www.jetbrains.com/lp/toolbox/",
+                "2. Open the Toolbox App. It allows you to easily install, update, and manage Android Studio and other JetBrains IDEs.",
+                "3. Locate 'Android Studio' in the list and click 'Install'.",
+                "4. Launch Android Studio from the Toolbox App and complete SDK setup."
+              ],
+              "installation_query": "N/A (GUI tool for installation)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Visual Studio Code (with Android/Kotlin extensions)",
+      "publisher": "Microsoft",
+      "description": "A lightweight but powerful source code editor that runs on your desktop. Can be configured for Android development with appropriate extensions for Kotlin, Java, Gradle, and Android SDK.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Monthly",
+          "supported_oses": ["Windows (x64, ARM64)", "macOS (Intel, Apple Silicon)", "Linux (x64, ARM64)"],
+          "notes": "Requires Android SDK and JDK to be installed separately. Not a full-featured Android IDE like Android Studio.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows Installer)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Visit the official VS Code download page: https://code.visualstudio.com/download",
+                "2. Download the 'User Installer' or 'System Installer' for Windows (x64 or ARM64).",
+                "3. Run the installer and follow the prompts.",
+                "4. After installation, open VS Code.",
+                "5. Go to the Extensions view (Ctrl+Shift+X).",
+                "6. Search for and install extensions like 'Kotlin', 'Java Extension Pack', 'Gradle for Java', and 'Android' (by Microsoft or others)."
+              ],
+              "installation_query": "N/A (GUI installer, extensions via internal VS Code command)"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "supported_oses": ["Windows (x64)"],
+              "notes": "Requires Scoop to be installed. Installs VS Code for the current user.",
+              "instructions": [
+                "1. Ensure Scoop is installed.",
+                "2. Install VS Code: `scoop install vscode`",
+                "3. Open VS Code and install relevant Android/Kotlin/Java extensions."
+              ],
+              "installation_query": "scoop install vscode"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "supported_oses": ["Windows (x64)"],
+              "notes": "Requires Chocolatey to be installed. Run PowerShell as Administrator.",
+              "instructions": [
+                "1. Ensure Chocolatey is installed.",
+                "2. Open PowerShell as Administrator.",
+                "3. Install VS Code: `choco install vscode`",
+                "4. Open VS Code and install relevant Android/Kotlin/Java extensions."
+              ],
+              "installation_query": "choco install vscode"
+            },
+            {
+              "method_name": "Homebrew Cask (macOS)",
+              "type": "Package Manager / Software Store",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Install VS Code: `brew install --cask visual-studio-code`",
+                "3. Open VS Code and install relevant Android/Kotlin/Java extensions."
+              ],
+              "installation_query": "brew install --cask visual-studio-code"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add Microsoft GPG key and VS Code repository:",
+                "   `sudo apt-get install wget apt-transport-https gnupg -y`",
+                "   `wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg`",
+                "   `sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg`",
+                "   `echo \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main\" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null`",
+                "2. Update package lists and install VS Code:",
+                "   `sudo apt update`",
+                "   `sudo apt install code`",
+                "3. Open VS Code and install relevant Android/Kotlin/Java extensions."
+              ],
+              "installation_query": "sudo apt-get install wget apt-transport-https gnupg -y && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg && echo \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main\" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null && sudo apt update && sudo apt install code"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager / Software Store",
+              "notes": "Offers easy installation and updates via Snap.",
+              "instructions": [
+                "1. Ensure Snap is installed on your Linux distribution.",
+                "2. Install VS Code via Snap:",
+                "   `sudo snap install code --classic`",
+                "3. Open VS Code and install relevant Android/Kotlin/Java extensions."
+              ],
+              "installation_query": "sudo snap install code --classic"
+            },
+            {
+              "method_name": "Flatpak (Linux)",
+              "type": "Package Manager / Software Store",
+              "notes": "Offers easy installation and sandboxing via Flatpak.",
+              "instructions": [
+                "1. Ensure Flatpak is installed and Flathub remote is added.",
+                "2. Install VS Code via Flatpak:",
+                "   `flatpak install flathub com.visualstudio.Code`",
+                "3. Open VS Code and install relevant Android/Kotlin/Java extensions."
+              ],
+              "installation_query": "flatpak install flathub com.visualstudio.Code"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntelliJ IDEA (with Android Plugin)",
+      "publisher": "JetBrains",
+      "description": "A powerful Java IDE. The Ultimate edition offers full Android development support, while the Community edition can be extended with a basic Android plugin. Android Studio is built on IntelliJ IDEA.",
+      "versions": [
+        {
+          "version_name": "Latest Community Edition (with Android Plugin)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows (x64, ARM64)", "macOS (Intel, Apple Silicon)", "Linux (x64, ARM64)"],
+          "notes": "For full-fledged Android development, Android Studio is generally preferred. IntelliJ IDEA is more for general Java/Kotlin development with Android capabilities.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows - Community Edition)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Visit the official IntelliJ IDEA download page: https://www.jetbrains.com/idea/download/",
+                "2. Download the latest Community Edition `.exe` installer for Windows.",
+                "3. Run the installer and follow the prompts.",
+                "4. After installation, open IntelliJ IDEA.",
+                "5. Go to 'Settings/Preferences' -> 'Plugins'.",
+                "6. Search for 'Android' and install the official 'Android Support' plugin by JetBrains.",
+                "7. Restart the IDE and configure the Android SDK path (File -> Project Structure -> SDKs)."
+              ],
+              "installation_query": "N/A (GUI installer, manual plugin installation)"
+            },
+            {
+              "method_name": "Scoop (Windows - Community Edition)",
+              "type": "Package Manager",
+              "supported_oses": ["Windows (x64)"],
+              "notes": "Requires Scoop to be installed. Installs IntelliJ IDEA Community Edition.",
+              "instructions": [
+                "1. Ensure Scoop is installed.",
+                "2. Add the JetBrains bucket: `scoop bucket add jetbrains`",
+                "3. Install IntelliJ IDEA Community: `scoop install intellijidea-ce`",
+                "4. Launch IntelliJ IDEA and install the Android Support plugin (File -> Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "scoop bucket add jetbrains && scoop install intellijidea-ce"
+            },
+            {
+              "method_name": "Chocolatey (Windows - Community Edition)",
+              "type": "Package Manager",
+              "supported_oses": ["Windows (x64)"],
+              "notes": "Requires Chocolatey to be installed. Run PowerShell as Administrator. For Community Edition.",
+              "instructions": [
+                "1. Ensure Chocolatey is installed.",
+                "2. Open PowerShell as Administrator.",
+                "3. Install IntelliJ IDEA Community: `choco install intellijidea-community`",
+                "4. Launch IntelliJ IDEA and install the Android Support plugin (File -> Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "choco install intellijidea-community"
+            },
+            {
+              "method_name": "Homebrew Cask (macOS - Community Edition)",
+              "type": "Package Manager / Software Store",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Install IntelliJ IDEA Community: `brew install --cask intellij-idea-ce`",
+                "3. Open IntelliJ IDEA and install the Android Support plugin (File -> Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "brew install --cask intellij-idea-ce"
+            },
+            {
+              "method_name": "Snap (Linux - Community Edition)",
+              "type": "Package Manager / Software Store",
+              "supported_oses": ["Linux (x64)"],
+              "notes": "Installs IntelliJ IDEA Community Edition via Snap.",
+              "instructions": [
+                "1. Ensure Snap is installed on your Linux distribution.",
+                "2. Install IntelliJ IDEA Community: `sudo snap install intellijidea-community --classic`",
+                "3. Launch IntelliJ IDEA and install the Android Support plugin (File -> Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "sudo snap install intellijidea-community --classic"
+            },
+            {
+              "method_name": "Flatpak (Linux - Community Edition)",
+              "type": "Package Manager / Software Store",
+              "supported_oses": ["Linux (x64)"],
+              "notes": "Installs IntelliJ IDEA Community Edition via Flatpak.",
+              "instructions": [
+                "1. Ensure Flatpak is installed and Flathub remote is added.",
+                "2. Install IntelliJ IDEA Community: `flatpak install flathub com.jetbrains.IntelliJIDEA-Community`",
+                "3. Launch IntelliJ IDEA and install the Android Support plugin (File -> Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "flatpak install flathub com.jetbrains.IntelliJIDEA-Community"
+            },
+            {
+              "method_name": "JetBrains Toolbox App (Cross-platform)",
+              "type": "Centralized Manager",
+              "instructions": [
+                "1. Download and install the JetBrains Toolbox App: https://www.jetbrains.com/lp/toolbox/",
+                "2. Open the Toolbox App. It allows you to easily install, update, and manage IntelliJ IDEA.",
+                "3. Locate 'IntelliJ IDEA Community' in the list and click 'Install'.",
+                "4. Launch IntelliJ IDEA and install the Android Support plugin (File -> Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "N/A (GUI tool for installation)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+    "SDKs_and_Components": [
+    {
+      "name": "Android SDK Platforms",
+      "publisher": "Google",
+      "description": "Contains the core Android platform files, system images, and libraries for specific API levels. Essential for compiling apps against different Android versions and running emulators.",
+      "versions": [
+        {
+          "version_name": "API Level 34 (Android 14)",
+          "release_date": "September 2023",
+          "supported_oses": ["N/A (installed within Android Studio/SDK Manager)"],
+          "notes": "Latest stable platform. `targetSdkVersion` should generally be set to the latest API level.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Platforms' tab, check the box for 'Android 14 (U)' or the latest available API Level.",
+                "4. Click 'Apply' and 'OK' to download and install."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line `sdkmanager`",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. Ensure Android SDK Command-line Tools are installed and added to your PATH.",
+                "2. List available platforms: `sdkmanager --list`",
+                "3. Install a specific platform (e.g., API 34): `sdkmanager 'platforms;android-34'`",
+                "4. Accept licenses when prompted: `sdkmanager --licenses`"
+              ],
+              "installation_query": "sdkmanager 'platforms;android-34'"
+            }
+          ]
+        },
+        {
+          "version_name": "API Level 33 (Android 13)",
+          "release_date": "August 2022",
+          "supported_oses": ["N/A"],
+          "notes": "Commonly used for `minSdkVersion` in newer projects or for wider compatibility.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Platforms' tab, check the box for 'Android 13 (Tiramisu)'.",
+                "4. Click 'Apply' and 'OK' to download and install."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line `sdkmanager`",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. `sdkmanager 'platforms;android-33'`",
+                "2. Accept licenses: `sdkmanager --licenses`"
+              ],
+              "installation_query": "sdkmanager 'platforms;android-33'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android SDK Build-Tools",
+      "publisher": "Google",
+      "description": "Tools required to build an Android application, including AAPT (Android Asset Packaging Tool), `dx` (Dalvik Executable converter), `apksigner`, and `zipalign`.",
+      "versions": [
+        {
+          "version_name": "Latest (e.g., 34.0.0)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (installed within Android Studio/SDK Manager)"],
+          "notes": "The latest version is usually backward compatible. Specified in `build.gradle`.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab (ensure 'Show Package Details' is checked), expand 'Android SDK Build-Tools'.",
+                "4. Check the latest version available (e.g., 34.0.0).",
+                "5. Click 'Apply' and 'OK'."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line `sdkmanager`",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. `sdkmanager 'build-tools;34.0.0'` (replace with desired version)",
+                "2. Accept licenses: `sdkmanager --licenses`"
+              ],
+              "installation_query": "sdkmanager 'build-tools;34.0.0'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android SDK Platform-Tools",
+      "publisher": "Google",
+      "description": "Essential low-level tools that interact directly with Android devices and emulators, including ADB (Android Debug Bridge) and fastboot.",
+      "versions": [
+        {
+          "version_name": "Latest (e.g., 34.0.5)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Always keep this updated. Can be downloaded independently of Android Studio.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'Android SDK Platform-Tools'.",
+                "4. Click 'Apply' and 'OK'."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line `sdkmanager`",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. `sdkmanager 'platform-tools'`",
+                "2. Accept licenses: `sdkmanager --licenses`",
+                "3. Add the `platform-tools` directory to your system's PATH for easy access to `adb` and `fastboot`."
+              ],
+              "installation_query": "sdkmanager 'platform-tools'"
+            },
+            {
+              "method_name": "Direct Download (independent)",
+              "type": "ZIP Archive",
+              "instructions": [
+                "1. Visit the official platform-tools release page: https://developer.android.com/tools/releases/platform-tools",
+                "2. Download the ZIP file for your operating system (Windows, macOS, Linux).",
+                "3. Extract the contents to a memorable location (e.g., `$HOME/Android/sdk/platform-tools`).",
+                "4. Add this directory to your system's PATH environment variable."
+              ],
+              "installation_query": "wget https://dl.google.com/android/repository/platform-tools-latest-linux.zip -O /tmp/platform-tools.zip && unzip /tmp/platform-tools.zip -d /opt/android-sdk/ && echo 'export PATH=$PATH:/opt/android-sdk/platform-tools' >> ~/.bashrc && source ~/.bashrc"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Chocolatey is installed (https://chocolatey.org/install).",
+                "2. Open an elevated PowerShell or Command Prompt.",
+                "3. Install platform-tools: `choco install adb`"
+              ],
+              "installation_query": "choco install adb"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed (https://brew.sh/).",
+                "2. Open Terminal.",
+                "3. Install platform-tools: `brew install android-platform-tools`"
+              ],
+              "installation_query": "brew install android-platform-tools"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Terminal.",
+                "2. Update package list: `sudo apt update`",
+                "3. Install adb and fastboot: `sudo apt install adb fastboot`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install adb fastboot"
+            },
+            {
+              "method_name": "dnf (Fedora Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Terminal.",
+                "2. Install adb and fastboot: `sudo dnf install android-tools`"
+              ],
+              "installation_query": "sudo dnf install android-tools"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Terminal.",
+                "2. Install adb and fastboot: `sudo pacman -S android-tools`"
+              ],
+              "installation_query": "sudo pacman -S android-tools"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android Emulator",
+      "publisher": "Google",
+      "description": "A virtual device environment that lets you test your Android apps on your computer without requiring a physical device.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (installed within Android Studio/SDK Manager)"],
+          "notes": "Crucial for testing across various screen sizes, API levels, and hardware features.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'Android Emulator'.",
+                "4. Click 'Apply' and 'OK' to download. (You'll also need 'Intel x86 Emulator Accelerator (HAXM installer)' or 'Android Emulator Hypervisor Driver for AMD Processors' if applicable for performance).",
+                "5. To create virtual devices: Go to 'Tools' -> 'Device Manager' in Android Studio, then click 'Create Device' and follow the wizard."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line `sdkmanager`",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. `sdkmanager 'emulator'`",
+                "2. Accept licenses: `sdkmanager --licenses`",
+                "3. Install system images (e.g., `sdkmanager 'system-images;android-34;google_apis;x86_64'`)",
+                "4. Create AVDs using `avdmanager` command-line tool."
+              ],
+              "installation_query": "sdkmanager 'emulator' && sdkmanager 'system-images;android-34;google_apis;x86_64'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android NDK (Native Development Kit)",
+      "publisher": "Google",
+      "description": "A toolset that allows you to implement parts of your app using native code languages like C and C++. Useful for performance-critical tasks like game development or heavy computation.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 26.2.11394342)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (installed within Android Studio/SDK Manager)"],
+          "notes": "Only required if you are writing C/C++ code for your Android application.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'NDK (Side by side)'.",
+                "4. Click 'Apply' and 'OK'."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line `sdkmanager`",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. `sdkmanager 'ndk;26.2.11394342'` (replace with desired version)",
+                "2. Accept licenses: `sdkmanager --licenses`"
+              ],
+              "installation_query": "sdkmanager 'ndk;26.2.11394342'"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Google USB Driver",
+      "publisher": "Google",
+      "description": "Required for Windows users to connect their Android devices (Google devices and some others) to their development machine for debugging via ADB.",
+      "versions": [
+        {
+          "version_name": "Latest",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows"],
+          "notes": "Only needed for Windows. For macOS and Linux, typically no specific driver installation is required.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'Google USB Driver'.",
+                "4. Click 'Apply' and 'OK'.",
+                "5. The driver files will be downloaded to `android-sdk\\extras\\google\\usb_driver`.",
+                "6. Manually install the driver via Windows Device Manager if the device is not recognized."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Intel x86 Emulator Accelerator (HAXM installer)",
+      "publisher": "Intel",
+      "description": "Hardware-assisted virtualization engine (hypervisor) that uses Intel Virtualization Technology (Intel VT) to speed up Android app emulation on Intel-based machines.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows (Intel CPU)", "macOS (Intel CPU)", "Linux (Intel CPU with KVM)"],
+          "notes": "Essential for good emulator performance on Intel CPUs. Ensure virtualization (VT-x) is enabled in BIOS/UEFI.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'Intel x86 Emulator Accelerator (HAXM installer)'.",
+                "4. Click 'Apply' and 'OK'.",
+                "5. After download, navigate to `android-sdk\\extras\\intel\\Hardware_Accelerated_Execution_Manager` and run `intelhaxm-android.exe` (Windows) or the `.dmg` (macOS) to install the driver. For Linux, ensure KVM is set up."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Chocolatey is installed (https://chocolatey.org/install).",
+                "2. Open an elevated PowerShell or Command Prompt.",
+                "3. Install HAXM: `choco install haxm`"
+              ],
+              "installation_query": "choco install haxm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android Emulator Hypervisor Driver for AMD Processors",
+      "publisher": "Google",
+      "description": "Allows Android Emulator to utilize hardware acceleration on AMD processors for improved performance. Requires Windows Hypervisor Platform (WHPX) to be enabled.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows (AMD CPU)"],
+          "notes": "Essential for good emulator performance on AMD CPUs. Requires Windows 10/11 with Hyper-V enabled.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'Android Emulator Hypervisor Driver for AMD Processors'.",
+                "4. Click 'Apply' and 'OK'.",
+                "5. Ensure Windows Hypervisor Platform is enabled: Go to 'Turn Windows features on or off' and check 'Windows Hypervisor Platform'."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android SDK Command-line Tools",
+      "publisher": "Google",
+      "description": "Contains the `sdkmanager` tool, which you can use to view, install, update, and uninstall packages for the Android SDK from the command line.",
+      "versions": [
+        {
+          "version_name": "Latest (e.g., 11.0)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Necessary for command-line SDK management.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio SDK Manager",
+              "type": "GUI Tool",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. In 'SDK Tools' tab, check 'Android SDK Command-line Tools (latest)'.",
+                "4. Click 'Apply' and 'OK'."
+              ],
+              "installation_query": "N/A (GUI tool)"
+            },
+            {
+              "method_name": "Command-line (Direct Download)",
+              "type": "ZIP Archive",
+              "instructions": [
+                "1. Visit the official SDK command-line tools page: https://developer.android.com/studio/command-line/sdkmanager",
+                "2. Download the ZIP file for your operating system.",
+                "3. Extract the contents to a new directory within your Android SDK installation (e.g., `android-sdk/cmdline-tools/latest`).",
+                "4. Add the `cmdline-tools/latest/bin` directory to your system's PATH environment variable to use `sdkmanager`."
+              ],
+              "installation_query": "wget https://dl.google.com/android/repository/commandlinetools-linux-X.Y.zip -O /tmp/cmdline-tools.zip && mkdir -p /opt/android-sdk/cmdline-tools/latest && unzip /tmp/cmdline-tools.zip -d /opt/android-sdk/cmdline-tools/latest && echo 'export PATH=$PATH:/opt/android-sdk/cmdline-tools/latest/bin' >> ~/.bashrc && source ~/.bashrc"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Chocolatey is installed (https://chocolatey.org/install).",
+                "2. Open an elevated PowerShell or Command Prompt.",
+                "3. Install Android command-line tools: `choco install android-sdk-tools`"
+              ],
+              "installation_query": "choco install android-sdk-tools"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed (https://brew.sh/).",
+                "2. Open Terminal.",
+                "3. Install Android SDK: `brew install android-sdk`"
+              ],
+              "installation_query": "brew install android-sdk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gradle",
+      "publisher": "Gradle, Inc.",
+      "description": "An advanced build automation system used for building Android projects. It's the primary build tool for Android Studio.",
+      "versions": [
+        {
+          "version_name": "Latest (e.g., 8.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Android Studio usually manages the Gradle version per project via the Gradle Wrapper. Manual installation is typically only needed for global command-line usage or specific setups.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Wrapper (Recommended for Android Projects)",
+              "type": "Built-in (Project-specific)",
+              "instructions": [
+                "1. Android Studio projects include a Gradle Wrapper (`gradlew` or `gradlew.bat`).",
+                "2. When you build an Android project, the wrapper automatically downloads and uses the Gradle version defined in `gradle/wrapper/gradle-wrapper.properties`."
+              ],
+              "installation_query": "N/A (Project-specific)"
+            },
+            {
+              "method_name": "SDKMAN! (Linux/macOS/WSL)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Install SDKMAN!: `curl -s \"https://get.sdkman.io\" | bash`",
+                "2. Follow on-screen instructions to complete installation (source `~/.sdkman/bin/sdkman-init.sh`).",
+                "3. Install Gradle: `sdk install gradle`",
+                "4. List versions: `sdk list gradle`",
+                "5. Install specific version: `sdk install gradle 8.7`"
+              ],
+              "installation_query": "sdk install gradle"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Chocolatey is installed (https://chocolatey.org/install).",
+                "2. Open an elevated PowerShell or Command Prompt.",
+                "3. Install Gradle: `choco install gradle`"
+              ],
+              "installation_query": "choco install gradle"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed (https://brew.sh/).",
+                "2. Open Terminal.",
+                "3. Install Gradle: `brew install gradle`"
+              ],
+              "installation_query": "brew install gradle"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Terminal.",
+                "2. Install Gradle: `sudo apt install gradle`"
+              ],
+              "installation_query": "sudo apt install gradle"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Java Development Kit (JDK)",
+      "publisher": "Oracle / OpenJDK",
+      "description": "Required for Android development as Android Studio and Gradle are built on Java. It provides the Java runtime environment and development tools.",
+      "versions": [
+        {
+          "version_name": "JDK 17 (Recommended for Android Studio Giraffe and later)",
+          "release_date": "September 2021 (LTS)",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Android Studio bundles a JDK, but a separate installation might be needed for other Java development or specific build environments. Ensure JAVA_HOME is set if using outside of Android Studio.",
+          "installation_methods": [
+            {
+              "method_name": "Android Studio Bundled JDK",
+              "type": "Built-in (with Android Studio)",
+              "instructions": [
+                "1. Android Studio includes its own bundled JDK. This is the recommended approach for Android development.",
+                "2. You can view or change the JDK location in Android Studio under 'File' -> 'Project Structure' -> 'SDK Location' -> 'Gradle Settings'."
+              ],
+              "installation_query": "N/A (Bundled)"
+            },
+            {
+              "method_name": "SDKMAN! (Linux/macOS/WSL)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Install SDKMAN! if not already installed: `curl -s \"https://get.sdkman.io\" | bash`",
+                "2. Install a specific JDK version (e.g., OpenJDK 17): `sdk install java 17.0.11-tem` (replace with desired vendor/version)",
+                "3. Set as default: `sdk default java 17.0.11-tem`"
+              ],
+              "installation_query": "sdk install java 17.0.11-tem"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Chocolatey is installed (https://chocolatey.org/install).",
+                "2. Install OpenJDK 17: `choco install openjdk17`"
+              ],
+              "installation_query": "choco install openjdk17"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed (https://brew.sh/).",
+                "2. Install OpenJDK 17: `brew install openjdk@17`",
+                "3. Link OpenJDK (if necessary): `sudo ln -sfn /opt/homebrew/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk` (for Apple Silicon)"
+              ],
+              "installation_query": "brew install openjdk@17"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Update package list: `sudo apt update`",
+                "2. Install OpenJDK 17: `sudo apt install openjdk-17-jdk`"
+              ],
+              "installation_query": "sudo apt install openjdk-17-jdk"
+            },
+            {
+              "method_name": "dnf (Fedora Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install OpenJDK 17: `sudo dnf install java-17-openjdk-devel`"
+              ],
+              "installation_query": "sudo dnf install java-17-openjdk-devel"
+            }
+          ]
+        },
+        {
+          "version_name": "JDK 11 (Recommended for Android Studio Arctic Fox to Bumblebee)",
+          "release_date": "September 2018 (LTS)",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Still used for older Android Studio versions or projects.",
+          "installation_methods": [
+            {
+              "method_name": "SDKMAN! (Linux/macOS/WSL)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. `sdk install java 11.0.23-tem` (replace with desired vendor/version)",
+                "2. `sdk default java 11.0.23-tem`"
+              ],
+              "installation_query": "sdk install java 11.0.23-tem"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install openjdk11`"
+              ],
+              "installation_query": "choco install openjdk11"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install openjdk@11`"
+              ],
+              "installation_query": "brew install openjdk@11"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt install openjdk-11-jdk`"
+              ],
+              "installation_query": "sudo apt install openjdk-11-jdk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Node.js (for React Native/Flutter/Ionic)",
+      "publisher": "OpenJS Foundation",
+      "description": "A JavaScript runtime built on Chrome's V8 JavaScript engine, essential for cross-platform mobile development frameworks like React Native and Flutter (for running build tools and managing packages).",
+      "versions": [
+        {
+          "version_name": "LTS (e.g., 20.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Required if you plan to develop with React Native, Flutter (for dependency management like npm/yarn), or Ionic.",
+          "installation_methods": [
+            {
+              "method_name": "Official Installer",
+              "type": "Executable/Package",
+              "instructions": [
+                "1. Visit the official Node.js website: https://nodejs.org/en/download/",
+                "2. Download the LTS version installer for your operating system.",
+                "3. Run the installer and follow the prompts."
+              ],
+              "installation_query": "N/A (Installer dependent)"
+            },
+            {
+              "method_name": "nvm (Node Version Manager) (Linux/macOS/WSL)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Install nvm: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`",
+                "2. Follow on-screen instructions to set up nvm.",
+                "3. Install LTS Node.js: `nvm install --lts`",
+                "4. Use specific version: `nvm use 20`"
+              ],
+              "installation_query": "nvm install --lts"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install nodejs-lts`"
+              ],
+              "installation_query": "choco install nodejs-lts"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Scoop is installed (https://scoop.sh/).",
+                "2. Install Node.js LTS: `scoop install nodejs-lts`"
+              ],
+              "installation_query": "scoop install nodejs-lts"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install node@20` (for version 20, use appropriate version)"
+              ],
+              "installation_query": "brew install node@20"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update`",
+                "2. `sudo apt install nodejs npm`"
+              ],
+              "installation_query": "sudo apt install nodejs npm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Flutter SDK",
+      "publisher": "Google",
+      "description": "Google's UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.",
+      "versions": [
+        {
+          "version_name": "Stable Channel (Latest)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Includes the Dart SDK. Requires an Android SDK and optionally Xcode for iOS development.",
+          "installation_methods": [
+            {
+              "method_name": "Official Download (Manual)",
+              "type": "ZIP Archive",
+              "instructions": [
+                "1. Visit the official Flutter install page: https://flutter.dev/docs/get-started/install",
+                "2. Download the Flutter SDK for your OS.",
+                "3. Extract the ZIP file to a desired location (e.g., `C:\\src\\flutter` on Windows, `~/development/flutter` on Linux/macOS).",
+                "4. Add the `flutter/bin` directory to your system's PATH.",
+                "5. Run `flutter doctor` to check dependencies."
+              ],
+              "installation_query": "N/A (Manual download/extract)"
+            },
+            {
+              "method_name": "Git Clone (Recommended for frequent updates)",
+              "type": "Version Control",
+              "instructions": [
+                "1. `git clone https://github.com/flutter/flutter.git -b stable` (or other channel like `beta`, `dev`)",
+                "2. Add the cloned `flutter/bin` directory to your system's PATH.",
+                "3. Run `flutter doctor`."
+              ],
+              "installation_query": "git clone https://github.com/flutter/flutter.git -b stable"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install flutter`"
+              ],
+              "installation_query": "choco install flutter"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop bucket add extras` (if not already added)",
+                "2. `scoop install flutter`"
+              ],
+              "installation_query": "scoop install flutter"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install --cask flutter`"
+              ],
+              "installation_query": "brew install --cask flutter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Android Studio",
+      "publisher": "Google",
+      "description": "The official integrated development environment (IDE) for Android application development, based on IntelliJ IDEA.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., Iguana | 2023.2.1)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Highly recommended for all Android development. Includes an SDK Manager, emulator, and other tools.",
+          "installation_methods": [
+            {
+              "method_name": "Official Download",
+              "type": "Executable/DMG/ZIP",
+              "instructions": [
+                "1. Visit the official Android Studio website: https://developer.android.com/studio",
+                "2. Download the installer for your operating system.",
+                "3. Run the installer and follow the setup wizard. It will guide you through initial SDK component downloads."
+              ],
+              "installation_query": "N/A (Installer dependent)"
+            },
+            {
+              "method_name": "JetBrains Toolbox App (Recommended for managing JetBrains IDEs)",
+              "type": "GUI Tool/Installer",
+              "instructions": [
+                "1. Download and install the JetBrains Toolbox App: https://www.jetbrains.com/toolbox-app/",
+                "2. Open the Toolbox App.",
+                "3. Find Android Studio in the list of available IDEs and click 'Install'."
+              ],
+              "installation_query": "N/A (Toolbox App)"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install androidstudio`"
+              ],
+              "installation_query": "choco install androidstudio"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop bucket add extras` (if not already added)",
+                "2. `scoop install androidstudio`"
+              ],
+              "installation_query": "scoop install androidstudio"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install --cask android-studio`"
+              ],
+              "installation_query": "brew install --cask android-studio"
+            },
+            {
+              "method_name": "Snap (Ubuntu/Debian-based Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo snap install android-studio --classic`"
+              ],
+              "installation_query": "sudo snap install android-studio --classic"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Visual Studio Code",
+      "publisher": "Microsoft",
+      "description": "A lightweight but powerful source code editor that runs on your desktop and is available for Windows, macOS, and Linux. It supports Android development through various extensions (e.g., for Flutter, React Native).",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Monthly",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Excellent for Flutter and React Native development, and can be used for basic Android SDK command-line interactions.",
+          "installation_methods": [
+            {
+              "method_name": "Official Download",
+              "type": "Executable/DMG/DEB/RPM",
+              "instructions": [
+                "1. Visit the official VS Code website: https://code.visualstudio.com/download",
+                "2. Download the installer for your operating system.",
+                "3. Run the installer and follow the prompts."
+              ],
+              "installation_query": "N/A (Installer dependent)"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install vscode`"
+              ],
+              "installation_query": "choco install vscode"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install vscode`"
+              ],
+              "installation_query": "scoop install vscode"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install --cask visual-studio-code`"
+              ],
+              "installation_query": "brew install --cask visual-studio-code"
+            },
+            {
+              "method_name": "Snap (Ubuntu/Debian-based Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo snap install code --classic`"
+              ],
+              "installation_query": "sudo snap install code --classic"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add Microsoft GPG key: `wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg`",
+                "2. `sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg`",
+                "3. Add repository: `echo \"deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main\" | sudo tee /etc/apt/sources.list.d/vscode.list > /dev/null`",
+                "4. Update and install: `rm -f packages.microsoft.gpg && sudo apt update && sudo apt install code`"
+              ],
+              "installation_query": "sudo apt install code"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Git",
+      "publisher": "Git SCM",
+      "description": "A free and open source distributed version control system designed to handle everything from small to very large projects with speed and efficiency.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Essential for managing project versions, collaborating with teams, and using many open-source tools (like cloning Flutter SDK).",
+          "installation_methods": [
+            {
+              "method_name": "Official Installer",
+              "type": "Executable/Package",
+              "instructions": [
+                "1. Visit the official Git website: https://git-scm.com/downloads",
+                "2. Download the installer for your operating system.",
+                "3. Run the installer and follow the prompts."
+              ],
+              "installation_query": "N/A (Installer dependent)"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install git.install`"
+              ],
+              "installation_query": "choco install git.install"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install git`"
+              ],
+              "installation_query": "scoop install git"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install git`"
+              ],
+              "installation_query": "brew install git"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update`",
+                "2. `sudo apt install git`"
+              ],
+              "installation_query": "sudo apt install git"
+            },
+            {
+              "method_name": "dnf (Fedora Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo dnf install git`"
+              ],
+              "installation_query": "sudo dnf install git"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo pacman -S git`"
+              ],
+              "installation_query": "sudo pacman -S git"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+     "Programming_Languages_and_Runtimes": [
+    {
+      "name": "Kotlin",
+      "publisher": "JetBrains (primary developer), Google (endorsement and support)",
+      "description": "A modern, concise, safe, and interoperable programming language that is officially recommended by Google for Android development.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 1.9.23)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (integrated into IDEs/build tools)"],
+          "notes": "Default language for new Android projects in Android Studio. Leverages JVM and compiles to native code via Kotlin/Native.",
+          "installation_methods": [
+            {
+              "method_name": "Integrated with Android Studio",
+              "type": "IDE Integration",
+              "instructions": [
+                "1. Kotlin is bundled and configured by default with Android Studio for new projects.",
+                "2. Ensure the Kotlin plugin is enabled/updated in Android Studio (Settings/Preferences -> Plugins)."
+              ],
+              "installation_query": "N/A (IDE-managed)"
+            },
+            {
+              "method_name": "Gradle Plugin (for existing Java projects)",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. In your project's top-level `build.gradle` file, add the Kotlin Gradle plugin:",
+                "   ```groovy",
+                "   plugins {",
+                "       id 'com.android.application' version '8.X.X' apply false",
+                "       id 'org.jetbrains.kotlin.android' version '1.9.23' apply false",
+                "   }",
+                "   ```",
+                "2. In your app-level `build.gradle` file, apply the plugin:",
+                "   ```groovy",
+                "   plugins {",
+                "       id 'com.android.application'",
+                "       id 'org.jetbrains.kotlin.android'",
+                "   }",
+                "   ```",
+                "3. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed plugin)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Java Development Kit (JDK)",
+      "publisher": "Various (Eclipse Adoptium, Oracle, Azul Zulu, Amazon Corretto, etc.)",
+      "description": "Essential for compiling and running Java (and Kotlin) applications. Provides the Java Runtime Environment (JRE) and development tools.",
+      "versions": [
+        {
+          "version_name": "JDK 17 (Latest LTS - Long-Term Support)",
+          "release_date": "September 2021",
+          "supported_oses": ["Windows (x64, ARM64)", "macOS (Intel, Apple Silicon)", "Linux (x64, ARM64)"],
+          "notes": "Recommended for most Android development for its stability and long-term support. Android Studio may bundle a compatible JDK, but an external one might be needed for specific build environments.",
+          "installation_methods": [
+            {
+              "method_name": "SDKMAN! (Linux/macOS/WSL/Cygwin/MSYS2)",
+              "type": "Tool/Script",
+              "instructions": [
+                "1. Install SDKMAN! (if not already): `curl -s \"https://get.sdkman.io\" | bash && source \"$HOME/.sdkman/bin/sdkman-init.sh\"`",
+                "2. Install a specific JDK (e.g., Temurin 17): `sdk install java 17.0.11-tem`",
+                "3. Set as default (optional): `sdk default java 17.0.11-tem`",
+                "4. Verify: `java -version`"
+              ],
+              "installation_query": "curl -s \"https://get.sdkman.io\" | bash && source \"$HOME/.sdkman/bin/sdkman-init.sh\" && sdk install java 17.0.11-tem && sdk default java 17.0.11-tem"
+            },
+            {
+              "method_name": "Direct Download (Adoptium Temurin - Windows)",
+              "type": "MSI Installer / ZIP Archive",
+              "instructions": [
+                "1. Visit Adoptium Downloads: https://adoptium.net/temurin/releases/",
+                "2. Select 'JDK 17', 'Windows', 'x64' or 'ARM64', 'MSI' (recommended) or 'ZIP' and download.",
+                "3. **MSI:** Run the MSI installer and follow the prompts. This will typically set `JAVA_HOME` and update `PATH` automatically.",
+                "4. **ZIP:** Extract the contents of the ZIP to a directory (e.g., `C:\\Program Files\\Java\\jdk-17`). Manually set `JAVA_HOME` to this directory and add `%JAVA_HOME%\\bin` to your system `PATH`."
+              ],
+              "installation_query": "N/A (GUI installer for MSI, for ZIP: Invoke-WebRequest -Uri 'https://adoptium.net/download/jdk/temurin17-hotspot/windows/x64/latest.zip' -OutFile 'temurin17.zip' ; Expand-Archive -Path 'temurin17.zip' -DestinationPath 'C:\\Program Files\\Java')"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager / Software Store",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Tap the Homebrew Caskroom for Java (if not already): `brew tap homebrew/cask-versions`",
+                "3. Install a specific JDK (e.g., Temurin 17): `brew install --cask temurin17`"
+              ],
+              "installation_query": "brew tap homebrew/cask-versions && brew install --cask temurin17"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu - Official/Corretto/Zulu/Liberica)",
+              "type": "Package Manager",
+              "instructions": [
+                "**For default OpenJDK (Ubuntu 22.04+):** `sudo apt update && sudo apt install openjdk-17-jdk`",
+                " (Other distributions like Corretto, Zulu, Liberica also available via their respective repositories - see existing data.json for details)."
+              ],
+              "installation_query": "sudo apt update && sudo apt install openjdk-17-jdk -y"
+            },
+            {
+              "method_name": "Winget (Windows 10/11 - Adoptium/Microsoft/Zulu/Liberica)",
+              "type": "Package Manager / Software Store",
+              "instructions": [
+                "1. Ensure Winget is installed.",
+                "2. Install Adoptium Temurin 17: `winget install EclipseAdoptium.Temurin.17.JDK`"
+              ],
+              "installation_query": "winget install EclipseAdoptium.Temurin.17.JDK"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Chocolatey is installed.",
+                "2. Install a specific JDK (e.g., Temurin 17): `choco install temurin17-jdk`"
+              ],
+              "installation_query": "choco install temurin17-jdk"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Scoop is installed.",
+                "2. Add the 'java' bucket (if not already): `scoop bucket add java`",
+                "3. Install a specific JDK (e.g., Temurin 17): `scoop install temurin17-jdk`"
+              ],
+              "installation_query": "scoop bucket add java && scoop install temurin17-jdk"
+            }
+          ]
+        },
+        {
+          "version_name": "JDK 11 (Previous LTS)",
+          "release_date": "September 2018",
+          "supported_oses": ["Windows (x64)", "macOS (Intel - via Rosetta on Apple Silicon)", "Linux (x64)"],
+          "notes": "Still widely used for older projects and specific build systems. For Apple Silicon Macs, Intel builds run via Rosetta 2.",
+          "installation_methods": [
+            {
+              "method_name": "SDKMAN! (Linux/macOS/WSL/Cygwin/MSYS2)",
+              "type": "Tool/Script",
+              "instructions": [
+                "1. Install SDKMAN! (if not already).",
+                "2. `sdk install java 11.0.23-tem` (or other vendors like zulu, librca)"
+              ],
+              "installation_query": "curl -s \"https://get.sdkman.io\" | bash && source \"$HOME/.sdkman/bin/sdkman-init.sh\" && sdk install java 11.0.23-tem"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu - Official)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update && sudo apt install openjdk-11-jdk`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install openjdk-11-jdk -y"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager / Software Store",
+              "instructions": [
+                "1. `brew install --cask temurin11`"
+              ],
+              "installation_query": "brew install --cask temurin11"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install temurin11-jdk`"
+              ],
+              "installation_query": "choco install temurin11-jdk"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install temurin11-jdk`"
+              ],
+              "installation_query": "scoop install temurin11-jdk"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "C++ (for NDK Development)",
+      "publisher": "Various (GNU, LLVM/Clang)",
+      "description": "Used for performance-critical parts of Android applications, games, and direct hardware access via the Android Native Development Kit (NDK).",
+      "versions": [
+        {
+          "version_name": "Latest NDK Supported (e.g., Clang 14/17)",
+          "release_date": "Synchronized with Android NDK releases",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "The Android NDK bundles its own Clang toolchain. Direct system-wide C++ compilers are generally not needed for NDK development unless building external dependencies.",
+          "installation_methods": [
+            {
+              "method_name": "Android NDK (via Android Studio SDK Manager)",
+              "type": "IDE Component",
+              "instructions": [
+                "1. Open Android Studio.",
+                "2. Go to 'Tools' -> 'SDK Manager'.",
+                "3. Navigate to 'SDK Tools' tab.",
+                "4. Check 'NDK (Side by side)' and 'CMake' (if not already checked).",
+                "5. Click 'Apply' to download and install."
+              ],
+              "installation_query": "N/A (Android Studio SDK Manager)"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install build-essential (includes GCC/G++): `sudo apt update && sudo apt install build-essential`",
+                "2. For Clang: `sudo apt install clang`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install build-essential clang -y"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install Xcode Command Line Tools: `xcode-select --install`",
+                "2. Install GCC: `brew install gcc`",
+                "3. Install Clang (usually comes with Xcode CLT, but can be managed by Homebrew): `brew install llvm`"
+              ],
+              "installation_query": "xcode-select --install && brew install gcc llvm"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install MinGW (for GCC/G++): `choco install mingw`",
+                "2. Install LLVM (for Clang): `choco install llvm`"
+              ],
+              "installation_query": "choco install mingw llvm"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install MinGW: `scoop install mingw`",
+                "2. Install LLVM: `scoop install llvm`"
+              ],
+              "installation_query": "scoop install mingw llvm"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Dart (for Flutter Development)",
+      "publisher": "Google",
+      "description": "An object-oriented, class-based, garbage-collected language with C-style syntax. Used for building cross-platform mobile, web, and desktop applications with Flutter.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 3.0.5)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Dart SDK includes the Dart VM, compilers (JIT and AOT), and core libraries.",
+          "installation_methods": [
+            {
+              "method_name": "Flutter SDK (Recommended)",
+              "type": "SDK Bundle",
+              "instructions": [
+                "1. Follow the Flutter installation guide for your OS: https://flutter.dev/docs/get-started/install",
+                "2. The Flutter SDK includes the Dart SDK.",
+                "3. Verify installation: `flutter doctor`"
+              ],
+              "installation_query": "N/A (Follow Flutter guide)"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install dart`"
+              ],
+              "installation_query": "brew install dart"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install dart-sdk`"
+              ],
+              "installation_query": "choco install dart-sdk"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install dart`"
+              ],
+              "installation_query": "scoop install dart"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add Dart repository key: `sudo apt-get update && sudo apt-get install apt-transport-https ca-certificates curl gnupg -y && curl https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg`",
+                "2. Add Dart repository: `echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list`",
+                "3. Install Dart SDK: `sudo apt-get update && sudo apt-get install dart -y`"
+              ],
+              "installation_query": "sudo apt-get update && sudo apt-get install apt-transport-https ca-certificates curl gnupg -y && curl https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo gpg --dearmor -o /usr/share/keyrings/dart.gpg && echo 'deb [signed-by=/usr/share/keyrings/dart.gpg arch=amd64] https://storage.googleapis.com/download.dartlang.org/linux/debian stable main' | sudo tee /etc/apt/sources.list.d/dart_stable.list && sudo apt-get update && sudo apt-get install dart -y"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "JavaScript/TypeScript (for React Native/NativeScript/Cordova)",
+      "publisher": "Ecma International (JavaScript), Microsoft (TypeScript)",
+      "description": "JavaScript is a high-level, interpreted scripting language. TypeScript is a superset of JavaScript that adds static typing. Both are used extensively in cross-platform mobile development frameworks.",
+      "versions": [
+        {
+          "version_name": "Latest Node.js LTS (e.g., 20.x, 22.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Node.js includes npm (Node Package Manager) which is crucial for managing JavaScript/TypeScript dependencies. TypeScript itself is installed as an npm package.",
+          "installation_methods": [
+            {
+              "method_name": "Node Version Manager (nvm - Linux/macOS/WSL)",
+              "type": "Tool/Script",
+              "instructions": [
+                "1. Install nvm: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`",
+                "2. Install Node.js LTS: `nvm install --lts`",
+                "3. Use LTS: `nvm use --lts`",
+                "4. Verify: `node -v` and `npm -v`"
+              ],
+              "installation_query": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash && nvm install --lts && nvm use --lts"
+            },
+            {
+              "method_name": "Node.js Official Installer (Windows/macOS)",
+              "type": "Installer",
+              "instructions": [
+                "1. Visit Node.js website: https://nodejs.org/en/download/",
+                "2. Download the LTS installer for your OS and run it.",
+                "3. Verify: Open a new terminal and run `node -v` and `npm -v`"
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install node`"
+              ],
+              "installation_query": "brew install node"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add Node.js PPA: `curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -` (replace 'lts.x' with specific version like '20.x' or '22.x')",
+                "2. Install Node.js: `sudo apt-get install -y nodejs`"
+              ],
+              "installation_query": "curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt-get install -y nodejs"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install nodejs-lts`"
+              ],
+              "installation_query": "choco install nodejs-lts"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install nodejs-lts`"
+              ],
+              "installation_query": "scoop install nodejs-lts"
+            },
+            {
+              "method_name": "npm (for TypeScript)",
+              "type": "Package Manager (JavaScript)",
+              "instructions": [
+                "1. After installing Node.js, install TypeScript globally: `npm install -g typescript`",
+                "2. Verify: `tsc -v`"
+              ],
+              "installation_query": "npm install -g typescript"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Python (for Kivy/Briefcase/specific tooling)",
+      "publisher": "Python Software Foundation",
+      "description": "A high-level, general-purpose programming language often used for scripting, automation, and data science. Can be used for Android development via frameworks like Kivy or for building supporting tools.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 3.11.x, 3.12.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Ensure you install the correct architecture (x64) and manage PATH correctly.",
+          "installation_methods": [
+            {
+              "method_name": "pyenv (Linux/macOS/WSL)",
+              "type": "Tool/Script",
+              "instructions": [
+                "1. Install pyenv: `curl https://pyenv.run | bash`",
+                "2. Add pyenv to your shell environment (follow post-install instructions).",
+                "3. Install a Python version: `pyenv install 3.11.9`",
+                "4. Set as global/local: `pyenv global 3.11.9`",
+                "5. Verify: `python3 -V`"
+              ],
+              "installation_query": "curl https://pyenv.run | bash && pyenv install 3.11.9 && pyenv global 3.11.9"
+            },
+            {
+              "method_name": "Official Installer (Windows/macOS)",
+              "type": "Installer",
+              "instructions": [
+                "1. Visit Python Downloads: https://www.python.org/downloads/",
+                "2. Download the appropriate installer for your OS.",
+                "3. **Windows:** Run the installer, ensure 'Add Python to PATH' is checked.",
+                "4. **macOS:** Run the installer package.",
+                "5. Verify: Open a new terminal and run `python --version` or `python3 --version`"
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install python` (installs latest stable Python 3)"
+              ],
+              "installation_query": "brew install python"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update && sudo apt install python3 python3-pip`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install python3 python3-pip -y"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install python --version=3.11.9` (specify version as needed)"
+              ],
+              "installation_query": "choco install python --version=3.11.9"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install python`"
+              ],
+              "installation_query": "scoop install python"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rust (for performance-critical components/game engines)",
+      "publisher": "Mozilla (initial), Rust Foundation",
+      "description": "A systems programming language focused on safety, performance, and concurrency. Can be used for Android NDK development for highly optimized code.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 1.79.0)",
+          "release_date": "Constantly updated (6-week release cycle)",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Rustup is the recommended installer for Rust, managing toolchains and components.",
+          "installation_methods": [
+            {
+              "method_name": "Rustup (Recommended)",
+              "type": "Tool/Script",
+              "instructions": [
+                "1. Install Rustup: `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`",
+                "2. Follow on-screen instructions (usually select default installation).",
+                "3. Source cargo environment: `source $HOME/.cargo/env` (or restart terminal).",
+                "4. Verify: `rustc --version` and `cargo --version`"
+              ],
+              "installation_query": "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install rust`"
+              ],
+              "installation_query": "brew install rust"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update && sudo apt install rustc cargo`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install rustc cargo -y"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install rust`"
+              ],
+              "installation_query": "choco install rust"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install rust`"
+              ],
+              "installation_query": "scoop install rust"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Build_Systems": [
+    {
+      "name": "Gradle",
+      "publisher": "Gradle Inc. (Open-source project)",
+      "description": "The default build automation tool used by Android Studio for Android projects. It manages project dependencies, compiles code, runs tests, and packages applications.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 8.8)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Android Studio manages Gradle Wrapper for projects. Direct installation is usually for command-line builds or specific needs.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Wrapper (Recommended for projects)",
+              "type": "Project-local script",
+              "instructions": [
+                "1. Android Studio automatically sets up and uses the Gradle Wrapper (`gradlew`/`gradlew.bat`) for new projects.",
+                "2. To run Gradle tasks, navigate to your project's root directory in a terminal.",
+                "3. Execute Gradle tasks using `./gradlew <task_name>` (Linux/macOS) or `gradlew <task_name>` (Windows)."
+              ],
+              "installation_query": "N/A (comes with project)"
+            },
+            {
+              "method_name": "SDKMAN! (Linux/macOS/WSL)",
+              "type": "Tool/Script",
+              "instructions": [
+                "1. Ensure SDKMAN! is installed and initialized.",
+                "2. Install Gradle: `sdk install gradle`",
+                "3. Verify: `gradle -v`"
+              ],
+              "installation_query": "sdk install gradle"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install gradle`"
+              ],
+              "installation_query": "brew install gradle"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `winget install Gradle.Gradle`"
+              ],
+              "installation_query": "winget install Gradle.Gradle"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install gradle`"
+              ],
+              "installation_query": "choco install gradle"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `scoop install gradle`"
+              ],
+              "installation_query": "scoop install gradle"
+            },
+            {
+              "method_name": "Direct Download (ZIP)",
+              "type": "Archive Extraction",
+              "instructions": [
+                "1. Visit the Gradle releases page: https://gradle.org/releases/",
+                "2. Download the 'complete' distribution ZIP (e.g., `gradle-8.8-all.zip`).",
+                "3. Extract the ZIP to a directory (e.g., `C:\\Program Files\\Gradle\\gradle-8.8` on Windows, `/opt/gradle/gradle-8.8` on Linux/macOS).",
+                "4. Add the `bin` directory of the extracted Gradle to your system `PATH`."
+              ],
+              "installation_query": "wget https://services.gradle.org/distributions/gradle-8.8-all.zip -O /tmp/gradle.zip && sudo unzip /tmp/gradle.zip -d /opt/gradle && sudo mv /opt/gradle/gradle-8.8 /opt/gradle/current && echo 'export GRADLE_HOME=/opt/gradle/current' >> ~/.bashrc && echo 'export PATH=$GRADLE_HOME/bin:$PATH' >> ~/.bashrc"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Database_and_Persistence_Tools": [
+    {
+      "name": "SQLite",
+      "publisher": "D. Richard Hipp (open-source)",
+      "description": "A lightweight, file-based relational database system embedded directly into Android devices. Used for local structured data storage.",
+      "versions": [
+        {
+          "version_name": "Built-in to Android OS",
+          "release_date": "N/A",
+          "supported_oses": ["Android"],
+          "notes": "No explicit installation needed for the database engine itself on Android devices.",
+          "components": [
+            {
+              "component_name": "SQLite Database (on device)",
+              "installation_methods": [
+                {
+                  "method_name": "Part of Android OS",
+                  "type": "System Component",
+                  "instructions": [
+                    "SQLite is automatically available on all Android devices. Your application interacts with it via Android's `SQLiteOpenHelper` or higher-level libraries like Room."
+                  ],
+                  "installation_query": "N/A"
+                }
+              ]
+            },
+            {
+              "component_name": "Android Studio Database Inspector",
+              "notes": "Allows real-time inspection of your app's databases, including SQLite, directly within Android Studio.",
+              "installation_methods": [
+                {
+                  "method_name": "Integrated with Android Studio",
+                  "type": "IDE Feature",
+                  "instructions": [
+                    "1. Connect a running app on an emulator or physical device to Android Studio.",
+                    "2. Go to 'View' -> 'Tool Windows' -> 'Database Inspector'.",
+                    "3. Select your application process to view its databases."
+                  ],
+                  "installation_query": "N/A (IDE feature)"
+                }
+              ]
+            },
+            {
+              "component_name": "DB Browser for SQLite (GUI Client)",
+              "notes": "A free, open-source visual tool to create, design, and edit SQLite database files.",
+              "installation_methods": [
+                {
+                  "method_name": "Direct Download (Windows/macOS/Linux)",
+                  "type": "Executable Installer / DMG / AppImage",
+                  "instructions": [
+                    "1. Visit: https://sqlitebrowser.org/dl/",
+                    "2. Download the installer for your OS and follow installation instructions."
+                  ],
+                  "installation_query": "N/A (GUI installer)"
+                },
+                {
+                  "method_name": "Homebrew Cask (macOS)",
+                  "type": "Package Manager / Software Store",
+                  "instructions": [
+                    "1. `brew install --cask db-browser-for-sqlite`"
+                  ],
+                  "installation_query": "brew install --cask db-browser-for-sqlite"
+                },
+                {
+                  "method_name": "Winget (Windows 10/11)",
+                  "type": "Package Manager / Software Store",
+                  "instructions": [
+                    "1. `winget install DBBrowserForSQLite.DBBrowserForSQLite`"
+                  ],
+                  "installation_query": "winget install DBBrowserForSQLite.DBBrowserForSQLite"
+                },
+                {
+                  "method_name": "Scoop (Windows)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. `scoop install sqlitebrowser`"
+                  ],
+                  "installation_query": "scoop install sqlitebrowser"
+                },
+                {
+                  "method_name": "Chocolatey (Windows)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. `choco install sqlitebrowser`"
+                  ],
+                  "installation_query": "choco install sqlitebrowser"
+                },
+                {
+                  "method_name": "APT (Debian/Ubuntu Linux)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. `sudo apt update && sudo apt install sqlitebrowser -y`"
+                  ],
+                  "installation_query": "sudo apt install sqlitebrowser -y"
+                },
+                {
+                  "method_name": "dnf (Fedora Linux)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. `sudo dnf install sqlitebrowser -y`"
+                  ],
+                  "installation_query": "sudo dnf install sqlitebrowser -y"
+                },
+                {
+                  "method_name": "pacman (Arch Linux)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. `sudo pacman -S sqlitebrowser`"
+                  ],
+                  "installation_query": "sudo pacman -S sqlitebrowser"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Room Persistence Library (Jetpack)",
+      "publisher": "Google (Android Jetpack)",
+      "description": "An abstraction layer over SQLite that simplifies database interactions, provides compile-time SQL validation, and integrates with LiveData/Flow.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 2.6.1)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Android Library)"],
+          "notes": "Recommended for local relational database persistence in Android applications.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependency",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. Add the following dependencies to your app's `build.gradle` file:",
+                "   ```groovy",
+                "   dependencies {",
+                "       implementation 'androidx.room:room-runtime:2.6.1'",
+                "       annotationProcessor 'androidx.room:room-compiler:2.6.1'",
+                "       // For Kotlin KAPT support",
+                "       kapt 'androidx.room:room-compiler:2.6.1'",
+                "       // For Kotlin Coroutines support",
+                "       implementation 'androidx.room:room-ktx:2.6.1'",
+                "   }",
+                "   // Apply KAPT plugin at the top of the file if using Kotlin",
+                "   // plugins { id 'kotlin-kapt' }",
+                "   ```",
+                "2. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "DataStore (Jetpack)",
+      "publisher": "Google (Android Jetpack)",
+      "description": "A new and improved data storage solution that builds on Kotlin Coroutines and Flow to store data asynchronously, consistently, and transactionally. A replacement for SharedPreferences.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 1.0.0)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Android Library)"],
+          "notes": "Recommended for storing simple key-value pairs or typed objects (Proto DataStore) reliably and asynchronously.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependency (Preferences DataStore)",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. Add the following dependency to your app's `build.gradle` file:",
+                "   ```groovy",
+                "   dependencies {",
+                "       implementation 'androidx.datastore:datastore-preferences:1.0.0'",
+                "   }",
+                "   ```",
+                "2. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            },
+            {
+              "method_name": "Gradle Dependency (Proto DataStore)",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. Add the following dependencies to your app's `build.gradle` file:",
+                "   ```groovy",
+                "   dependencies {",
+                "       implementation 'androidx.datastore:datastore-core:1.0.0'",
+                "       // Also need Protocol Buffers Gradle plugin and library",
+                "       implementation 'com.google.protobuf:protobuf-javalite:3.X.X'",
+                "   }",
+                "   // Add ProtoBuf plugin at the top of the file",
+                "   // plugins { id 'com.google.protobuf' }",
+                "   // Configure protobuf source in android block:",
+                "   // android { ... sourceSets { main { proto { srcDir 'src/main/proto' } } } }",
+                "   ```",
+                "2. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Firebase Realtime Database / Cloud Firestore",
+      "publisher": "Google",
+      "description": "Cloud-hosted NoSQL databases that let you store and sync data between your users in real time. Realtime Database is a JSON tree, Firestore is a document-oriented database with richer querying capabilities.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Cloud Service, Android Library)"],
+          "notes": "Requires a Google account and a Firebase project setup.",
+          "components": [
+            {
+              "component_name": "Firebase Project Setup (Console)",
+              "installation_methods": [
+                {
+                  "method_name": "Firebase Console (Web GUI)",
+                  "type": "Web-based Configuration",
+                  "instructions": [
+                    "1. Go to Firebase Console: https://console.firebase.google.com/",
+                    "2. Create a new Firebase project or select an existing one.",
+                    "3. Add an Android app to your project, following the on-screen instructions.",
+                    "4. Download the `google-services.json` file and place it in your app module's root directory (`app/google-services.json`).",
+                    "5. Add the Firebase SDK to your project's `build.gradle` files (as below)."
+                  ],
+                  "installation_query": "N/A (GUI web setup)"
+                }
+              ]
+            },
+            {
+              "component_name": "Firebase Android SDK (Gradle Dependency)",
+              "installation_methods": [
+                {
+                  "method_name": "Gradle Dependency (Realtime Database)",
+                  "type": "Build Tool Dependency",
+                  "instructions": [
+                    "1. In your project-level `build.gradle` (`<project>/build.gradle`), add Google's Maven repository and the Google Services plugin:",
+                    "   ```groovy",
+                    "   buildscript {",
+                    "       repositories {",
+                    "           google()",
+                    "       }",
+                    "       dependencies {",
+                    "           classpath 'com.google.gms:google-services:4.4.1'",
+                    "       }",
+                    "   }",
+                    "   allprojects {",
+                    "       repositories {",
+                    "           google()",
+                    "       }",
+                    "   }",
+                    "   ```",
+                    "2. In your app-level `build.gradle` (`<project>/app/build.gradle`), apply the plugin and add the dependency:",
+                    "   ```groovy",
+                    "   plugins {",
+                    "       id 'com.android.application'",
+                    "       id 'com.google.gms.google-services'",
+                    "   }",
+                    "   dependencies {",
+                    "       implementation platform('com.google.firebase:firebase-bom:33.0.0')",
+                    "       implementation 'com.google.firebase:firebase-database-ktx'",
+                    "   }",
+                    "   ```",
+                    "3. Sync your project with Gradle files."
+                  ],
+                  "installation_query": "N/A (Gradle managed library)"
+                },
+                {
+                  "method_name": "Gradle Dependency (Cloud Firestore)",
+                  "type": "Build Tool Dependency",
+                  "instructions": [
+                    "1. Follow step 1 from Realtime Database setup (add Google Services plugin).",
+                    "2. In your app-level `build.gradle`, apply the plugin and add the dependency:",
+                    "   ```groovy",
+                    "   plugins {",
+                    "       id 'com.android.application'",
+                    "       id 'com.google.gms.google-services'",
+                    "   }",
+                    "   dependencies {",
+                    "       implementation platform('com.google.firebase:firebase-bom:33.0.0')",
+                    "       implementation 'com.google.firebase:firebase-firestore-ktx'",
+                    "   }",
+                    "   ```",
+                    "3. Sync your project with Gradle files."
+                  ],
+                  "installation_query": "N/A (Gradle managed library)"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Realm (MongoDB Realm)",
+      "publisher": "MongoDB",
+      "description": "A mobile-first database and synchronization platform that offers an embedded, object-oriented database for local persistence and a cloud-based sync service.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 10.x.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Android Library)"],
+          "notes": "Provides an alternative to SQLite for local storage, with an object-oriented approach and optional cloud synchronization.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependency",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. In your project-level `build.gradle` (`<project>/build.gradle`), add the Realm Gradle plugin:",
+                "   ```groovy",
+                "   buildscript {",
+                "       repositories {",
+                "           mavenCentral()",
+                "       }",
+                "       dependencies {",
+                "           classpath 'io.realm:realm-gradle-plugin:10.x.x' // Check for the latest version",
+                "       }",
+                "   }",
+                "   ```",
+                "2. In your app-level `build.gradle` (`<project>/app/build.gradle`), apply the plugin and add the dependency:",
+                "   ```groovy",
+                "   apply plugin: 'realm-android'",
+                "   dependencies {",
+                "       implementation 'io.realm:realm-android-library:10.x.x'",
+                "   }",
+                "   ```",
+                "3. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ObjectBox",
+      "publisher": "ObjectBox Ltd.",
+      "description": "A super-fast, lightweight object-oriented database for mobile and IoT. Designed for high performance and ease of use, with automatic schema migrations.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 3.x.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Android Library)"],
+          "notes": "Focuses on speed and simplicity for local object persistence.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependency",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. In your project-level `build.gradle` (`<project>/build.gradle`), add the ObjectBox Gradle plugin:",
+                "   ```groovy",
+                "   buildscript {",
+                "       repositories {",
+                "           mavenCentral()",
+                "       }",
+                "       dependencies {",
+                "           classpath 'io.objectbox:objectbox-gradle-plugin:3.x.x' // Check for the latest version",
+                "       }",
+                "   }",
+                "   ```",
+                "2. In your app-level `build.gradle` (`<project>/app/build.gradle`), apply the plugin and add the dependency:",
+                "   ```groovy",
+                "   apply plugin: 'io.objectbox'",
+                "   dependencies {",
+                "       implementation 'io.objectbox:objectbox-android:3.x.x'",
+                "       // For Kotlin extensions",
+                "       implementation 'io.objectbox:objectbox-kotlin:3.x.x'",
+                "   }",
+                "   ```",
+                "3. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SQLDelight",
+      "publisher": "Cash App (Square)",
+      "description": "Generates type-safe Kotlin APIs from your SQL queries. It works with SQLite and provides compile-time verification of your SQL.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 2.0.0)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Kotlin Multiplatform Library, Android Compatible)"],
+          "notes": "Excellent for projects where you want to write raw SQL but still benefit from type safety.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependency",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. In your project-level `build.gradle.kts` (or `build.gradle`), add the SQLDelight plugin:",
+                "   ```kotlin",
+                "   // project-level build.gradle.kts",
+                "   plugins {",
+                "       id(\"com.squareup.sqldelight\") version \"2.0.0\"",
+                "   }",
+                "   ```",
+                "2. In your app-level `build.gradle.kts` (or `build.gradle`), apply the plugin and add the runtime dependency:",
+                "   ```kotlin",
+                "   // app-level build.gradle.kts",
+                "   plugins {",
+                "       id(\"com.squareup.sqldelight\")",
+                "   }",
+                "   android {",
+                "       // ...",
+                "   }",
+                "   sqldelight {",
+                "       databases {",
+                "           appDatabase {",
+                "               packageName = \"com.yourpackage.data\"",
+                "               schemaOutputDirectory = file(\"build/generated/sqldelight/appDatabase\")",
+                "           }",
+                "       }",
+                "   }",
+                "   dependencies {",
+                "       implementation \"com.squareup.sqldelight:android-driver:2.0.0\"",
+                "       // For Coroutines Flow support",
+                "       implementation \"com.squareup.sqldelight:runtime-coroutines-jvm:2.0.0\"",
+                "   }",
+                "   ```",
+                "3. Define your `.sq` files in `src/main/sqldelight/com/yourpackage/data` (or configured path).",
+                "4. Sync your project with Gradle files."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+     "Backend_and_Cloud_Platforms": [
+    {
+      "name": "Firebase",
+      "publisher": "Google",
+      "description": "Google's mobile and web application development platform, offering a suite of tools including databases, authentication, hosting, cloud functions, analytics, and more.",
+      "versions": [
+        {
+          "version_name": "Latest (Platform-as-a-Service)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Cloud Service, interacts via SDKs)"],
+          "notes": "Offers a comprehensive backend without managing servers. Integrates well with Android apps.",
+          "installation_methods": [
+            {
+              "method_name": "Firebase Console (Web GUI)",
+              "type": "Web-based Configuration",
+              "instructions": [
+                "1. Go to Firebase Console: https://console.firebase.google.com/",
+                "2. Create a project, add Android app, follow setup wizard.",
+                "3. Configure services (Authentication, Storage, Functions, Hosting, etc.) through the console."
+              ],
+              "installation_query": "N/A (GUI web setup)"
+            },
+            {
+              "method_name": "Firebase Android SDK (Gradle Dependencies for specific services)",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. Add `google-services.json` to your app (from Console setup).",
+                "2. Add `com.google.gms:google-services` plugin to project/app `build.gradle`.",
+                "3. Add Firebase BOM to app `build.gradle` for version management:",
+                "   `implementation platform('com.google.firebase:firebase-bom:33.0.0')`",
+                "4. Add specific service dependencies (e.g., for Authentication):",
+                "   `implementation 'com.google.firebase:firebase-auth-ktx'`",
+                "5. Sync Gradle."
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Google Cloud Platform (GCP)",
+      "publisher": "Google",
+      "description": "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products. Offers services for compute, storage, databases, machine learning, and more, which can serve as backends for Android apps.",
+      "versions": [
+        {
+          "version_name": "Continuously Updated (Cloud Services)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Cloud Service)"],
+          "notes": "For custom backends, scalable APIs, and advanced data processing needs. Requires a Google Cloud project and billing setup.",
+          "components": [
+            {
+              "component_name": "GCP Project Setup & Billing",
+              "installation_methods": [
+                {
+                  "method_name": "Google Cloud Console (Web GUI)",
+                  "type": "Web-based Configuration",
+                  "instructions": [
+                    "1. Go to Google Cloud Console: https://console.cloud.google.com/",
+                    "2. Create a new project.",
+                    "3. Enable billing for the project.",
+                    "4. Enable necessary APIs (e.g., Cloud Functions API, App Engine API, Cloud SQL API) through the 'APIs & Services' -> 'Enabled APIs & Services' section."
+                  ],
+                  "installation_query": "N/A (GUI web setup)"
+                }
+              ]
+            },
+            {
+              "component_name": "Cloud SDK (gcloud CLI)",
+              "notes": "Command-line interface for interacting with Google Cloud services.",
+              "installation_methods": [
+                {
+                  "method_name": "Direct Download & Installer (Windows)",
+                  "type": "Executable Installer",
+                  "instructions": [
+                    "1. Download the Cloud SDK installer from: https://cloud.google.com/sdk/docs/install",
+                    "2. Run the installer and follow prompts. It will set up the `gcloud` command-line tool.",
+                    "3. Initialize the SDK: `gcloud init`"
+                  ],
+                  "installation_query": "N/A (GUI installer)"
+                },
+                {
+                  "method_name": "Scoop (Windows)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. Open PowerShell and install Scoop if you haven't already: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` (if needed) and then `irm get.scoop.sh | iex`",
+                    "2. Install Google Cloud SDK: `scoop install gcloud`",
+                    "3. Initialize the SDK: `gcloud init`"
+                  ],
+                  "installation_query": "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; irm get.scoop.sh | iex; scoop install gcloud; gcloud init --console-only"
+                },
+                {
+                  "method_name": "Chocolatey (Windows)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. Open an elevated PowerShell or CMD and install Chocolatey if you haven't already (refer to chocolatey.org for installation).",
+                    "2. Install Google Cloud SDK: `choco install gcloudsdk -y`",
+                    "3. Initialize the SDK: `gcloud init`"
+                  ],
+                  "installation_query": "choco install gcloudsdk -y; gcloud init --console-only"
+                },
+                {
+                  "method_name": "Scripted Install (Linux/macOS)",
+                  "type": "Shell Script",
+                  "instructions": [
+                    "1. Download the install script:",
+                    "   `curl -O https://dl.google.com/dl/cloudsdk/channels/current/install-google-cloud-sdk.bash`",
+                    "2. Run the script:",
+                    "   `bash install-google-cloud-sdk.bash` (follow prompts for PATH setup etc.)",
+                    "3. Initialize the SDK: `gcloud init`"
+                  ],
+                  "installation_query": "curl -O https://dl.google.com/dl/cloudsdk/channels/current/install-google-cloud-sdk.bash && bash install-google-cloud-sdk.bash --disable-prompts --install-dir=/usr/local/google-cloud-sdk && /usr/local/google-cloud-sdk/bin/gcloud init --console-only"
+                },
+                {
+                  "method_name": "Homebrew (macOS)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. Install Homebrew if you haven't already: `/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"`",
+                    "2. Install Google Cloud SDK: `brew install google-cloud-sdk`",
+                    "3. Initialize the SDK: `gcloud init`"
+                  ],
+                  "installation_query": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\" && brew install google-cloud-sdk && gcloud init --console-only"
+                },
+                {
+                  "method_name": "APT (Debian/Ubuntu Linux)",
+                  "type": "Package Manager",
+                  "instructions": [
+                    "1. Add the Cloud SDK distribution URI as a package source (detailed instructions at https://cloud.google.com/sdk/docs/install#deb).",
+                    "2. Import the Google Cloud public key.",
+                    "3. `sudo apt update && sudo apt install google-cloud-sdk -y`",
+                    "4. Initialize: `gcloud init`"
+                  ],
+                  "installation_query": "echo \"deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main\" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && sudo apt-get install apt-transport-https ca-certificates gnupg -y && curl https://packages.cloud.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && sudo apt-get update && sudo apt-get install google-cloud-sdk -y && gcloud init --console-only"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Room Persistence Library",
+      "publisher": "Google (Android Jetpack)",
+      "description": "An abstraction layer over SQLite to allow for more robust database access while harnessing the full power of SQLite. It's part of Android Jetpack and simplifies database interactions, providing compile-time verification of SQL queries and a fluent API.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 2.6.1)",
+          "release_date": "Constantly updated with Android Jetpack",
+          "supported_oses": ["Android (Runtime)"],
+          "notes": "Recommended for structured data persistence on Android. Works with LiveData and Kotlin Coroutines for reactive programming.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependencies",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. Add the following to your app's `build.gradle` file (replace with latest version):",
+                "   `dependencies {",
+                "     implementation 'androidx.room:room-runtime:2.6.1'",
+                "     annotationProcessor 'androidx.room:room-compiler:2.6.1' (for Java)",
+                "     kapt 'androidx.room:room-compiler:2.6.1' (for Kotlin)",
+                "     implementation 'androidx.room:room-ktx:2.6.1' (for Kotlin extensions & Coroutines support)",
+                "   }`"
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SQLite (Android Native Support)",
+      "publisher": "Google (Android Platform)",
+      "description": "Android includes full support for SQLite databases. SQLite is a lightweight, self-contained, high-reliability, full-featured, public-domain, SQL database engine. It's built directly into the Android OS, allowing apps to create and manage their own private databases.",
+      "versions": [
+        {
+          "version_name": "Android OS version dependent",
+          "release_date": "Integrated with Android releases",
+          "supported_oses": ["Android (Runtime)"],
+          "notes": "Low-level API access; Room is generally preferred for ease of use and compile-time safety. Suitable for simple data storage or when direct SQL control is needed.",
+          "installation_methods": [
+            {
+              "method_name": "Built-in Android APIs",
+              "type": "Native API Access",
+              "instructions": [
+                "1. No installation required; SQLite is part of the Android framework.",
+                "2. Use `android.database.sqlite.SQLiteOpenHelper` and `SQLiteDatabase` classes in your Android Java/Kotlin code.",
+                "3. Example: Extend `SQLiteOpenHelper` to manage database creation and versioning."
+              ],
+              "installation_query": "N/A (Built-in OS functionality)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Realm (MongoDB Realm)",
+      "publisher": "MongoDB",
+      "description": "A mobile-first object database and synchronization platform. It's an alternative to SQLite and ORMs, designed for performance, ease of use, and offline-first capabilities. It also offers cloud synchronization with MongoDB Atlas.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 10.16.0 for Android SDK)",
+          "release_date": "Regularly updated",
+          "supported_oses": ["Android (Runtime)"],
+          "notes": "Ideal for complex local data management and seamless cloud synchronization. Offers a live object model, no ORM needed.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Plugin and Dependencies",
+              "type": "Build Tool Plugin & Dependency",
+              "instructions": [
+                "1. Add Realm plugin to your project-level `build.gradle`:",
+                "   `buildscript {",
+                "     repositories { google() mavenCentral() }",
+                "     dependencies {",
+                "       classpath 'io.realm:realm-gradle-plugin:10.16.0'",
+                "     }",
+                "   }`",
+                "2. Apply plugin and add dependency to your app-level `build.gradle` (top of file):",
+                "   `apply plugin: 'realm-android'`",
+                "   `dependencies {",
+                "     implementation 'io.realm:realm-android-library:10.16.0'",
+                "   }`"
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "ObjectBox",
+      "publisher": "ObjectBox",
+      "description": "A super fast object-oriented database for mobile. It's a NoSQL database that directly stores Java/Kotlin objects, eliminating the need for ORMs or manual SQL queries. Focuses on performance and ease of use.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 3.6.0)",
+          "release_date": "Regularly updated",
+          "supported_oses": ["Android (Runtime)"],
+          "notes": "Known for its speed and developer-friendliness due to direct object storage. Requires an annotation processor.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Plugin and Dependencies",
+              "type": "Build Tool Plugin & Dependency",
+              "instructions": [
+                "1. Add ObjectBox plugin to your project-level `build.gradle`:",
+                "   `buildscript {",
+                "     repositories { google() mavenCentral() }",
+                "     dependencies {",
+                "       classpath 'io.objectbox:objectbox-gradle-plugin:3.6.0'",
+                "     }",
+                "   }`",
+                "2. Apply plugin and add dependency to your app-level `build.gradle`:",
+                "   `apply plugin: 'io.objectbox'`",
+                "   `dependencies {",
+                "     implementation 'io.objectbox:objectbox-android:3.6.0'",
+                "   }`"
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jetpack DataStore",
+      "publisher": "Google (Android Jetpack)",
+      "description": "A new and improved data storage solution for Android, designed to replace SharedPreferences. It provides a safe and asynchronous way to store data, with two implementations: `Proto DataStore` (for typed objects using protocol buffers) and `Preferences DataStore` (for key-value pairs).",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 1.1.1)",
+          "release_date": "Constantly updated with Android Jetpack",
+          "supported_oses": ["Android (Runtime)"],
+          "notes": "Recommended for storing small, simple data sets (Preferences DataStore) or more complex, typed data (Proto DataStore). Built on Kotlin Coroutines and Flow for asynchronous operations.",
+          "installation_methods": [
+            {
+              "method_name": "Gradle Dependencies",
+              "type": "Build Tool Dependency",
+              "instructions": [
+                "1. Add the following to your app's `build.gradle` file (replace with latest version):",
+                "   `dependencies {",
+                "     // Preferences DataStore",
+                "     implementation 'androidx.datastore:datastore-preferences:1.1.1'",
+                "     // Proto DataStore (requires Protobuf setup)",
+                "     implementation 'androidx.datastore:datastore-core:1.1.1'",
+                "     // If using Proto DataStore, also need Protobuf library:",
+                "     implementation 'com.google.protobuf:protobuf-javalite:3.24.4'",
+                "   }`"
+              ],
+              "installation_query": "N/A (Gradle managed library)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Shared Preferences",
+      "publisher": "Google (Android Platform)",
+      "description": "Android's lightweight key-value store for saving application preferences and simple data. Data is stored in XML files within the app's private data directory.",
+      "versions": [
+        {
+          "version_name": "Android OS version dependent",
+          "release_date": "Integrated with Android releases",
+          "supported_oses": ["Android (Runtime)"],
+          "notes": "Suitable for small amounts of primitive data (booleans, ints, floats, strings, string sets). Not suitable for large datasets or complex objects. DataStore is the recommended modern alternative.",
+          "installation_methods": [
+            {
+              "method_name": "Built-in Android APIs",
+              "type": "Native API Access",
+              "instructions": [
+                "1. No installation required; part of the Android framework.",
+                "2. Access using `Context.getSharedPreferences()` or `Activity.getPreferences()` in your Android Java/Kotlin code."
+              ],
+              "installation_query": "N/A (Built-in OS functionality)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+     "Version_Control_Systems": [
+    {
+      "name": "Git",
+      "publisher": "Linus Torvalds (original author), Git Development Community",
+      "description": "A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Essential for collaborative software development.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 2.45.1)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Used for managing source code, collaborating with teams, and deploying projects. Often integrated directly into IDEs like Android Studio.",
+          "installation_methods": [
+            {
+              "method_name": "Git for Windows (Installer)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Download from: https://git-scm.com/download/win",
+                "2. Run the installer and accept the default options (or customize as needed). This will install Git Bash, Git GUI, and integrate with Command Prompt/PowerShell.",
+                "3. Verify installation by opening Command Prompt or Git Bash and typing: `git --version`"
+              ],
+              "installation_query": "N/A (GUI installer, but can be automated with '/VERYSILENT' flag)"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell and install Scoop if you haven't already: `Set-ExecutionPolicy RemoteSigned -Scope CurrentUser` (if needed) then `irm get.scoop.sh | iex`",
+                "2. Install Git: `scoop install git`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force; irm get.scoop.sh | iex; scoop install git"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open an elevated PowerShell or CMD and install Chocolatey if you haven't already (refer to chocolatey.org for installation).",
+                "2. Install Git: `choco install git -y`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "choco install git -y"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed: `/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"`",
+                "2. Install Git: `brew install git`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "brew install git"
+            },
+            {
+              "method_name": "MacPorts (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure MacPorts is installed (refer to macports.org for installation).",
+                "2. Update MacPorts: `sudo port selfupdate`",
+                "3. Install Git: `sudo port install git`",
+                "4. Verify: `git --version`"
+              ],
+              "installation_query": "sudo port selfupdate && sudo port install git"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Update package lists: `sudo apt update`",
+                "2. Install Git: `sudo apt install git -y`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install git -y"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install Git: `sudo dnf install git -y` (for modern Fedora/RHEL) or `sudo yum install git -y` (for older RHEL/CentOS)",
+                "2. Verify: `git --version`"
+              ],
+              "installation_query": "sudo dnf install git -y"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install Git: `sudo pacman -S git`",
+                "2. Verify: `git --version`"
+              ],
+              "installation_query": "sudo pacman -S git"
+            },
+            {
+              "method_name": "Zypper (openSUSE/SLES)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Install Git: `sudo zypper install git`",
+                "2. Verify: `git --version`"
+              ],
+              "installation_query": "sudo zypper install git"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager (Universal)",
+              "instructions": [
+                "1. Ensure Snap is installed and running on your system.",
+                "2. Install Git: `sudo snap install git --classic`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "sudo snap install git --classic"
+            },
+            {
+              "method_name": "Flatpak (Linux)",
+              "type": "Package Manager (Universal)",
+              "notes": "While Git itself is a CLI tool, some GUI Git clients might be available as Flatpaks. Direct Flatpak installation for the core Git CLI is less common.",
+              "instructions": [
+                "1. Ensure Flatpak is installed and configured.",
+                "2. Search for Git-related applications: `flatpak search git`",
+                "3. Install a relevant application (e.g., a GUI client): `flatpak install flathub org.gnome.gitg` (example for Gitg GUI client)",
+                "4. For CLI, it's typically better to use native package managers."
+              ],
+              "installation_query": "N/A (varies by GUI client; core Git CLI typically via native package managers)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Install Git: `winget install Git.Git`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "winget install Git.Git"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Subversion (SVN)",
+      "publisher": "Apache Software Foundation",
+      "description": "A centralized version control system where all files are stored on a central server (repository). Users 'check out' files, make changes, and 'commit' them back to the server. Often used for its simpler model compared to distributed systems.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 1.14.3)",
+          "release_date": "Regularly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "While less common for new projects than Git, SVN is still widely used in many legacy and enterprise environments. Simpler conceptual model for beginners.",
+          "installation_methods": [
+            {
+              "method_name": "Windows Installer (CollabNet Subversion / SlikSVN / TortoiseSVN)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. For command-line SVN: Download and install SlikSVN from https://sliksvn.com/download/ (or similar distribution).",
+                "2. For GUI integration: Download and install TortoiseSVN from https://tortoisesvn.net/ (includes command-line client).",
+                "3. Verify: Open Command Prompt and type `svn --version`"
+              ],
+              "installation_query": "N/A (GUI installer, often includes CLI)"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install subversion`",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "brew install subversion"
+            },
+            {
+              "method_name": "MacPorts (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo port install subversion`",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "sudo port install subversion"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update`",
+                "2. `sudo apt install subversion -y`",
+                "3. Verify: `svn --version`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install subversion -y"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo dnf install subversion -y` (or `sudo yum install subversion -y`)",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "sudo dnf install subversion -y"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo pacman -S subversion`",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "sudo pacman -S subversion"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install subversion --installargs 'ADD_PATH=1'`",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "choco install subversion --installargs 'ADD_PATH=1'"
+            },
+            {
+              "method_name": "Zypper (openSUSE/SLES)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo zypper install subversion`",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "sudo zypper install subversion"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "notes": "Availability via Snap might vary; native package managers are usually preferred.",
+              "instructions": [
+                "1. `sudo snap install svn` (if available)",
+                "2. Verify: `svn --version`"
+              ],
+              "installation_query": "sudo snap install svn"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mercurial (Hg)",
+      "publisher": "Matt Mackall (original author), Mercurial Team",
+      "description": "A distributed revision control tool for software developers. It's designed to be simple, fast, and scalable, often seen as an alternative to Git with a focus on ease of use and a more consistent command-line interface.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (e.g., 6.6.2)",
+          "release_date": "Regularly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Similar to Git in its distributed nature but with a different philosophy and command set. Popular in some open-source projects and enterprise environments.",
+          "installation_methods": [
+            {
+              "method_name": "Windows Installer",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Download from: https://www.mercurial-scm.org/downloads",
+                "2. Run the installer and follow the prompts.",
+                "3. Verify: Open Command Prompt and type `hg --version`"
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install mercurial`",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "brew install mercurial"
+            },
+            {
+              "method_name": "MacPorts (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo port install mercurial`",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "sudo port install mercurial"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo apt update`",
+                "2. `sudo apt install mercurial -y`",
+                "3. Verify: `hg --version`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install mercurial -y"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo dnf install mercurial -y` (or `sudo yum install mercurial -y`)",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "sudo dnf install mercurial -y"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo pacman -S mercurial`",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "sudo pacman -S mercurial"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `choco install mercurial`",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "choco install mercurial"
+            },
+            {
+              "method_name": "Zypper (openSUSE/SLES)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `sudo zypper install mercurial`",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "sudo zypper install mercurial"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "notes": "Availability via Snap might vary; native package managers are usually preferred.",
+              "instructions": [
+                "1. `sudo snap install mercurial` (if available)",
+                "2. Verify: `hg --version`"
+              ],
+              "installation_query": "sudo snap install mercurial"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+     "Cross_Platform_Tool_Managers": [
+    {
+      "name": "SDKMAN!",
+      "publisher": "SDKMAN! Development Team",
+      "description": "A command-line tool for managing parallel versions of multiple Software Development Kits (SDKs) on most Unix-like systems. It's particularly useful for managing different JDKs, Gradle, Maven, Spring Boot, Kotlin, and other JVM-based tools.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Linux", "macOS", "WSL (Windows Subsystem for Linux)", "Cygwin", "MSYS2"],
+          "notes": "Highly recommended for developers working with Java, Kotlin, Groovy, Scala, or other JVM languages to efficiently switch between tool versions. It handles environment variables automatically.",
+          "installation_methods": [
+            {
+              "method_name": "Scripted Installation (curl)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Ensure you have `curl` and `zip`/`unzip` installed on your system.",
+                "2. Open a terminal and run the following command:",
+                "   `curl -s \"https://get.sdkman.io\" | bash`",
+                "3. Follow the on-screen instructions to complete the installation. You will typically be prompted to restart your shell or `source` a script to initialize SDKMAN! (e.g., `source \"$HOME/.sdkman/bin/sdkman-init.sh\"`).",
+                "4. Verify the installation by typing: `sdk version`"
+              ],
+              "installation_query": "curl -s \"https://get.sdkman.io\" | bash && source \"$HOME/.sdkman/bin/sdkman-init.sh\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Homebrew",
+      "publisher": "Homebrew Project",
+      "description": "The missing package manager for macOS and Linux. Homebrew simplifies the installation of software and development tools that aren't natively available or easily installed through system package managers. It installs 'formulae' (pre-compiled packages) and 'casks' (GUI applications).",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["macOS", "Linux (as Linuxbrew)"],
+          "notes": "It's the de-facto package manager for developers on macOS. For Linux, it can be installed alongside or as an alternative to `apt`, `dnf`, etc., especially useful for installing newer versions of software not available in distribution repositories.",
+          "installation_methods": [
+            {
+              "method_name": "Command-line Installation",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open Terminal and run the installation command:",
+                "   `/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"`",
+                "2. For macOS, you might be prompted to install Xcode Command Line Tools. Follow the instructions.",
+                "3. For Linux, ensure you have build essentials installed (e.g., `sudo apt install build-essential` or `sudo dnf install @development-tools`).",
+                "4. Follow any post-installation instructions to add Homebrew to your PATH, especially on older systems or specific Linux distributions.",
+                "5. Verify the installation: `brew help`"
+              ],
+              "installation_query": "/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Winget",
+      "publisher": "Microsoft",
+      "description": "The Windows Package Manager, a command-line tool for installing applications on Windows 10 (version 1809 and later) and Windows 11. It provides a unified, command-line experience for installing, upgrading, and managing software from a centralized repository.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows 10", "Windows 11"],
+          "notes": "Winget is often pre-installed on modern Windows versions as part of the 'App Installer' package. It offers a native, fast way to install many common developer tools and applications.",
+          "installation_methods": [
+            {
+              "method_name": "Microsoft Store / GitHub Releases (Built-in)",
+              "type": "Software Store / Direct Download",
+              "instructions": [
+                "1. **Pre-installed**: Winget is typically included by default with Windows 11 and recent Windows 10 builds.",
+                "2. **Manual Install/Update**: You can install or update 'App Installer' from the Microsoft Store by searching for it, or download the latest `.msixbundle` from the official GitHub releases page: https://github.com/microsoft/winget-cli/releases",
+                "3. Open PowerShell or Command Prompt and verify the installation: `winget --version`"
+              ],
+              "installation_query": "ms-windows-store://pdp/?ProductId=9NBGV4MXZLCX"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Chocolatey",
+      "publisher": "Chocolatey Software, Inc.",
+      "description": "A popular package manager for Windows, akin to `apt-get` or `yum` for Linux. Chocolatey simplifies software installation and management via the command line, providing a vast community-driven repository of packages for both open-source and commercial software.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows"],
+          "notes": "A powerful and widely adopted alternative to Winget, especially useful for systems where Winget might not be available or for accessing a broader range of community packages.",
+          "installation_methods": [
+            {
+              "method_name": "PowerShell Command (Administrator)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open PowerShell **as Administrator**.",
+                "2. **Set Execution Policy** (if not already): `Set-ExecutionPolicy Bypass -Scope Process -Force;`",
+                "3. **Run the installation script**:",
+                "   `iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))`",
+                "4. Close and reopen PowerShell (or run `refreshenv`) to ensure Chocolatey is in your PATH.",
+                "5. Verify the installation: `choco --version`"
+              ],
+              "installation_query": "Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "nvm (Node Version Manager)",
+      "publisher": "Corey Schaf (creation), nvm Contributors",
+      "description": "A simple bash script to manage multiple active Node.js versions. It allows you to install, uninstall, and switch between different Node.js versions on the same machine, along with their associated npm packages.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Linux", "macOS", "WSL (Windows Subsystem for Linux)", "Git Bash on Windows"],
+          "notes": "Essential for front-end and back-end developers working with Node.js, enabling easy switching between project-specific Node.js environments. Not natively supported on Windows Command Prompt/PowerShell (use `nvm-windows` instead, or WSL).",
+          "installation_methods": [
+            {
+              "method_name": "Scripted Installation (curl or wget)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Ensure `curl` or `wget` is installed.",
+                "2. Open a terminal and run one of the following:",
+                "   **Using curl**: `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash` (replace `v0.39.7` with the latest version from nvm's GitHub releases)",
+                "   **Using wget**: `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash`",
+                "3. Close and reopen your terminal or source your shell's rc file (`~/.bashrc`, `~/.zshrc`, etc.) to load nvm.",
+                "4. Verify: `nvm --version`",
+                "5. **Install a Node.js version**: `nvm install node` (installs latest) or `nvm install 18` (installs Node.js 18.x)"
+              ],
+              "installation_query": "curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pyenv (Python Version Manager)",
+      "publisher": "pyenv contributors",
+      "description": "A simple Python version management tool. It lets you easily switch between multiple Python versions. It handles virtual environments through plugins like `pyenv-virtualenv`.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Linux", "macOS", "WSL (Windows Subsystem for Linux)"],
+          "notes": "Crucial for Python developers needing to work with different Python versions and isolate project dependencies efficiently. It's often used with `pyenv-virtualenv` for environment management.",
+          "installation_methods": [
+            {
+              "method_name": "Scripted Installation (curl)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Install build dependencies first (e.g., on Ubuntu: `sudo apt install make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev`).",
+                "2. Clone pyenv from GitHub:",
+                "   `curl https://pyenv.run | bash`",
+                "3. Add pyenv to your shell's environment. Add the following to your `~/.bashrc`, `~/.zshrc`, etc.:",
+                "   `export PYENV_ROOT=\"$HOME/.pyenv\"`",
+                "   `export PATH=\"$PYENV_ROOT/bin:$PATH\"`",
+                "   `eval \"$(pyenv init --path)\"`",
+                "   `eval \"$(pyenv virtualenv-init -)\"` (if using pyenv-virtualenv plugin)",
+                "4. Close and reopen your terminal or `source` your rc file.",
+                "5. Verify: `pyenv --version`",
+                "6. **Install a Python version**: `pyenv install 3.9.1` (example) or `pyenv install 3.10.12`",
+                "7. **Set global/local version**: `pyenv global 3.9.1` or `pyenv local 3.10.12`"
+              ],
+              "installation_query": "curl https://pyenv.run | bash"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install pyenv`",
+                "2. Add pyenv to your shell's environment (as in step 3 above, but Homebrew might provide specific instructions).",
+                "3. Verify: `pyenv --version`"
+              ],
+              "installation_query": "brew install pyenv"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "asdf-vm",
+      "publisher": "asdf-vm contributors",
+      "description": "A powerful, extensible version manager that allows you to manage multiple runtime versions with a single CLI tool. It supports languages like Node.js, Python, Ruby, Elixir, Go, and many more via a plugin system.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Linux", "macOS", "WSL (Windows Subsystem for Linux)"],
+          "notes": "A versatile and unified approach to managing various language runtimes and tools, reducing the need for separate version managers for each language. Ideal for polyglot development environments.",
+          "installation_methods": [
+            {
+              "method_name": "Git Clone (Recommended)",
+              "type": "Source Clone",
+              "instructions": [
+                "1. Clone the asdf-vm repository:",
+                "   `git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0` (replace `v0.14.0` with the latest stable tag)",
+                "2. Add asdf to your shell's environment. Add the following to your `~/.bashrc`, `~/.zshrc`, etc.:",
+                "   `. $HOME/.asdf/asdf.sh`",
+                "   `. $HOME/.asdf/completions/asdf.bash` (for bash completions, similar for zsh)",
+                "3. Close and reopen your terminal or `source` your rc file.",
+                "4. Verify: `asdf --version`",
+                "5. **Install a plugin (e.g., Node.js)**: `asdf plugin add nodejs https://github.com/asdf-vm/asdf-nodejs.git`",
+                "6. **Install a version**: `asdf install nodejs 18.18.0`",
+                "7. **Set global/local version**: `asdf global nodejs 18.18.0` or `asdf local nodejs 18.18.0`"
+              ],
+              "installation_query": "git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. `brew install asdf`",
+                "2. Add asdf to your shell's environment (similar to step 2 in Git Clone method, Homebrew will usually provide instructions).",
+                "3. Verify: `asdf --version`"
+              ],
+              "installation_query": "brew install asdf"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+  }
+}
