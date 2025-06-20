@@ -1,6 +1,6 @@
 #Datasets For Stack Hub AI Projects
-**java polished.json:** Java Developers Datastet
-**android.json:** Android Developers Datastet
+- **java polished.json:** Java Developers Datastet
+= **android.json:** Android Developers Datastet
 
 #Coming Soon
 
