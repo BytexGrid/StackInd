@@ -1,0 +1,2439 @@
+{
+  "backend_development_tools": {
+     "IDEs": [
+    {
+      "name": "Visual Studio Code",
+      "description": "A lightweight yet powerful source code editor that runs on your desktop and is available for Windows, macOS, and Linux. It comes with built-in support for JavaScript, TypeScript, and Node.js and has a rich ecosystem of extensions for other languages and runtimes essential for backend development (Python, Java, Go, C#).",
+      "versions": [
+        {
+          "supported_oses": ["Windows"],
+          "installation_methods": [
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .exe installer from the official VS Code website (https://code.visualstudio.com/). Run the installer and follow the prompts. The installer will automatically add VS Code to your PATH.",
+              "notes": "Recommended for most users. Provides a seamless installation experience."
+            },
+            {
+              "method_name": "Winget",
+              "command": "winget install Microsoft.VisualStudioCode",
+              "notes": "Requires Windows 10/11 with Winget installed. Run from an elevated PowerShell or Command Prompt."
+            },
+            {
+              "method_name": "Chocolatey",
+              "command": "choco install vscode",
+              "notes": "Requires Chocolatey package manager. Useful for automated installations."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["macOS"],
+          "installation_methods": [
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .zip file from the official VS Code website. Unzip the archive and drag 'Visual Studio Code.app' to your 'Applications' folder.",
+              "notes": "Verify by opening VS Code and running 'code .' from your terminal in a project directory."
+            },
+            {
+              "method_name": "Homebrew Cask",
+              "command": "brew install --cask visual-studio-code",
+              "notes": "Requires Homebrew. Simplifies installation and updates."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Ubuntu/Debian)"],
+          "installation_methods": [
+            {
+              "method_name": "APT (Debian Package)",
+              "command": "sudo apt update && sudo apt install code",
+              "instructions": "First, import the Microsoft GPG key and add the VS Code repository:\ncurl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg\nsudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/\nsudo sh -c 'echo \"deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main\" > /etc/apt/sources.list.d/vscode.list'\nrm microsoft.gpg\nsudo apt update\nsudo apt install code",
+              "notes": "This method ensures you get updates directly from Microsoft's repository."
+            },
+            {
+              "method_name": "Snap",
+              "command": "sudo snap install --classic code",
+              "notes": "Requires Snapd. A sandboxed and easy-to-install package. May have slightly slower startup times."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (CentOS/RHEL)"],
+          "installation_methods": [
+            {
+              "method_name": "DNF/YUM (RPM Package)",
+              "instructions": "First, import the Microsoft GPG key and add the VS Code repository:\nsudo rpm --import https://packages.microsoft.com/keys/microsoft.asc\nsudo sh -c 'echo -e \"[code]\\nname=Visual Studio Code\\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\\nenabled=1\\ngpgcheck=1\\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" > /etc/yum.repos.d/vscode.repo'\nsudo dnf check-update\nsudo dnf install code",
+              "notes": "Use `yum` instead of `dnf` for older RHEL/CentOS versions."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Arch Linux)"],
+          "installation_methods": [
+            {
+              "method_name": "Pacman",
+              "command": "sudo pacman -S code",
+              "notes": "Available in the official Community repository."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "IntelliJ IDEA",
+      "description": "A powerful and ergonomic Java IDE by JetBrains. Its Ultimate Edition is widely used for enterprise-level backend development, supporting various languages and frameworks beyond Java, including Spring Boot, Kotlin, Python (via PyCharm Professional features), Go (via GoLand features), Scala, SQL, and web technologies.",
+      "versions": [
+        {
+          "supported_oses": ["Windows"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download and install the JetBrains Toolbox App from the official JetBrains website (https://www.jetbrains.com/toolbox-app/). Open the Toolbox App and install IntelliJ IDEA (Community or Ultimate).",
+              "notes": "Recommended for managing multiple JetBrains IDEs and their updates. Simplifies setting up project-specific environments."
+            },
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .exe installer from the IntelliJ IDEA website (https://www.jetbrains.com/idea/). Run the installer and follow the instructions.",
+              "notes": "Allows for custom installation paths and creating desktop shortcuts."
+            },
+            {
+              "method_name": "Chocolatey",
+              "command": "choco install intellijidea-community",
+              "notes": "Replace 'intellijidea-community' with 'intellijidea-ultimate' for the Ultimate Edition. Requires Chocolatey."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["macOS"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download and install the JetBrains Toolbox App from the official JetBrains website. Open the Toolbox App and install IntelliJ IDEA.",
+              "notes": "Ensures easy updates and management of IDE versions."
+            },
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .dmg file from the IntelliJ IDEA website. Open the .dmg and drag 'IntelliJ IDEA.app' to your 'Applications' folder.",
+              "notes": "Verify that you can launch the application and create a new project."
+            },
+            {
+              "method_name": "Homebrew Cask",
+              "command": "brew install --cask intellij-idea-community",
+              "notes": "Replace 'intellij-idea-community' with 'intellij-idea' for the Ultimate Edition. Requires Homebrew."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Ubuntu/Debian)"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download the Toolbox App .tar.gz from JetBrains. Extract and run the `jetbrains-toolbox` executable. Use the Toolbox App to install IntelliJ IDEA.",
+              "notes": "The most flexible way to manage JetBrains IDEs on Linux."
+            },
+            {
+              "method_name": "Snap",
+              "command": "sudo snap install intellij-idea-community --classic",
+              "notes": "Replace 'intellij-idea-community' with 'intellij-idea-ultimate' for the Ultimate Edition. Requires Snapd."
+            },
+            {
+              "method_name": "Manual (Tarball)",
+              "instructions": "Download the .tar.gz from the IntelliJ IDEA website. Extract it to a desired location (e.g., `/opt/`). Navigate into the `bin` directory and run `./idea.sh`.",
+              "notes": "Consider adding the `bin` directory to your PATH for easier access."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (CentOS/RHEL)"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download and install the JetBrains Toolbox App from the official JetBrains website. Use the Toolbox App to install IntelliJ IDEA.",
+              "notes": "Recommended for managing multiple JetBrains IDEs."
+            },
+            {
+              "method_name": "Manual (Tarball)",
+              "instructions": "Download the .tar.gz from the IntelliJ IDEA website. Extract to `/opt/` (or similar). Run `./idea.sh` from the `bin` directory.",
+              "notes": "Ensure you have Java Development Kit (JDK) installed and configured."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Arch Linux)"],
+          "installation_methods": [
+            {
+              "method_name": "Pacman (Community Repository)",
+              "command": "sudo pacman -S intellij-idea-community-edition",
+              "notes": "Replace 'intellij-idea-community-edition' with 'intellij-idea-ultimate-edition' from the AUR for Ultimate. Consider using an AUR helper like `yay` for AUR packages."
+            },
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Follow the same instructions as for Ubuntu/Debian.",
+              "notes": "Provides direct updates from JetBrains."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PyCharm",
+      "description": "A dedicated IDE for Python development by JetBrains, available in Community (free) and Professional (paid) editions. PyCharm Professional supports web development frameworks (Django, Flask), scientific tools, and remote development, making it highly suitable for backend Python projects.",
+      "versions": [
+        {
+          "supported_oses": ["Windows"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download and install the JetBrains Toolbox App. Use the Toolbox App to install PyCharm (Community or Professional).",
+              "notes": "Ideal for managing PyCharm and other JetBrains IDEs."
+            },
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .exe installer from the PyCharm website (https://www.jetbrains.com/pycharm/). Run the installer and follow the prompts.",
+              "notes": "Allows for custom installation paths and optional desktop shortcuts."
+            },
+            {
+              "method_name": "Chocolatey",
+              "command": "choco install pycharm-community",
+              "notes": "Replace 'pycharm-community' with 'pycharm-professional' for the Professional Edition. Requires Chocolatey."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["macOS"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download and install the JetBrains Toolbox App. Use the Toolbox App to install PyCharm.",
+              "notes": "Simplifies updates and environment management."
+            },
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .dmg file from the PyCharm website. Open the .dmg and drag 'PyCharm.app' to your 'Applications' folder.",
+              "notes": "Ensure you have a Python interpreter configured in PyCharm after installation."
+            },
+            {
+              "method_name": "Homebrew Cask",
+              "command": "brew install --cask pycharm-ce",
+              "notes": "Replace 'pycharm-ce' with 'pycharm' for the Professional Edition. Requires Homebrew."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Ubuntu/Debian)"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download the Toolbox App .tar.gz. Extract and run `jetbrains-toolbox`. Use the Toolbox App to install PyCharm.",
+              "notes": "The most versatile method for managing JetBrains IDEs."
+            },
+            {
+              "method_name": "Snap",
+              "command": "sudo snap install pycharm-community --classic",
+              "notes": "Replace 'pycharm-community' with 'pycharm-professional' for the Professional Edition. Requires Snapd."
+            },
+            {
+              "method_name": "Manual (Tarball)",
+              "instructions": "Download the .tar.gz from PyCharm website. Extract to a preferred location (e.g., `/opt/`). Navigate into the `bin` directory and run `./pycharm.sh`.",
+              "notes": "Consider creating a desktop entry or adding the `bin` directory to your PATH."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (CentOS/RHEL)"],
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Download and install the JetBrains Toolbox App. Use the Toolbox App to install PyCharm.",
+              "notes": "Recommended for easy updates and version control."
+            },
+            {
+              "method_name": "Manual (Tarball)",
+              "instructions": "Download the .tar.gz from the PyCharm website. Extract to `/opt/` or similar. Run `./pycharm.sh` from the `bin` directory.",
+              "notes": "Ensure Python is installed and accessible."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Arch Linux)"],
+          "installation_methods": [
+            {
+              "method_name": "Pacman (Community Repository)",
+              "command": "sudo pacman -S pycharm-community-edition",
+              "notes": "Replace 'pycharm-community-edition' with 'pycharm-professional-edition' from the AUR for Professional. An AUR helper like `yay` is useful for AUR packages."
+            },
+            {
+              "method_name": "JetBrains Toolbox App",
+              "instructions": "Follow the same instructions as for Ubuntu/Debian.",
+              "notes": "Direct updates from JetBrains."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Eclipse IDE",
+      "description": "A highly extensible open-source IDE, particularly popular for Java backend development (e.g., with Spring, Apache Tomcat). It also supports other languages like PHP, C++, and Python via plugins. Often used for large, complex enterprise projects.",
+      "versions": [
+        {
+          "supported_oses": ["Windows"],
+          "installation_methods": [
+            {
+              "method_name": "Eclipse Installer",
+              "instructions": "Download the 'Eclipse Installer' .exe from the official Eclipse website (https://www.eclipse.org/downloads/). Run the installer, select 'Eclipse IDE for Enterprise Java and Web Developers' or 'Eclipse IDE for Java Developers', and follow the prompts.",
+              "notes": "The installer simplifies the process and allows selecting specific Eclipse packages."
+            },
+            {
+              "method_name": "Manual (Zipped Package)",
+              "instructions": "Download the zipped Eclipse package (.zip) from the official website. Extract the contents to a directory (e.g., `C:\\eclipse`). Run `eclipse.exe` from the extracted folder.",
+              "notes": "Requires a Java Development Kit (JDK) to be installed separately and configured."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["macOS"],
+          "installation_methods": [
+            {
+              "method_name": "Eclipse Installer",
+              "instructions": "Download the 'Eclipse Installer' .dmg from the Eclipse website. Open the .dmg and drag the installer application to your 'Applications' folder. Run the installer and choose your desired Eclipse package.",
+              "notes": "Similar to Windows, it simplifies package selection."
+            },
+            {
+              "method_name": "Manual (Tarball)",
+              "instructions": "Download the .tar.gz package from the Eclipse website. Extract it (e.g., `tar -xzf eclipse-*.tar.gz`). Move the 'eclipse' folder to your 'Applications' directory.",
+              "notes": "Ensure a compatible JDK is installed and configured in your shell profile."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Ubuntu/Debian)"],
+          "installation_methods": [
+            {
+              "method_name": "Eclipse Installer (Tarball)",
+              "instructions": "Download the 'Eclipse Installer' .tar.gz from the Eclipse website. Extract it (e.g., `tar -xzf eclipse-inst-linux64.tar.gz`). Navigate into the extracted `eclipse-installer` directory and run `./eclipse-inst`. Select your desired Eclipse package.",
+              "notes": "Recommended method for recent versions. Ensures necessary components are installed."
+            },
+            {
+              "method_name": "APT (Older Versions)",
+              "command": "sudo apt install eclipse",
+              "notes": "This command often installs an older, generic Eclipse version from the Ubuntu repositories. Not recommended for modern development or specific Java EE/Web editions."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (CentOS/RHEL)"],
+          "installation_methods": [
+            {
+              "method_name": "Eclipse Installer (Tarball)",
+              "instructions": "Download the Eclipse Installer .tar.gz. Extract it and run `./eclipse-inst`. Select the desired Eclipse package.",
+              "notes": "Make sure you have a JDK installed and configured before running the installer."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Arch Linux)"],
+          "installation_methods": [
+            {
+              "method_name": "Pacman (Community/AUR)",
+              "command": "sudo pacman -S eclipse",
+              "notes": "The `eclipse` package in the Community repository usually provides the base Eclipse platform. For specific editions (e.g., Java EE), you might need to use AUR packages (e.g., `eclipse-java-ee`) with an AUR helper like `yay`."
+            },
+            {
+              "method_name": "Eclipse Installer (Tarball)",
+              "instructions": "Follow the same instructions as for Ubuntu/Debian.",
+              "notes": "A reliable method to get the latest versions and specific packages."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sublime Text",
+      "description": "A sophisticated text editor for code, markup and prose, widely used for backend development due to its speed, efficiency, and powerful features. While not a full IDE out-of-the-box, it can be extended with packages (e.g., for language-specific linting, auto-completion, debugging) to offer IDE-like functionality.",
+      "versions": [
+        {
+          "supported_oses": ["Windows"],
+          "installation_methods": [
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .exe installer from the official Sublime Text website (https://www.sublimetext.com/). Run the installer and follow the prompts.",
+              "notes": "Provides options to add to context menu and PATH."
+            },
+            {
+              "method_name": "Chocolatey",
+              "command": "choco install sublimetext3",
+              "notes": "Installs Sublime Text 3. For Sublime Text 4, use `choco install sublimetext`."
+            },
+            {
+              "method_name": "Winget",
+              "command": "winget install SublimeHQ.SublimeText",
+              "notes": "Installs the latest version of Sublime Text 4. Requires Winget."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["macOS"],
+          "installation_methods": [
+            {
+              "method_name": "Official Installer",
+              "instructions": "Download the .dmg file from the Sublime Text website. Open the .dmg and drag 'Sublime Text.app' to your 'Applications' folder.",
+              "notes": "Consider adding the 'subl' command-line tool for easier access: `sudo ln -s /Applications/Sublime\\ Text.app/Contents/SharedSupport/bin/subl /usr/local/bin/subl`"
+            },
+            {
+              "method_name": "Homebrew Cask",
+              "command": "brew install --cask sublime-text",
+              "notes": "Requires Homebrew. Simplifies installation and updates."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Ubuntu/Debian)"],
+          "installation_methods": [
+            {
+              "method_name": "APT (Official Repository)",
+              "instructions": "First, import the GPG key and add the Sublime Text repository:\nwget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -\nsudo apt install apt-transport-https\necho \"deb https://download.sublimetext.com/ apt/stable/\" | sudo tee /etc/apt/sources.list.d/sublime-text.list\nsudo apt update\nsudo apt install sublime-text",
+              "notes": "Ensures you receive official updates. Replace 'stable' with 'dev' for the development build."
+            },
+            {
+              "method_name": "Snap",
+              "command": "sudo snap install sublime-text --classic",
+              "notes": "Requires Snapd. A quick and easy installation method."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (CentOS/RHEL)"],
+          "installation_methods": [
+            {
+              "method_name": "DNF/YUM (Official Repository)",
+              "instructions": "First, import the GPG key and add the Sublime Text repository:\nsudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg\nsudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo\nsudo dnf install sublime-text",
+              "notes": "Use `yum` instead of `dnf` for older RHEL/CentOS versions."
+            }
+          ]
+        },
+        {
+          "supported_oses": ["Linux (Arch Linux)"],
+          "installation_methods": [
+            {
+              "method_name": "Pacman (Community Repository)",
+              "command": "sudo pacman -S sublime-text",
+              "notes": "Available in the official Community repository."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+    "Programming_Languages_Runtimes": [
+      {
+        "name": "Python",
+        "description": "A versatile, high-level programming language widely adopted for backend development due to its simplicity and extensive libraries.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install python -y",
+                "notes": "Installs Python 3."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install -e --id Python.Python.3.11 --scope machine",
+                "notes": "Specify version; Python 3 installers add PATH."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .exe; 'Add python.exe to PATH' crucial. Verify with python --version.",
+                "notes": "Verify with python --version."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install python",
+                "notes": "Verify with python3 --version; consider pyenv for multiple versions."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .pkg; Run installer."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt (Default Repository)",
+                "command": "sudo apt install python3",
+                "notes": "Often pre-installed; may be outdated for production."
+              },
+              {
+                "method_name": "apt (Deadsnakes PPA for Specific Versions)",
+                "command": "sudo add-apt-repository ppa:deadsnakes/ppa; sudo apt install python3.12",
+                "notes": "For specific/newer versions."
+              },
+              {
+                "method_name": "Manual (from Source)",
+                "instructions": "wget....tgz; sudo make install",
+                "notes": "Requires build dependencies."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "dnf",
+                "command": "sudo dnf install python3",
+                "notes": "Verify with python3 --version."
+              },
+              {
+                "method_name": "yum (for older CentOS)",
+                "command": "sudo yum install epel-release; sudo yum install python-pip",
+                "notes": "Package names vary (python2-pip, python34-pip)."
+              },
+              {
+                "method_name": "Manual (from Source)",
+                "instructions": "wget....tgz; make install",
+                "notes": "Requires development tools."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "sudo pacman -S python",
+                "notes": "Installs Python 3; consider pyenv for multiple versions."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Node.js",
+        "description": "A JavaScript runtime environment crucial for building fast and scalable server-side applications and APIs.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download .msi; Run installer. Select npm and Native modules; verify node -v, npm -v."
+              },
+              {
+                "method_name": "NVM for Windows",
+                "instructions": "Download installer; nvm install latest",
+                "notes": "nvm use <version> to switch."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install OpenJS.NodeJS",
+                "notes": "Verify node -v, npm -v."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install nodejs"
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install node",
+                "notes": "Verify node -v, npm -v."
+              },
+              {
+                "method_name": "NVM",
+                "instructions": "`curl... bash; nvm install `"
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .pkg; Run installer."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt (Default Repository)",
+                "command": "sudo apt install nodejs npm",
+                "notes": "May be outdated for production."
+              },
+              {
+                "method_name": "apt (NodeSource PPA for Specific Versions)",
+                "instructions": "curl...; sudo bash...; sudo apt install nodejs",
+                "notes": "Includes npm."
+              },
+              {
+                "method_name": "NVM",
+                "instructions": "`curl... bash; nvm install `"
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "NodeSource Repository",
+                "instructions": "`curl... sudo bash -; sudo yum install -y nodejs`"
+              },
+              {
+                "method_name": "NVM",
+                "instructions": "`curl... bash; nvm install node`"
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "pacman -S nodejs npm"
+              },
+              {
+                "method_name": "NVM",
+                "instructions": "`curl... bash; nvm install node`"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Java (JDK)",
+        "description": "Java Development Kit (JDK) is essential for developing Java applications, providing the compiler, runtime environment, and other tools.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install openjdk"
+              },
+              {
+                "method_name": "Scoop",
+                "command": "scoop bucket add java; scoop install openjdk"
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install --id=Microsoft.OpenJDK.21 -e",
+                "notes": "For specific OpenJDK builds."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download OpenJDK; Extract; Set JAVA_HOME, add bin to PATH.",
+                "notes": "Verify java -version."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install openjdk@23",
+                "notes": "Configure JAVA_HOME, PATH in shell profile."
+              },
+              {
+                "method_name": "Manual (Oracle)",
+                "instructions": "Download .dmg; Run installer; Set JAVA_HOME, PATH in shell profile."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt (JRE)",
+                "command": "sudo apt install default-jre",
+                "notes": "Latest LTS OpenJDK JRE."
+              },
+              {
+                "method_name": "apt (JDK)",
+                "command": "sudo apt install -y openjdk-17-jdk",
+                "notes": "For development."
+              },
+              {
+                "method_name": "Manual (Oracle JRE)",
+                "instructions": "Download .tar.gz; Extract; update-alternatives.",
+                "notes": "Requires Oracle account; may be older version."
+              },
+              {
+                "method_name": "Manual (Oracle JDK)",
+                "instructions": "Download .tar.gz; Extract to /opt; Set JAVA_HOME, PATH in ~/.bashrc."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "RPM (Manual)",
+                "instructions": "Download .rpm; sudo rpm -ivh...",
+                "notes": "Requires root; no reboot."
+              },
+              {
+                "method_name": "Tarball (Manual)",
+                "instructions": "Download .tar.gz; Extract."
+              },
+              {
+                "method_name": "yum/dnf (OpenJDK)",
+                "command": "sudo yum install -y java-1.8.0-openjdk",
+                "notes": "Set JAVA_HOME, JRE_HOME in /etc/profile."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman (OpenJDK)",
+                "command": "pacman -S jre11-openjdk; pacman -S jdk17-openjdk",
+                "notes": "Use archlinux-java set to set default."
+              },
+              {
+                "method_name": "Manual (Oracle)",
+                "instructions": "Download .tar.gz; Extract to /opt; Set JAVA_HOME, PATH in /etc/profile.d/."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Go (Golang)",
+        "description": "Go, or Golang, is an open-source programming language designed for building efficient and reliable software, particularly popular for backend services and microservices.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install go"
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install GoLang.Go",
+                "notes": "Single command, requires elevated session."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .msi; Add C:\\Go\\bin to PATH.",
+                "notes": "Verify go version."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install go",
+                "notes": "Set GOPATH, GOROOT, add to PATH in shell profile."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .pkg; Add /usr/local/go/bin to PATH in shell profile."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "PPA",
+                "command": "sudo add-apt-repository ppa:longsleep/golang-backports; sudo apt install golang-go"
+              },
+              {
+                "method_name": "Snap",
+                "command": "sudo snap install --classic go"
+              },
+              {
+                "method_name": "Manual (Tarball)",
+                "instructions": "Download .tar.gz; Extract to /usr/local; Add /usr/local/go/bin to PATH.",
+                "notes": "Remove previous Go installation first."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "Manual (Tarball)",
+                "instructions": "Download .tar.gz; Extract to /usr/local; Set PATH, GOROOT, GOPATH in /etc/profile.",
+                "notes": "Remove previous Go installation and clear old ENV."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "Manual (Tarball)",
+                "instructions": "Download .tar.gz; Extract to /usr/local; Add PATH to ~/.bashrc."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "PHP",
+        "description": "A widely-used, open-source scripting language primarily for developing dynamic web applications and server-side logic.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install php -y",
+                "notes": "Use --params '\"/ThreadSafe\"' for Apache."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install PHP.PHP.8.4",
+                "notes": "Portable app, updates PATH, supports multiple versions."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download binaries; Configure with web server (IIS/Apache); Use WampServer/XAMPP.",
+                "notes": "Requires web server and database."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install php",
+                "notes": "Verify php -v."
+              },
+              {
+                "method_name": "Preinstalled",
+                "instructions": "Uncomment lines in Apache httpd.conf."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt (Latest)",
+                "command": "sudo apt install php"
+              },
+              {
+                "method_name": "apt (Specific Version via PPA)",
+                "command": "sudo add-apt-repository ppa:ondrej/php; sudo apt install php7.4",
+                "notes": "For specific/newer versions."
+              },
+              {
+                "method_name": "apt (with Apache/MySQL modules)",
+                "command": "sudo apt install php libapache2-mod-php",
+                "notes": "Install php-mysql, php-cli etc. as needed. Restart Apache."
+              },
+              {
+                "method_name": "LAMP Stack",
+                "command": "sudo apt install tasksel; sudo tasksel install lamp-server"
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "yum/dnf",
+                "instructions": "Enable EPEL/Remi repos; sudo dnf module install php:remi-8.3 -y",
+                "notes": "Verify php -v."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "pacman -S php",
+                "notes": "For multiple versions, add PHP repo and import key."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": ".NET SDK (C#)",
+        "description": "The .NET SDK is a comprehensive development kit for building applications with .NET and C#, including compilers, runtime, and tools.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install dotnet-6.0-sdk",
+                "notes": "Metapackage for latest 6.x.x."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install Microsoft.DotNet.SDK.6 -h",
+                "notes": "Requires elevated session; for specific versions."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .exe; Run installer. Path auto-set; verify dotnet --version; Visual Studio includes SDK.",
+                "notes": "Verify dotnet --version; Visual Studio includes SDK."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew cask install dotnet-sdk",
+                "notes": "Verify dotnet --version; install mono for debugging."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .pkg; Run installer. Optionally add path to ~/.zshrc."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "command": "sudo apt install -y dotnet-sdk-9.0",
+                "notes": "May need Microsoft repo/backports PPA for specific versions."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "dnf",
+                "command": "sudo dnf install dotnet-sdk-8.0"
+              },
+              {
+                "method_name": "Script",
+                "command": "wget https://dot.net/v1/dotnet-install.sh; bash./dotnet-install.sh --channel 8.0",
+                "notes": "Adds to $HOME/.dotnet/; add to PATH."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "pacman -S dotnet-sdk",
+                "notes": "Available in official Community repository."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Databases": [
+      {
+        "name": "PostgreSQL",
+        "description": "A powerful, open-source object-relational database system known for its robustness, feature set, and high data integrity.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Winget",
+                "command": "winget install --id PostgreSQL.PostgreSQL",
+                "notes": "Requires admin auth."
+              },
+              {
+                "method_name": "Manual (Installer)",
+                "instructions": "Download installer; Set postgres password, port. Service starts automatically."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install postgresql@14",
+                "notes": "Start with brew services start postgresql; createdb <username>."
+              },
+              {
+                "method_name": "Postgres.app (Manual)",
+                "instructions": "Download .dmg; Drag to Apps; Configure PATH."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "command": "sudo apt install postgresql",
+                "notes": "Service auto-configured; configure listen_addresses, pg_hba.conf."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "dnf",
+                "command": "Add repo; sudo dnf install -y postgresql17-server",
+                "notes": "Disable built-in module; initdb; start/enable service."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "sudo pacman -S postgresql",
+                "notes": "initdb; start/enable service; createuser, createdb."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "MySQL",
+        "description": "MySQL is a popular open-source relational database management system, widely used in web applications as part of the LAMP stack.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install mysql"
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install --id=Oracle.MySQL -e"
+              },
+              {
+                "method_name": "Manual (Installer)",
+                "instructions": "Download installer; Set root password. Access via mysql -u root -p; check services.msc."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install mysql",
+                "notes": "Start with brew services start mysql; mysqladmin -u root password 'secretpassword'."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "command": "sudo apt install mysql-server",
+                "notes": "Service starts automatically."
+              },
+              {
+                "method_name": "MySQL Workbench",
+                "command": "sudo apt-get install mysql-workbench-community"
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "yum/dnf",
+                "command": "sudo yum install mysql-server (or dnf install mysql mysql-server)",
+                "notes": "Start/enable service; sudo mysql_secure_installation."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "pacman -S mysql",
+                "notes": "mysql_install_db; start/enable service; mysql_secure_installation; create users."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "MongoDB",
+        "description": "MongoDB is a popular NoSQL document database known for its flexibility and scalability, making it a common choice for modern web applications.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install mongodb.portable",
+                "notes": "Portable version, can set install dir."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install --id=MongoDB.Server -e"
+              },
+              {
+                "method_name": "Manual (Installer)",
+                "instructions": "Download .msi; Run installer. Can configure as Windows service; mongosh separate."
+              },
+              {
+                "method_name": "Manual (ZIP)",
+                "instructions": "Download .zip; Extract; mongod.exe --dbpath=... Run mongosh in new CMD."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install mongodb",
+                "notes": "Create /data/db, set permissions; run mongod, mongo."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .tgz; Extract; Create /data/db. Run mongod from bin, mongo from bin."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "instructions": "Add repo, GPG key; sudo apt install -y mongodb-org",
+                "notes": "Start/enable service; create admin user, enable auth."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "dnf",
+                "instructions": "Create repo file; sudo yum install -y mongodb-org",
+                "notes": "Start/enable service; create admin user, configure auth."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "AUR (via makepkg)",
+                "command": "git clone https://aur.arch.org/mongodb-bin.git; makepkg -si",
+                "notes": "Start/enable service."
+              },
+              {
+                "method_name": "Docker",
+                "command": "sudo pacman -S docker; sudo docker run -d -p 27017:27017 -v ~/mongodb_data:/data/db mongo"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Redis (Caching)",
+        "description": "Redis is an open-source, in-memory data structure store used as a database, cache, and message broker, highly valued for its speed and flexibility.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install redis",
+                "notes": "Package may be old/broken."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install --id=ekvedaras.redis-gui -e",
+                "notes": "GUI client."
+              },
+              {
+                "method_name": "WSL2 (Recommended)",
+                "instructions": "Install WSL2; Follow Ubuntu steps within WSL2.",
+                "notes": "Redis not officially supported on Windows."
+              },
+              {
+                "method_name": "Manual (Unofficial Port)",
+                "instructions": "Download redis64-latest.zip; Extract; redis-server.exe redis.windows.conf",
+                "notes": "Unofficial port, may lag."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install redis",
+                "notes": "Start with brew services start redis; verify redis-cli PING."
+              },
+              {
+                "method_name": "Manual (from Source)",
+                "instructions": "xcode-select --install; Download source; make; cp redis-cli."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "command": "sudo apt install redis-server -y",
+                "notes": "Start/enable service; verify redis-cli PING."
+              },
+              {
+                "method_name": "apt (CLI only)",
+                "command": "sudo apt install redis-tools"
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "dnf",
+                "command": "sudo dnf install redis",
+                "notes": "Start/enable service."
+              },
+              {
+                "method_name": "Manual (from Source)",
+                "instructions": "Install gcc, wget; Download source; make; cp redis-cli."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "pacman -S valkey",
+                "notes": "Redis deprecated, replaced by Valkey."
+              },
+              {
+                "method_name": "Manual (from Source)",
+                "instructions": "Clone source; make redis-cli; cp redis-cli."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Web_Servers": [
+      {
+        "name": "Nginx",
+        "description": "Nginx (pronounced 'engine-X') is a high-performance web server, reverse proxy, load balancer, and HTTP cache, known for its efficiency and scalability.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Winget",
+                "command": "winget install --id=nginxinc.nginx -e"
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install nginx",
+                "notes": "Can specify install location, port."
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download .zip; Extract; start nginx (from admin CMD). Verify http://localhost; can use NSSM for service."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install nginx",
+                "notes": "Start with brew services start nginx; verify http://localhost:8080. Config: /usr/local/etc/nginx/nginx.conf."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "command": "sudo apt install nginx",
+                "notes": "Enable/start service; configure UFW (sudo ufw allow 'Nginx Full')."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "dnf",
+                "command": "sudo dnf install nginx",
+                "notes": "Enable/start service; configure firewall."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "pacman -S nginx-mainline",
+                "notes": "Start/enable service; configure firewall."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Apache HTTP Server",
+        "description": "Apache HTTP Server, commonly known as Apache, is a free and open-source web server widely used for hosting websites and web applications across various operating systems.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install apache-httpd -y"
+              },
+              {
+                "method_name": "Manual",
+                "instructions": "Download binaries; Extract; Configure httpd.conf. Install as Windows service; adjust Windows Firewall."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Homebrew",
+                "command": "brew install httpd",
+                "notes": "Stop built-in Apache first; start with brew services start httpd."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "apt",
+                "command": "sudo apt install apache2",
+                "notes": "Verify by IP; configure DocumentRoot, VirtualHost; a2ensite, reload."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/RHEL)"],
+            "installation_methods": [
+              {
+                "method_name": "yum/dnf",
+                "command": "sudo yum install httpd (or dnf install httpd)",
+                "notes": "Start/enable service; verify by IP. Config: /etc/httpd/httpd.conf."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "pacman",
+                "command": "sudo pacman -S apache",
+                "notes": "Start/enable service; configure firewall."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Build_Tools": [
+      {
+        "name": "Apache Maven",
+        "publisher": "Apache Software Foundation",
+        "description": "A software project management and comprehension tool. Based on the concept of a Project Object Model (POM), Maven can manage a project's build, reporting, and documentation from a central piece of information. It's a fundamental tool for almost all Java backend projects.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 3.9.6)",
+            "release_date": "Constantly updated, refer to Apache Maven website",
+            "supported_oses": ["Any OS with Java installed (Linux, Windows, macOS)"],
+            "notes": "Requires Java Development Kit (JDK). Maven 3.9.x requires JDK 8 or above.",
+            "components": [
+              {
+                "component_name": "Maven Core",
+                "installation_methods": [
+                  {
+                    "method_name": "Direct Download (Binary Archive)",
+                    "type": "Manual Extraction",
+                    "instructions": "1. Ensure Java is installed and JAVA_HOME is set. 2. Download the binary tar.gz or zip archive from: https://maven.apache.org/download.cgi 3. Extract the archive to a directory (e.g., /opt/apache-maven-3.9.6). 4. Add bin directory to your system's PATH environment variable (e.g., export PATH=/opt/apache-maven-3.9.6/bin:$PATH). 5. Verify: mvn -v",
+                    "installation_query": "wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz && tar -xvzf apache-maven-3.9.6-bin.tar.gz && export PATH=$(pwd)/apache-maven-3.9.6/bin:$PATH"
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install maven"
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "installation_query": "choco install maven -y"
+                  },
+                  {
+                    "method_name": "APT (Debian/Ubuntu Linux)",
+                    "type": "Package Manager",
+                    "installation_query": "sudo apt update && sudo apt install maven -y"
+                  },
+                  {
+                    "method_name": "DNF/YUM (RHEL/CentOS/Fedora Linux)",
+                    "type": "Package Manager",
+                    "installation_query": "sudo dnf install maven -y"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "version_name": "Maven 3.6.3",
+            "release_date": "October 2019",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "Commonly used older version, compatible with JDK 7 and higher. Still present in many legacy build systems.",
+            "installation_methods": [
+              {
+                "method_name": "Direct Download (Tar.gz/ZIP)",
+                "type": "Archive Extraction",
+                "instructions": "1. Visit Maven Archives: https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/. 2. Download apache-maven-3.6.3-bin.zip or .tar.gz. 3. Extract and configure environment variables as per the latest version's direct download instructions, pointing M2_HOME to the 3.6.3 directory.",
+                "installation_query": "wget https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/apache-maven-3.6.3-bin.tar.gz -O /tmp/maven-3.6.3.tar.gz && sudo tar -xzf /tmp/maven-3.6.3.tar.gz -C /opt/ && sudo mv /opt/apache-maven-3.6.3 /opt/maven-3.6.3 && echo 'export M2_HOME=/opt/maven-3.6.3' >> ~/.bashrc && echo 'export PATH=$M2_HOME/bin:$PATH' >> ~/.bashrc"
+              },
+              {
+                "method_name": "SDKMAN! (Linux/macOS/WSL)",
+                "type": "Tool/Script",
+                "instructions": "1. Ensure SDKMAN! is installed and initialized. 2. Install a specific Maven version: sdk install maven 3.6.3 3. Verify: mvn -v",
+                "installation_query": "sdk install maven 3.6.3"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Chocolatey. 2. Install Maven 3.6.3: choco install maven --version 3.6.3 3. Verify: mvn -v",
+                "installation_query": "choco install maven --version 3.6.3"
+              },
+              {
+                "method_name": "Scoop (Windows)",
+                "type": "Package Manager",
+                "notes": "Scoop might not always offer direct installation of older specific versions. You might need to manually install or find a specific manifest.",
+                "instructions": "1. Install Scoop and add the 'java' bucket. 2. Check for specific Maven 3.6.3 manifest if available: scoop search maven 3. If available, install: scoop install maven@3.6.3 (or similar version syntax). Otherwise, direct download is recommended for older versions.",
+                "installation_query": "scoop install maven@3.6.3"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Gradle",
+        "publisher": "Gradle Inc.",
+        "description": "An open-source build automation tool focused on flexibility and performance. It combines the best features of Ant and Maven, providing a Groovy/Kotlin-based DSL for build scripts. Increasingly popular for Java, Android, and polyglot projects.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 8.8)",
+            "release_date": "Constantly updated, refer to Gradle Release Notes",
+            "supported_oses": ["Any OS with Java installed (Linux, Windows, macOS)"],
+            "notes": "Requires Java Development Kit (JDK). Gradle 8.x requires JDK 17 or above.",
+            "components": [
+              {
+                "component_name": "Gradle Distribution",
+                "installation_methods": [
+                  {
+                    "method_name": "Gradle Wrapper (Recommended for Projects)",
+                    "type": "Project-local Script",
+                    "instructions": "1. Most Gradle projects include a 'Gradle Wrapper' ( ./gradlew or gradlew.bat script). 2. Simply run the wrapper script from your project root (e.g., ./gradlew build). It will automatically download and set up the correct Gradle version. 3. To initialize a new project with a wrapper: gradle init (if Gradle is installed globally)."
+                  },
+                  {
+                    "method_name": "Direct Download (Binary Archive)",
+                    "type": "Manual Extraction",
+                    "instructions": "1. Ensure Java is installed and JAVA_HOME is set. 2. Download the binary-only distribution from: https://gradle.org/install/. 3. Unzip the archive to a directory (e.g., /opt/gradle-8.8). 4. Add bin directory to your system's PATH environment variable (e.g., export PATH=/opt/gradle-8.8/bin:$PATH). 5. Verify: gradle -v",
+                    "installation_query": "wget https://services.gradle.org/distributions/gradle-8.8-bin.zip && unzip gradle-8.8-bin.zip && export PATH=$(pwd)/gradle-8.8/bin:$PATH"
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install gradle"
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "installation_query": "choco install gradle -y"
+                  },
+                  {
+                    "method_name": "SDKMAN! (Linux/macOS)",
+                    "type": "Version Manager",
+                    "notes": "Recommended for managing multiple JDKs, Groovy, Scala, Kotlin, and Gradle versions.",
+                    "installation_query": "curl -s \"https://get.sdkman.io\" | bash && source \"$HOME/.sdkman/bin/sdkman-init.sh\" && sdk install gradle 8.8"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Apache Ant",
+        "publisher": "Apache Software Foundation",
+        "description": "A Java library and command-line tool whose mission is to drive processes described in build files as targets and extension points dependent on each other. The main known usage of Ant is the build of Java applications.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 1.10.14)",
+            "release_date": "Constantly updated, refer to Ant website",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "Requires Java JDK (version depends on Ant version, Ant 1.10.x requires JDK 8 or higher).",
+            "installation_methods": [
+              {
+                "method_name": "Direct Download (ZIP/Tar.gz)",
+                "type": "Archive Extraction",
+                "instructions": "1. Visit Apache Ant downloads: https://ant.apache.org/bindownload.cgi 2. Download the binary distribution (e.g., apache-ant-1.10.14-bin.zip for Windows, .tar.gz for Linux/macOS). 3. Extract the archive to a directory (e.g., C:\\Program Files\\Apache\\ant or /opt/ant). 4. Set environment variables: - ANT_HOME: point to the extracted directory (e.g., C:\\Program Files\\Apache\\ant or /opt/ant) - Add %ANT_HOME%\\bin (Windows) or $ANT_HOME/bin (Linux/macOS) to your system PATH environment variable. 5. Verify installation: ant -version",
+                "installation_query": "wget https://dlcdn.apache.org//ant/binaries/apache-ant-1.10.14-bin.tar.gz -O /tmp/ant.tar.gz && sudo tar -xzf /tmp/ant.tar.gz -C /opt/ && sudo mv /opt/apache-ant-1.10.14 /opt/ant && echo 'export ANT_HOME=/opt/ant' >> ~/.bashrc && echo 'export PATH=$ANT_HOME/bin:$PATH' >> ~/.bashrc"
+              },
+              {
+                "method_name": "SDKMAN! (Linux/macOS/WSL)",
+                "type": "Tool/Script",
+                "instructions": "1. Ensure SDKMAN! is installed and initialized. 2. Install Ant: sdk install ant 3. Verify: ant -version",
+                "installation_query": "sdk install ant"
+              },
+              {
+                "method_name": "APT (Debian/Ubuntu Linux)",
+                "type": "Package Manager",
+                "instructions": "1. sudo apt update 2. sudo apt install ant -y 3. Verify: ant -version",
+                "installation_query": "sudo apt update && sudo apt install ant -y"
+              },
+              {
+                "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+                "type": "Package Manager",
+                "instructions": "1. sudo dnf install ant -y 2. Verify: ant -version",
+                "installation_query": "sudo dnf install ant -y"
+              },
+              {
+                "method_name": "Pacman (Arch Linux)",
+                "type": "Package Manager",
+                "instructions": "1. sudo pacman -S ant 2. Verify: ant -version",
+                "installation_query": "sudo pacman -S ant"
+              },
+              {
+                "method_name": "Homebrew (macOS)",
+                "type": "Package Manager",
+                "instructions": "1. brew install ant 2. Verify: ant -version",
+                "installation_query": "brew install ant"
+              },
+              {
+                "method_name": "Winget (Windows 10/11)",
+                "type": "Package Manager",
+                "instructions": "1. winget install Apache.Ant 2. Verify: ant -version",
+                "installation_query": "winget install Apache.Ant"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Chocolatey. 2. Install Ant: choco install ant 3. Verify: ant -version",
+                "installation_query": "choco install ant"
+              },
+              {
+                "method_name": "Scoop (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Scoop. 2. Install Ant: scoop install ant 3. Verify: ant -version",
+                "installation_query": "scoop install ant"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Bazel",
+        "publisher": "Google (Open-source project)",
+        "description": "A fast, scalable, multi-language, and extensible build system developed by Google. It supports a wide variety of languages and platforms, with strong support for Java, C++, Android, and iOS.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 7.1.2)",
+            "release_date": "Constantly updated, refer to Bazel website",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "Requires Java JDK. Recommended to use Bazelisk for managing Bazel versions.",
+            "installation_methods": [
+              {
+                "method_name": "Bazelisk (Recommended)",
+                "type": "Tool/Script",
+                "instructions": "1. Install Bazelisk, which is a wrapper that automatically downloads the appropriate Bazel version. 2. For macOS/Linux (Homebrew): brew install bazelisk 3. For Windows (Chocolatey): choco install bazelisk 4. For Windows (Scoop): scoop install bazelisk 5. Verify: bazel version",
+                "installation_query": "brew install bazelisk || choco install bazelisk || scoop install bazelisk"
+              },
+              {
+                "method_name": "APT (Debian/Ubuntu Linux)",
+                "type": "Package Manager",
+                "instructions": "1. Install curl if not present: sudo apt install curl gnupg -y 2. Add Bazel distribution URI as a package source: echo \"deb [arch=$(dpkg --print-architecture)] https://mirror.bazel.build/ubuntu stable jdk1.8\" | sudo tee /etc/apt/sources.list.d/bazel.list 3. Download and add the Bazel public key: curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add - 4. Update package lists: sudo apt update 5. Install Bazel: sudo apt install bazel -y 6. Verify: bazel version",
+                "installation_query": "sudo apt install curl gnupg -y && echo \"deb [arch=$(dpkg --print-architecture)] https://mirror.bazel.build/ubuntu stable jdk1.8\" | sudo tee /etc/apt/sources.list.d/bazel.list && curl https://bazel.build/bazel-release.pub.gpg | sudo apt-key add - && sudo apt update && sudo apt install bazel -y"
+              },
+              {
+                "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+                "type": "Package Manager",
+                "instructions": "1. Download the Bazel .repo file: sudo wget -O /etc/yum.repos.d/bazel.repo https://bazel.build/rpms/fedora/bazel-fedora.repo 2. Install Bazel: sudo dnf install bazel -y 3. Verify: bazel version",
+                "installation_query": "sudo wget -O /etc/yum.repos.d/bazel.repo https://bazel.build/rpms/fedora/bazel-fedora.repo && sudo dnf install bazel -y"
+              },
+              {
+                "method_name": "Homebrew (macOS)",
+                "type": "Package Manager",
+                "instructions": "1. Ensure Homebrew is installed. 2. Install Bazel: brew install bazel 3. Verify: bazel version",
+                "installation_query": "brew install bazel"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Chocolatey. 2. Install Bazel: choco install bazel 3. Verify: bazel version",
+                "installation_query": "choco install bazel"
+              },
+              {
+                "method_name": "Scoop (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Scoop. 2. Add the 'main' bucket if not already added: scoop bucket add main 3. Install Bazel: scoop install bazel 4. Verify: bazel version",
+                "installation_query": "scoop install bazel"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SBT (Scala Build Tool)",
+        "publisher": "Lightbend (Open-source project)",
+        "description": "An interactive build tool for Scala and Java projects. It features incremental compilation, automatic dependency management, and a flexible plugin system.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 1.9.9)",
+            "release_date": "Constantly updated, refer to SBT website",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "Requires Java JDK (JDK 8 or higher, recommend JDK 11+).",
+            "installation_methods": [
+              {
+                "method_name": "Direct Download (ZIP/MSI/DEB/RPM)",
+                "type": "Archive/Installer",
+                "instructions": "1. Visit the SBT downloads page: https://www.scala-sbt.org/download.html 2. Download the appropriate distribution for your OS (e.g., .zip for manual extraction, .msi for Windows, .deb for Debian/Ubuntu, .rpm for Fedora/RHEL). 3. For ZIP: Extract to a directory and add its bin directory to your system PATH. 4. For installers: Run the installer. 5. Verify installation: sbt about",
+                "installation_query": "For DEB: wget https://github.com/sbt/sbt/releases/download/v1.9.9/sbt-1.9.9.deb -O /tmp/sbt.deb && sudo dpkg -i /tmp/sbt.deb && sudo apt update && sudo apt install -f -y; For RPM: sudo wget https://github.com/sbt/sbt/releases/download/v1.9.9/sbt-1.9.9.rpm -O /tmp/sbt.rpm && sudo rpm -i /tmp/sbt.rpm"
+              },
+              {
+                "method_name": "SDKMAN! (Linux/macOS/WSL)",
+                "type": "Tool/Script",
+                "instructions": "1. Ensure SDKMAN! is installed and initialized. 2. Install SBT: sdk install sbt 3. Verify: sbt about",
+                "installation_query": "sdk install sbt"
+              },
+              {
+                "method_name": "Homebrew (macOS)",
+                "type": "Package Manager",
+                "instructions": "1. Ensure Homebrew is installed. 2. Install SBT: brew install sbt 3. Verify: sbt about",
+                "installation_query": "brew install sbt"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Chocolatey. 2. Install SBT: choco install sbt 3. Verify: sbt about",
+                "installation_query": "choco install sbt"
+              },
+              {
+                "method_name": "Scoop (Windows)",
+                "type": "Package Manager",
+                "instructions": "1. Install Scoop and add the 'java' bucket. 2. Install SBT: scoop install sbt 3. Verify: sbt about",
+                "installation_query": "scoop install sbt"
+              },
+              {
+                "method_name": "APT (Debian/Ubuntu Linux)",
+                "type": "Package Manager",
+                "instructions": "1. Install apt-transport-https if not present: sudo apt install apt-transport-https -y 2. Add the sbt repository: echo \"deb https://repo.scala-sbt.org/scalasbt/debian all main\" | sudo tee /etc/apt/sources.list.d/sbt.list 3. Add the GPG key: curl -sL \"https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823\" | sudo apt-key add 4. Update package lists: sudo apt update 5. Install SBT: sudo apt install sbt -y 6. Verify: sbt about",
+                "installation_query": "sudo apt install apt-transport-https -y && echo \"deb https://repo.scala-sbt.org/scalasbt/debian all main\" | sudo tee /etc/apt/sources.list.d/sbt.list && curl -sL \"https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x2EE0EA64E40A89B84B2DF73499E82A75642AC823\" | sudo apt-key add && sudo apt update && sudo apt install sbt -y"
+              },
+              {
+                "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+                "type": "Package Manager",
+                "instructions": "1. Create the sbt.repo file: sudo curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt.repo 2. Install SBT: sudo dnf install sbt -y (or sudo yum install sbt -y) 3. Verify: sbt about",
+                "installation_query": "sudo curl -L https://www.scala-sbt.org/sbt-rpm.repo -o /etc/yum.repos.d/sbt.repo && sudo dnf install sbt -y"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Backend_and_Cloud_Platforms": [
+      {
+        "name": "Spring Boot",
+        "publisher": "VMware (Pivotal/Spring by Broadcom)",
+        "description": "An opinionated framework that simplifies the development of production-ready, stand-alone, and distributable Spring applications. It takes an 'opinionated' view of the Spring platform, making it easier to get started with minimal configuration. Widely adopted as the de-facto standard for building Java-based microservices and web applications.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 3.3.1)",
+            "release_date": "Constantly updated, refer to Spring Boot Release Notes",
+            "supported_oses": ["Any OS with Java installed (Linux, Windows, macOS, Docker)"],
+            "notes": "Spring Boot 3.x requires Java 17+ and Spring Framework 6.x. It leverages convention over configuration to rapidly build applications. It includes embedded servers (Tomcat, Jetty, Undertow).",
+            "components": [
+              {
+                "component_name": "Spring Boot Starter Dependencies (Java Libraries)",
+                "installation_methods": [
+                  {
+                    "method_name": "Maven Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add the Spring Boot parent POM to your pom.xml's <parent> section: <parent> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-parent</artifactId> <version>3.3.1</version> <relativePath/> <!-- lookup parent from repository --> </parent> 2. Add desired starter dependencies (e.g., for web app): <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-web</artifactId> </dependency>"
+                  },
+                  {
+                    "method_name": "Gradle Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add the Spring Boot plugin to your build.gradle: plugins { id 'org.springframework.boot' version '3.3.1' id 'io.spring.dependency-management' version '1.1.5' id 'java' } 2. Add desired starter dependencies: dependencies { implementation 'org.springframework.boot:spring-boot-starter-web' testImplementation 'org.springframework.boot:spring-boot-starter-test' }"
+                  }
+                ]
+              },
+              {
+                "component_name": "Spring Initializr (Project Generator)",
+                "notes": "A web-based tool for quickly generating a new Spring Boot project structure with selected dependencies.",
+                "installation_methods": [
+                  {
+                    "method_name": "Web Interface",
+                    "type": "Web Application",
+                    "instructions": "1. Visit: https://start.spring.io/ 2. Configure your project (e.g., Java version, Spring Boot version, Maven/Gradle, dependencies). 3. Click 'Generate' to download a zip archive with your project."
+                  },
+                  {
+                    "method_name": "IDE Integration (IntelliJ IDEA, VS Code, Eclipse)",
+                    "type": "IDE Plugin / Built-in Feature",
+                    "instructions": "1. In IntelliJ IDEA: File -> New -> Project... -> Spring Initializr. 2. In VS Code: Use the 'Spring Boot Extension Pack' and command palette (Ctrl+Shift+P) to search for 'Spring Boot: Generate a Maven Project...'."
+                  }
+                ]
+              },
+              {
+                "component_name": "Spring Tools Suite (STS)",
+                "notes": "An Eclipse-based IDE tailored for Spring application development, providing advanced features for Spring Boot, Spring Cloud, and more.",
+                "installation_methods": [
+                  {
+                    "method_name": "Direct Download",
+                    "type": "Executable Installer / ZIP",
+                    "instructions": "1. Download from: https://spring.io/tools 2. Extract the downloaded archive and run the executable."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Docker",
+        "publisher": "Docker, Inc.",
+        "description": "A platform that uses OS-level virtualization to deliver software in packages called containers. Containers are isolated from one another and bundle their own software, libraries, and configuration files; they can communicate with each other through well-defined channels. Essential for building, shipping, and running modern Java applications as microservices.",
+        "versions": [
+          {
+            "version_name": "Docker Desktop Latest (e.g., 4.30.0)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Windows (Pro/Enterprise/Edu with WSL2/Hyper-V), macOS (Intel/Apple Silicon)"],
+            "notes": "Docker Desktop bundles Docker Engine, Docker CLI, Docker Compose, Kubernetes, and more into a single, easy-to-install package for development environments.",
+            "components": [
+              {
+                "component_name": "Docker Desktop",
+                "installation_methods": [
+                  {
+                    "method_name": "Direct Download (Windows/macOS)",
+                    "type": "Executable Installer (GUI)",
+                    "instructions": "1. Download from: https://www.docker.com/products/docker-desktop 2. Run the installer and follow the on-screen instructions. Ensure WSL2 (Windows) or Rosetta 2 (macOS M1/M2) is enabled if prompted."
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "instructions": "1. Ensure Chocolatey is installed. 2. Install Docker Desktop: choco install docker-desktop -y 3. Requires Windows reboot to complete installation."
+                  },
+                  {
+                    "method_name": "Homebrew Cask (macOS)",
+                    "type": "Package Manager / Software Store",
+                    "instructions": "1. Ensure Homebrew is installed. 2. Install Docker Desktop: brew install --cask docker"
+                  }
+                ]
+              },
+              {
+                "component_name": "Docker Engine & Docker CLI (Linux)",
+                "installation_methods": [
+                  {
+                    "method_name": "APT (Debian/Ubuntu Linux)",
+                    "type": "Package Manager",
+                    "instructions": "1. Update package index: sudo apt update 2. Install necessary packages: sudo apt install ca-certificates curl gnupg 3. Add Docker's official GPG key: sudo install -m 0755 -d /etc/apt/keyrings && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg 4. Set up the repository: echo \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null 5. Update package index again: sudo apt update 6. Install Docker Engine, CLI, Containerd: sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y 7. (Optional) Add your user to the 'docker' group: sudo usermod -aG docker $USER (requires logout/login to apply).",
+                    "installation_query": "sudo apt update && sudo apt install ca-certificates curl gnupg -y && sudo install -m 0755 -d /etc/apt/keyrings && curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg && echo \"deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable\" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null && sudo apt update && sudo apt install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y"
+                  },
+                  {
+                    "method_name": "DNF/YUM (RHEL/CentOS/Fedora Linux)",
+                    "type": "Package Manager",
+                    "instructions": "1. Install dnf-plugins-core: sudo dnf install -y dnf-plugins-core 2. Add Docker repository: sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo (adjust for Fedora) 3. Install Docker Engine, CLI, Containerd: sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y 4. Start and enable Docker: sudo systemctl enable docker --now 5. (Optional) Add your user to the 'docker' group: sudo usermod -aG docker $USER (requires logout/login).",
+                    "installation_query": "sudo dnf install -y dnf-plugins-core && sudo dnf config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo && sudo dnf install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin -y && sudo systemctl enable docker --now"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Kubernetes",
+        "publisher": "Cloud Native Computing Foundation (CNCF)",
+        "description": "An open-source container orchestration system for automating deployment, scaling, and management of containerized applications. It groups containers that make up an application into logical units for easy management and discovery. It's the industry standard for deploying Java microservices at scale in cloud-native environments.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 1.30.0)",
+            "release_date": "Constantly updated, refer to Kubernetes Release Notes",
+            "supported_oses": ["Linux", "Windows (via WSL2 or Minikube/Docker Desktop)", "macOS (via Minikube/Docker Desktop)"],
+            "notes": "Often deployed on cloud providers like AWS, GCP, Azure, or on-premises. For local development, Minikube or Kind are popular choices.",
+            "components": [
+              {
+                "component_name": "kubectl (Command Line Tool)",
+                "notes": "The command-line tool for running commands against Kubernetes clusters.",
+                "installation_methods": [
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install kubectl"
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "installation_query": "choco install kubernetes-cli -y"
+                  }
+                ]
+              },
+              {
+                "component_name": "Minikube (Local Kubernetes)",
+                "notes": "A tool that runs a single-node Kubernetes cluster inside a VM or directly on a local machine.",
+                "installation_methods": [
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install minikube"
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "installation_query": "choco install minikube -y"
+                  },
+                  {
+                    "method_name": "Direct Download (Windows/Linux)",
+                    "type": "Executable Download",
+                    "instructions": "1. Download latest Minikube binary. 2. Place it in your PATH."
+                  }
+                ]
+              },
+              {
+                "component_name": "Kind (Kubernetes in Docker)",
+                "notes": "A tool for running local Kubernetes clusters using Docker containers as 'nodes'.",
+                "installation_methods": [
+                  {
+                    "method_name": "Docker (Prerequisite)",
+                    "type": "Containerization",
+                    "instructions": "Ensure Docker is installed and running."
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install kind"
+                  },
+                  {
+                    "method_name": "Go Install (Requires Go)",
+                    "type": "Go Package Manager",
+                    "installation_query": "go install sigs.k8s.io/kind@latest"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Apache Kafka",
+        "publisher": "Apache Software Foundation",
+        "description": "A distributed streaming platform capable of handling trillions of events per day. It's used for building real-time data pipelines and streaming applications. Often used with Apache ZooKeeper (for metadata management) or in KRaft mode (ZooKeeper-less).",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 3.7.1)",
+            "release_date": "Constantly updated, refer to Apache Kafka website",
+            "supported_oses": ["Linux", "Windows (via WSL or Docker)", "macOS", "Docker"],
+            "notes": "Requires Java Runtime Environment (JRE) to run. ZooKeeper is responsible for storing and serving messages. For simplicity in development, ZooKeeper can be run from the same Kafka distribution. For production, consider a dedicated ZooKeeper cluster or leverage Kafka's built-in KRaft mode for a ZooKeeper-less setup.",
+            "components": [
+              {
+                "component_name": "Kafka Broker (Server)",
+                "installation_methods": [
+                  {
+                    "method_name": "Tarball (Linux/macOS - Manual Extraction)",
+                    "type": "Manual Extraction",
+                    "instructions": "1. Ensure a compatible Java Development Kit (JDK) is installed (e.g., OpenJDK 11). 2. Download the latest stable binary tarball (e.g., kafka_2.13-3.7.1.tgz) from Apache Kafka downloads: https://kafka.apache.org/downloads 3. Extract the tarball: tar -xvf kafka_2.13-3.7.1.tgz 4. Navigate to the extracted directory: cd kafka_2.13-3.7.1 5. Start ZooKeeper (if using ZooKeeper mode): ./bin/zookeeper-server-start.sh config/zookeeper.properties 6. Start Kafka Broker (ZooKeeper mode): ./bin/kafka-server-start.sh config/server.properties 7. For KRaft mode, first generate a cluster ID: bin/kafka-storage.sh random-uuid, then format storage: bin/kafka-storage.sh format -t <cluster-uuid> -c config/kraft/server.properties, then start Kafka Broker (KRaft mode): ./bin/kafka-server-start.sh config/kraft/server.properties",
+                    "installation_query": "wget https://downloads.apache.org/kafka/3.7.1/kafka_2.13-3.7.1.tgz && tar -xvf kafka_2.13-3.7.1.tgz && cd kafka_2.13-3.7.1 && ./bin/zookeeper-server-start.sh config/zookeeper.properties & ./bin/kafka-server-start.sh config/server.properties"
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "instructions": "1. Install Kafka: brew install kafka (This formula often includes or recommends ZooKeeper). 2. Start ZooKeeper: brew services start zookeeper 3. Start Kafka: brew services start kafka 4. To use KRaft, consult Homebrew's Kafka formula notes for specific configuration after installation.",
+                    "installation_query": "brew install kafka && brew services start zookeeper && brew services start kafka"
+                  },
+                  {
+                    "method_name": "APT (Debian/Ubuntu Linux) - Confluent Community Repository",
+                    "type": "Package Manager",
+                    "notes": "Confluent provides a convenient APT repository for Kafka and related tools. This is a common way to install on Debian/Ubuntu.",
+                    "instructions": "1. Add Confluent public key: wget -qO - https://packages.confluent.io/deb/7.6/archive.key | sudo apt-key add - 2. Add Confluent repository: sudo add-apt-repository \"deb [arch=amd64] https://packages.confluent.io/deb/7.6 stable main\" (Adjust version '7.6' as needed). 3. Update package lists: sudo apt update 4. Install Kafka: sudo apt install confluent-kafka-2.13 -y (or confluent-kafka for latest stable). This will also install necessary dependencies like ZooKeeper if not using KRaft-enabled packages. 5. Start services: sudo systemctl start confluent-zookeeper (if applicable), sudo systemctl start confluent-kafka.",
+                    "installation_query": "wget -qO - https://packages.confluent.io/deb/7.6/archive.key | sudo apt-key add - && sudo add-apt-repository \"deb [arch=amd64] https://packages.confluent.io/deb/7.6 stable main\" && sudo apt update && sudo apt install confluent-kafka-2.13 -y"
+                  },
+                  {
+                    "method_name": "DNF/YUM (RHEL/CentOS/Fedora Linux) - Confluent Community Repository",
+                    "type": "Package Manager",
+                    "notes": "Similar to APT, Confluent offers a Yum/DNF repository for ease of installation on RHEL-based systems.",
+                    "instructions": "1. Create /etc/yum.repos.d/confluent.repo with content (adjust version '7.6' as needed): [Confluent.dist] name=Confluent repository (dist) baseurl=https://packages.confluent.io/rpm/7.6/2.13/x86_64 gpgcheck=1 gpgkey=https://packages.confluent.io/rpm/7.6/archive.key enabled=1 [Confluent.oss] name=Confluent repository (OSS) baseurl=https://packages.confluent.io/rpm/7.6/2.13/x86_64/non-oss gpgcheck=1 gpgkey=https://packages.confluent.io/rpm/7.6/archive.key enabled=1 2. Install Kafka: sudo dnf install confluent-kafka -y (or confluent-kafka-2.13). 3. Start services: sudo systemctl start confluent-zookeeper (if applicable), sudo systemctl start confluent-kafka.",
+                    "installation_query": "N/A (Requires manual repo file creation, then `sudo dnf install confluent-kafka -y`)"
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "instructions": "1. Ensure Chocolatey is installed. 2. Install Java Development Kit (JDK): choco install openjdk -y (e.g., adoptopenjdk11 or temurin11). 3. Install Kafka: choco install kafka -y (This package sets up the necessary environment and often provides a helper to run Zookeeper and Kafka). 4. Start services via Windows Services manager or using the provided batch scripts (check the C:\\ProgramData\\chocolatey\\lib\\kafka\\tools\\kafka\\bin\\windows directory).",
+                    "installation_query": "choco install openjdk -y && choco install kafka -y"
+                  },
+                  {
+                    "method_name": "Scoop (Windows)",
+                    "type": "Package Manager",
+                    "instructions": "1. Ensure Scoop is installed. 2. Add the 'java' bucket: scoop bucket add java 3. Install a JDK (e.g., Temurin): scoop install temurin-jdk 4. Install Kafka: scoop install kafka 5. After installation, navigate to %USERPROFILE%\\scoop\\apps\\kafka\\current and use the bin\\windows scripts to start ZooKeeper (zookeeper-server-start.bat) and Kafka (kafka-server-start.bat) manually.",
+                    "installation_query": "scoop bucket add java && scoop install temurin-jdk && scoop install kafka"
+                  },
+                  {
+                    "method_name": "Docker Container (using Docker Compose)",
+                    "type": "Container Image",
+                    "notes": "Recommended for local development environments to quickly spin up Kafka and its dependencies.",
+                    "instructions": "1. Install Docker Desktop. 2. Create a docker-compose.yml file (example for Kafka with ZooKeeper): version: '3' services: zookeeper: image: confluentinc/cp-zookeeper:7.6.0 hostname: zookeeper ports: - \"2181:2181\" environment: ZOOKEEPER_CLIENT_PORT: 2181 ZOOKEEPER_TICK_TIME: 2000 kafka: image: confluentinc/cp-kafka:7.6.0 hostname: kafka ports: - \"9092:9092\" environment: KAFKA_BROKER_ID: 1 KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181 KAFKA_ADVERTISED..."
+                  }
+                ]
+              },
+              {
+                "component_name": "Kafka Clients (CLI Tools)",
+                "installation_methods": [
+                  {
+                    "method_name": "Bundled with Kafka distribution",
+                    "type": "Command Line Tool",
+                    "instructions": "Use scripts in the bin directory of your Kafka installation (e.g., kafka-topics.sh, kafka-console-producer.sh, kafka-console-consumer.sh)."
+                  },
+                  {
+                    "method_name": "kafkacat (CLI Tool)",
+                    "type": "Command Line Tool",
+                    "notes": "A lightweight and versatile command-line tool for producing and consuming messages to/from Kafka. Excellent for quick testing and scripting. GitHub: https://github.com/edenhill/kafkacat",
+                    "installation_query": "brew install kafkacat || sudo apt-get install kafkacat"
+                  }
+                ]
+              },
+              {
+                "component_name": "Kafka UI (Open Source)",
+                "type": "GUI Application (Web-based)",
+                "notes": "A popular open-source web UI for managing and monitoring Kafka clusters, topics, consumers, and more. Provides a user-friendly interface for common Kafka operations.",
+                "installation_methods": [
+                  {
+                    "method_name": "Docker Container",
+                    "type": "Container Image",
+                    "installation_query": "docker run --name kafka-ui -p 8080:8080 -d -e KAFKA_CLUSTERS_0_NAME=local -e KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS=localhost:9092 -e KAFKA_CLUSTERS_0_ZOOKEEPER=localhost:2181 provectus/kafka-ui:latest"
+                  },
+                  {
+                    "method_name": "Manual JAR / Binary",
+                    "type": "Executable JAR / Binary",
+                    "instructions": "1. Download the latest release JAR from Kafka UI's GitHub releases page. 2. Run with java -jar kafka-ui.jar and configure via application.yml or environment variables."
+                  }
+                ]
+              },
+              {
+                "component_name": "AKHQ (Open Source)",
+                "type": "GUI Application (Web-based)",
+                "notes": "Another excellent open-source web UI for Kafka, providing comprehensive features for managing topics, consumers, data, and schema registry.",
+                "installation_methods": [
+                  {
+                    "method_name": "Docker Container",
+                    "type": "Container Image",
+                    "instructions": "1. Create docker-compose.yml: version: '3' services: akhq: image: tchiotludo/akhq hostname: akhq ports: - \"8080:8080\" environment: AKHQ_CONNECTIONS_LOCAL_PROPERTIES_BOOTSTRAPSERVERS: \"kafka:9092\" depends_on: - kafka # Assuming your Kafka service is named 'kafka' 2. Run docker-compose up -d."
+                  }
+                ]
+              },
+              {
+                "component_name": "Lenses.io (Commercial/Community Edition)",
+                "type": "GUI Application (Web-based)",
+                "notes": "A powerful data ops platform for Kafka, offering comprehensive monitoring, management, and data governance features. Community Edition available for limited use.",
+                "installation_methods": [
+                  {
+                    "method_name": "Docker Container",
+                    "type": "Container Image",
+                    "installation_query": "N/A (Requires license or community setup)"
+                  }
+                ]
+              },
+              {
+                "component_name": "Confluent Schema Registry",
+                "type": "Service",
+                "notes": "A crucial component in Kafka ecosystems for enforcing schema compatibility for messages, especially when using Avro, Protobuf, or JSON Schema. Provides a RESTful interface for schema management.",
+                "installation_methods": [
+                  {
+                    "method_name": "Bundled with Confluent Platform / Docker Container",
+                    "type": "Software Component",
+                    "installation_query": "docker run -d --name schema-registry -p 8081:8081 -e SCHEMA_REGISTRY_HOST_NAME=localhost -e SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS=PLAINTEXT://kafka:9092 --network host confluentinc/cp-schema-registry:7.6.0"
+                  }
+                ]
+              },
+              {
+                "component_name": "Confluent REST Proxy",
+                "type": "Service",
+                "notes": "Provides a RESTful interface to a Kafka cluster, allowing non-Java applications to produce and consume messages, and perform administrative actions without using the native Kafka protocol.",
+                "installation_methods": [
+                  {
+                    "method_name": "Bundled with Confluent Platform / Docker Container",
+                    "type": "Software Component",
+                    "installation_query": "docker run -d --name kafka-rest -p 8082:8082 -e KAFKA_REST_ZOOKEEPER_CONNECT=zookeeper:2181 -e KAFKA_REST_LISTENERS=http://0.0.0.0:8082 -e KAFKA_REST_SCHEMA_REGISTRY_URL=http://localhost:8081 --network host confluentinc/cp-kafka-rest:7.6.0"
+                  }
+                ]
+              },
+              {
+                "component_name": "Prometheus & Grafana (for Kafka Monitoring)",
+                "type": "Monitoring Tools",
+                "notes": "A popular combination for collecting metrics (Prometheus) and visualizing them (Grafana) for Kafka brokers and applications. Requires JMX Exporter for Kafka metrics.",
+                "installation_methods": [
+                  {
+                    "method_name": "Docker Compose (Example Setup)",
+                    "type": "Container Images",
+                    "instructions": "1. Requires JMX Exporter configured on Kafka brokers (often run as a Java agent). 2. Set up prometheus.yml and grafana/provisioning/dashboards/kafka.json. 3. Use docker-compose.yml to spin up Prometheus and Grafana containers and configure them to scrape Kafka JMX metrics."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Amazon Web Services (AWS)",
+        "publisher": "Amazon.com, Inc.",
+        "description": "The world's most comprehensive and broadly adopted cloud platform, offering over 200 fully featured services from data centers globally. For Java backend developers, key services include EC2 (virtual servers), Lambda (serverless functions), RDS (managed databases), S3 (object storage), SQS/SNS (messaging), and EKS (managed Kubernetes).",
+        "versions": [
+          {
+            "version_name": "General Availability (Continuous Updates)",
+            "release_date": "Continuously evolving services",
+            "supported_oses": ["N/A (Cloud Platform accessed via web, CLI, SDKs)"],
+            "notes": "AWS provides a free tier for many services. Requires an AWS account. Best practices include using Infrastructure as Code (IaC) tools like AWS CloudFormation or Terraform.",
+            "components": [
+              {
+                "component_name": "AWS Account & Management Console",
+                "notes": "The starting point for all AWS interactions.",
+                "installation_methods": [
+                  {
+                    "method_name": "Web Registration",
+                    "type": "Web Interface",
+                    "instructions": "1. Visit: https://aws.amazon.com/free/ 2. Click 'Create a Free Account' and follow the registration process (requires credit card for verification, but free tier usage is not charged)."
+                  }
+                ]
+              },
+              {
+                "component_name": "AWS CLI (Command Line Interface)",
+                "notes": "A unified tool to manage your AWS services from the command line.",
+                "installation_methods": [
+                  {
+                    "method_name": "Pip (Python Package Installer)",
+                    "type": "Python Package Manager",
+                    "installation_query": "pip install awscli && aws configure"
+                  },
+                  {
+                    "method_name": "MSI Installer (Windows)",
+                    "type": "Executable Installer",
+                    "instructions": "1. Download from: https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html 2. Run installer and follow prompts."
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install awscli && aws configure"
+                  }
+                ]
+              },
+              {
+                "component_name": "AWS SDK for Java 2.x",
+                "notes": "The official Java library for interacting with AWS services programmatically. Supports non-blocking I/O and various authentication methods.",
+                "installation_methods": [
+                  {
+                    "method_name": "Maven Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add the AWS SDK BOM to your pom.xml's <dependencyManagement> section for version control: <dependencyManagement> <dependencies> <dependency> <groupId>software.amazon.awssdk</groupId> <artifactId>bom</artifactId> <version>2.25.64</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> 2. Add specific service dependencies (e.g., S3, Lambda, EC2) to <dependencies> without specifying version: <dependency> <groupId>software.amazon.awssdk</groupId> <artifactId>s3</artifactId> </dependency> <dependency> <groupId>software.amazon.awssdk</groupId> <artifactId>lambda</artifactId> </dependency>"
+                  },
+                  {
+                    "method_name": "Gradle Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add specific service dependencies to your build.gradle (using the BOM for consistent versions): dependencies { implementation platform('software.amazon.awssdk:bom:2.25.64') implementation 'software.amazon.awssdk:s3' implementation 'software.amazon.awssdk:lambda' }"
+                  }
+                ]
+              },
+              {
+                "component_name": "AWS SAM CLI (Serverless Application Model)",
+                "notes": "An open-source command-line tool for developing, building, and deploying serverless applications defined by AWS SAM templates.",
+                "installation_methods": [
+                  {
+                    "method_name": "Pip (Python Package Installer)",
+                    "type": "Python Package Manager",
+                    "instructions": "1. Ensure Python 3 and pip are installed. 2. pip install aws-sam-cli 3. Verify: sam --version"
+                  },
+                  {
+                    "method_name": "MSI Installer (Windows)",
+                    "type": "Executable Installer",
+                    "instructions": "1. Download from AWS SAM CLI releases on GitHub. 2. Run installer and follow prompts."
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "instructions": "1. brew tap aws/tap 2. brew install aws-sam-cli"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Google Cloud Platform (GCP)",
+        "publisher": "Google LLC",
+        "description": "A suite of cloud computing services that runs on the same infrastructure that Google uses internally for its end-user products, such as Google Search, Gmail, file storage, and YouTube. For Java backend developers, key services include Compute Engine (VMs), App Engine (PaaS), Cloud Functions (serverless), Cloud SQL (managed databases), Cloud Storage (object storage), Pub/Sub (messaging), and Google Kubernetes Engine (GKE).",
+        "versions": [
+          {
+            "version_name": "General Availability (Continuous Updates)",
+            "release_date": "Continuously evolving services",
+            "supported_oses": ["N/A (Cloud Platform accessed via web, CLI, SDKs)"],
+            "notes": "GCP offers a free tier and free trial. Requires a Google Cloud account. Infrastructure as Code (IaC) can be done with Cloud Deployment Manager or Terraform.",
+            "components": [
+              {
+                "component_name": "Google Cloud Account & Cloud Console",
+                "notes": "The web-based interface for managing GCP resources.",
+                "installation_methods": [
+                  {
+                    "method_name": "Web Registration",
+                    "type": "Web Interface",
+                    "instructions": "1. Visit: https://cloud.google.com/free/ 2. Click 'Get started for free' and follow the registration process (requires credit card for verification, free tier usage not charged)."
+                  }
+                ]
+              },
+              {
+                "component_name": "gcloud CLI (Google Cloud SDK)",
+                "notes": "A set of tools for managing resources and applications on Google Cloud Platform.",
+                "installation_methods": [
+                  {
+                    "method_name": "Installer (Windows)",
+                    "type": "Executable Installer",
+                    "instructions": "1. Download the installer from: https://cloud.google.com/sdk/docs/install 2. Run the installer and follow prompts. It includes Python if not present. 3. Initialize: gcloud init"
+                  },
+                  {
+                    "method_name": "APT (Debian/Ubuntu Linux)",
+                    "type": "Package Manager",
+                    "installation_query": "echo \"deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main\" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && sudo curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add - && sudo apt update && sudo apt install google-cloud-sdk -y && gcloud init"
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "installation_query": "brew install google-cloud-sdk && gcloud init"
+                  }
+                ]
+              },
+              {
+                "component_name": "Google Cloud Client Libraries for Java",
+                "notes": "Idiomatic client libraries for specific GCP services, simplifying interaction with APIs for Compute Engine, Storage, Pub/Sub, etc.",
+                "installation_methods": [
+                  {
+                    "method_name": "Maven Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add the Google Cloud BOM to your pom.xml's <dependencyManagement> section: <dependencyManagement> <dependencies> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-bom</artifactId> <version>0.229.0</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> 2. Add specific service dependencies (e.g., Storage, Pub/Sub) to <dependencies> without specifying version: <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-storage</artifactId> </dependency> <dependency> <groupId>com.google.cloud</groupId> <artifactId>google-cloud-pubsub</artifactId> </dependency>"
+                  },
+                  {
+                    "method_name": "Gradle Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add specific service dependencies to your build.gradle (using the BOM): dependencies { implementation platform('com.google.cloud:google-cloud-bom:0.229.0') implementation 'com.google.cloud:google-cloud-storage' implementation 'com.google.cloud:google-cloud-pubsub' }"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Microsoft Azure",
+        "publisher": "Microsoft Corporation",
+        "description": "Microsoft's cloud computing platform, offering a wide range of services for computing, analytics, storage, and networking. For Java, relevant services include Azure App Service (PaaS), Azure Virtual Machines (IaaS), Azure Functions (serverless), Azure SQL Database (managed SQL), Azure Cosmos DB (NoSQL), Azure Service Bus (messaging), and Azure Kubernetes Service (AKS).",
+        "versions": [
+          {
+            "version_name": "General Availability (Continuous Updates)",
+            "release_date": "Continuously evolving services",
+            "supported_oses": ["N/A (Cloud Platform accessed via web, CLI, SDKs)"],
+            "notes": "Azure offers a free account with credits and free services. Requires a Microsoft Azure account. Uses Azure CLI for command-line management.",
+            "components": [
+              {
+                "component_name": "Azure Account & Azure Portal",
+                "notes": "The web-based console for managing Azure resources.",
+                "installation_methods": [
+                  {
+                    "method_name": "Web Registration",
+                    "type": "Web Interface",
+                    "instructions": "1. Visit: https://azure.microsoft.com/en-us/free/ 2. Click 'Start for free' and follow the registration process (requires Microsoft account)."
+                  }
+                ]
+              },
+              {
+                "component_name": "Azure CLI (Command Line Interface)",
+                "notes": "A cross-platform command-line tool for managing Azure resources.",
+                "installation_methods": [
+                  {
+                    "method_name": "MSI Installer (Windows)",
+                    "type": "Executable Installer",
+                    "instructions": "1. Download from: https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-windows?tabs=azure-cli 2. Run installer. 3. Log in: az login"
+                  },
+                  {
+                    "method_name": "Homebrew (macOS)",
+                    "type": "Package Manager",
+                    "instructions": "1. brew install azure-cli 2. Log in: az login"
+                  },
+                  {
+                    "method_name": "APT (Debian/Ubuntu Linux)",
+                    "type": "Package Manager",
+                    "instructions": "1. Install packages: sudo apt update && sudo apt install ca-certificates curl apt-transport-https lsb-release gnupg 2. Download and install Microsoft signing key: sudo curl -sL https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null 3. Add Azure CLI repository: AZ_REPO=$(lsb_release -cs) && echo \"deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $AZ_REPO main\" | sudo tee /etc/apt/sources.list.d/azure-cli.list 4. Update and install: sudo apt update && sudo apt install azure-cli 5. Log in: az login"
+                  },
+                  {
+                    "method_name": "Docker Container",
+                    "type": "Container Image",
+                    "instructions": "1. docker run -it mcr.microsoft.com/azure-cli az login (then follow browser instructions)."
+                  }
+                ]
+              },
+              {
+                "component_name": "Azure SDK for Java",
+                "notes": "The official Java library for interacting with Azure services programmatically. Supports various authentication methods and async operations.",
+                "installation_methods": [
+                  {
+                    "method_name": "Maven Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add the Azure SDK BOM to your pom.xml's <dependencyManagement> section: <dependencyManagement> <dependencies> <dependency> <groupId>com.azure</groupId> <artifactId>azure-sdk-bom</artifactId> <version>1.2.20</version> <type>pom</type> <scope>import</scope> </dependency> </dependencies> </dependencyManagement> 2. Add specific service dependencies (e.g., storage, cosmos) to <dependencies> without specifying version: <dependency> <groupId>com.azure</groupId> <artifactId>azure-storage-blob</artifactId> </dependency> <dependency> <groupId>com.azure</groupId> <artifactId>azure-cosmos</artifactId> </dependency>"
+                  },
+                  {
+                    "method_name": "Gradle Dependency",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add specific service dependencies to your build.gradle (using the BOM): dependencies { implementation platform('com.azure:azure-sdk-bom:1.2.20') implementation 'com.azure:azure-storage-blob' implementation 'com.azure:azure-cosmos' }"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "API_Management_Tools": [
+      {
+        "name": "Postman",
+        "publisher": "Postman, Inc.",
+        "description": "An API platform for building and using APIs. It simplifies each step of the API lifecycle and streamlines collaboration so you can create better APIs faster. Essential for testing and documenting Java backend APIs.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 10.25.0)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Windows, macOS, Linux (various distributions)"],
+            "notes": "Available as a desktop application and a web version. Requires a Postman account for cloud synchronization features.",
+            "components": [
+              {
+                "component_name": "Postman Desktop Application",
+                "notes": "The standalone application for comprehensive API development and testing.",
+                "installation_methods": [
+                  {
+                    "method_name": "Direct Download",
+                    "type": "Executable Installer / AppImage",
+                    "instructions": "1. Download for your OS from: https://www.postman.com/downloads/ 2. Run the installer (Windows/macOS) or execute the AppImage (Linux)."
+                  },
+                  {
+                    "method_name": "Chocolatey (Windows)",
+                    "type": "Package Manager",
+                    "installation_query": "choco install postman -y"
+                  },
+                  {
+                    "method_name": "Homebrew Cask (macOS)",
+                    "type": "Package Manager / Software Store",
+                    "installation_query": "brew install --cask postman"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "OpenAPI / Swagger",
+        "publisher": "SmartBear Software (Swagger), Linux Foundation (OpenAPI Initiative)",
+        "description": "The OpenAPI Specification (OAS) defines a standard, language-agnostic interface for RESTful APIs, which allows both humans and computers to discover and understand the capabilities of a service without access to source code or documentation. Swagger is a set of open-source tools built around the OpenAPI Specification, including Swagger UI (for API documentation) and Swagger Codegen (for generating API clients and server stubs).",
+        "versions": [
+          {
+            "version_name": "OpenAPI Specification (e.g., 3.1.0) / Swagger UI (e.g., 5.17.4)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["N/A (Specification/Tools)"],
+            "notes": "Widely used in Java backend development for API design-first approaches, documentation generation, and client code generation.",
+            "components": [
+              {
+                "component_name": "Swagger UI (Static/Embedded)",
+                "notes": "Provides a visual representation of your API, allowing developers to interact with and test API endpoints directly from the browser. Can be served statically or embedded in a Spring Boot app.",
+                "installation_methods": [
+                  {
+                    "method_name": "Maven Dependency (Springdoc-OpenAPI)",
+                    "type": "Build Tool Dependency",
+                    "notes": "Springdoc-OpenAPI is a popular library for generating OpenAPI documentation and Swagger UI from Spring Boot applications.",
+                    "instructions": "1. Add to your pom.xml: <dependency> <groupId>org.springdoc</groupId> <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId> <version>2.5.0</version> </dependency> 2. After running your Spring Boot app, access Swagger UI at http://localhost:8080/swagger-ui.html."
+                  },
+                  {
+                    "method_name": "Gradle Dependency (Springdoc-OpenAPI)",
+                    "type": "Build Tool Dependency",
+                    "instructions": "1. Add to your build.gradle: implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'"
+                  }
+                ]
+              },
+              {
+                "component_name": "Swagger Codegen (CLI / Maven Plugin)",
+                "notes": "Generates API clients, server stubs, and documentation from an OpenAPI Specification (YAML/JSON).",
+                "installation_methods": [
+                  {
+                    "method_name": "CLI (JAR executable)",
+                    "type": "Executable JAR",
+                    "instructions": "1. Download the latest swagger-codegen-cli.jar from Swagger Codegen GitHub releases. 2. Run: java -jar swagger-codegen-cli.jar generate -i your-openapi-spec.yaml -l java -o generated-code"
+                  },
+                  {
+                    "method_name": "Maven Plugin",
+                    "type": "Build Tool Plugin",
+                    "instructions": "1. Add the plugin to your pom.xml's <build><plugins> section: <plugin> <groupId>io.swagger.codegen.v3</groupId> <artifactId>swagger-codegen-maven-plugin</artifactId> <version>3.0.55</version> <executions> <execution> <goals> <goal>generate</goal> </goals> <configuration> <inputSpec>${project.basedir}/src/main/resources/openapi.yaml</inputSpec> <language>java</language> <output>${project.build.directory}/generated-sources/swagger</output> <modelPackage>com.example.model</modelPackage> <apiPackage>com.example.api</apiPackage> </configuration> </execution> </executions> </plugin> 2. Run mvn generate-sources."
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Version_Control_Systems": [
+      {
+        "name": "Git",
+        "publisher": "Linus Torvalds (original author), Git Development Community",
+        "description": "A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Essential for collaborative software development.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 2.45.1)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "Used for managing source code, collaborating with teams, and deploying projects. Often integrated directly into IDEs.",
+            "installation_methods": [
+              {
+                "method_name": "Git for Windows (Installer)",
+                "type": "Executable Installer",
+                "instructions": "1. Download from: https://git-scm.com/download/win 2. Run the installer and accept the default options (or customize as needed). This will install Git Bash, Git GUI, and integrate with Command Prompt/PowerShell. 3. Verify: git --version in Command Prompt or Git Bash."
+              },
+              {
+                "method_name": "Homebrew (macOS)",
+                "type": "Package Manager",
+                "installation_query": "brew install git"
+              },
+              {
+                "method_name": "APT (Debian/Ubuntu Linux)",
+                "type": "Package Manager",
+                "installation_query": "sudo apt update && sudo apt install git -y"
+              },
+              {
+                "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+                "type": "Package Manager",
+                "installation_query": "sudo dnf install git -y"
+              },
+              {
+                "method_name": "Pacman (Arch Linux)",
+                "type": "Package Manager",
+                "installation_query": "sudo pacman -S git"
+              },
+              {
+                "method_name": "Winget (Windows 10/11)",
+                "type": "Package Manager",
+                "installation_query": "winget install Git.Git"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "installation_query": "choco install git"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Java_Versioning_Tools": [
+      {
+        "name": "SDKMAN!",
+        "publisher": "SDKMAN! Team (Open Source)",
+        "description": "A powerful command-line tool for managing multiple versions of various Software Development Kits (SDKs) including Java (JDKs), Groovy, Scala, Kotlin, Maven, Gradle, and more, on Unix-like systems. It simplifies switching between different SDK versions for different projects.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 5.18.5)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Linux", "macOS", "WSL (Windows Subsystem for Linux)"],
+            "notes": "Requires curl and zip/unzip or unzip and tar. Integrates well with most shells (Bash, Zsh, Fish).",
+            "installation_methods": [
+              {
+                "method_name": "Curl (Linux/macOS/WSL)",
+                "type": "Shell Script",
+                "instructions": "1. Open your terminal. 2. Install curl and zip/unzip if not present (e.g., sudo apt install curl zip unzip). 3. Run the installation script: curl -s \"https://get.sdkman.io\" | bash 4. Follow the instructions to complete the installation (usually source \"$HOME/.sdkman/bin/sdkman-init.sh\" or restarting your terminal). 5. Verify installation: sdk version 6. Install a Java version (e.g., Temurin 21): sdk install java 21.0.3-tem (use sdk list java to find available versions). 7. Set as default: sdk default java 21.0.3-tem (or sdk use java 21.0.3-tem for current shell).",
+                "installation_query": "curl -s \"https://get.sdkman.io\" | bash && source \"$HOME/.sdkman/bin/sdkman-init.sh\""
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "jEnv",
+        "publisher": "jEnv Project (Open Source)",
+        "description": "A command-line tool designed specifically for managing multiple Java Development Kit (JDK) versions. It works by modifying your shell's PATH, allowing you to set a global Java version, a local (project-specific) version, and a shell-specific version.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 0.5.6)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["macOS", "Linux"],
+            "notes": "Relies on JDKs already being installed on your system. Only manages the JAVA_HOME environment variable and PATH.",
+            "installation_methods": [
+              {
+                "method_name": "Homebrew (macOS)",
+                "type": "Package Manager",
+                "instructions": "1. brew install jenv 2. Add jEnv to your shell's profile (e.g., echo 'eval \"$(jenv init -)\"' >> ~/.zshrc for Zsh, or ~/.bash_profile for Bash). Restart your terminal. 3. Add your installed JDKs to jEnv (e.g., jenv add /Library/Java/JavaVirtualMachines/jdk-21.jdk/Contents/Home). 4. Set global version: jenv global 21.0.3 (or jenv local 21.0.3 in a project directory).",
+                "installation_query": "brew install jenv"
+              },
+              {
+                "method_name": "Git Clone (Linux/macOS)",
+                "type": "Manual Installation",
+                "instructions": "1. git clone https://github.com/jenv/jenv.git ~/.jenv 2. Add to your shell's profile (similar to Homebrew step 2). 3. Add JDKs and set versions (similar to Homebrew steps 3 & 4)."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "asdf-vm",
+        "publisher": "asdf-vm Project (Open Source)",
+        "description": "A versatile version manager for multiple language runtimes, including Java, Node.js, Python, Ruby, and many more, using a plugin-based architecture. It provides a consistent interface for managing different tools.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (e.g., 0.14.0)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Linux", "macOS", "WSL"],
+            "notes": "Requires git and other build dependencies for various plugins. You need to install a specific plugin for Java (asdf-java) to manage JDK versions.",
+            "installation_methods": [
+              {
+                "method_name": "Homebrew (macOS)",
+                "type": "Package Manager",
+                "instructions": "1. brew install asdf 2. Add asdf to your shell's profile (e.g., echo '. $(brew --prefix asdf)/libexec/asdf.sh' >> ~/.zshrc). Restart your terminal. 3. Add the Java plugin: asdf plugin add java https://github.com/halcyon/asdf-java.git 4. Install a Java version: asdf install java openjdk-21.0.3 (use asdf list-all java to see available versions). 5. Set global or local version: asdf global java openjdk-21.0.3 or asdf local java openjdk-21.0.3.",
+                "installation_query": "brew install asdf"
+              },
+              {
+                "method_name": "Git Clone (Linux/macOS/WSL)",
+                "type": "Manual Installation",
+                "instructions": "1. git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.14.0 2. Add to your shell profile (similar to Homebrew step 2). 3. Add Java plugin: asdf plugin add java https://github.com/halcyon/asdf-java.git 4. Install Java versions: asdf install java openjdk-21.0.3 5. Set versions: asdf global java openjdk-21.0.3"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

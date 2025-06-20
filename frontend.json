@@ -1,0 +1,2988 @@
+{
+  "frontend_development_stack": {
+     "IDEs_and_Editors": [
+    {
+      "name": "Visual Studio Code (VS Code)",
+      "publisher": "Microsoft",
+      "description": "A highly versatile, open-source, and cross-platform code editor that has become the de-facto standard for modern web development. It boasts a rich feature set, an integrated terminal, robust debugging capabilities, and an unparalleled extension marketplace.",
+      "frontend_dev_focus": "VS Code excels in frontend development due to its native support for JavaScript, TypeScript, HTML, and CSS. Its IntelliSense provides intelligent code completion, parameter info, and quick info for various web technologies. Built-in Git integration, live server extensions, and dedicated debugging tools for browsers and Node.js make it a powerful environment for building and testing web applications.",
+      "popular_extensions": [
+        "ESLint: Integrates ESLint into VS Code, highlighting syntax errors and enforcing coding standards.",
+        "Prettier - Code formatter: Automatically formats JavaScript, TypeScript, CSS, HTML, and other files for consistent code style.",
+        "Live Server: Launches a local development server with live reload feature for HTML/CSS/JS files.",
+        "Debugger for Chrome/Edge: Enables debugging JavaScript code running in the browser directly from VS Code.",
+        "GitLens — Git supercharged: Enhances Git capabilities, showing blame annotations, commit history, and more.",
+        "Path Intellisense: Autocompletes filenames in your code, especially useful for import statements.",
+        "Tailwind CSS IntelliSense: Provides advanced autocompletion, syntax highlighting, and linting for Tailwind CSS.",
+        "Material Icon Theme: Provides a wide range of file icons to improve project navigation.",
+        "Bracket Pair Colorizer (built-in in newer VS Code versions but often cited as essential previously): Colors matching brackets to improve readability.",
+        "Docker: Adds rich Docker commands, IntelliSense, and integration for containerized development."
+      ],
+      "pros": [
+        "Extremely lightweight and fast startup compared to full IDEs.",
+        "Massive, active community and extensive extension marketplace.",
+        "Excellent built-in Git source control integration.",
+        "Powerful and flexible debugging capabilities.",
+        "Integrated terminal and rich set of customizable settings.",
+        "Cross-platform availability (Windows, macOS, Linux, Web)."
+      ],
+      "cons": [
+        "Can become resource-intensive if too many extensions are active.",
+        "Requires manual setup for some complex project configurations or deep framework-specific refactoring (where a full IDE might offer more out-of-the-box).",
+        "Less opinionated than a full IDE, requiring more configuration by the user."
+      ],
+      "target_audience": "Nearly all frontend and full-stack developers, from beginners seeking an easy entry point to experienced professionals looking for a highly customizable and efficient environment.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (Monthly Releases)",
+          "release_date": "Constantly updated (typically monthly, e.g., 'June 2025 (version 1.90)')",
+          "supported_oses": ["Windows 10/11 (x64, ARM64)", "macOS 10.13+ (Intel, Apple Silicon)", "Linux (Debian/Ubuntu, Red Hat/Fedora, Arch, Snap, Flatpak)"],
+          "notes": "Continuously evolving with new features, performance improvements, and bug fixes. Supports Remote Development (SSH, Containers, WSL) allowing development on remote machines or within containers directly from VS Code. IntelliSense and debugging are highly optimized for modern JavaScript frameworks.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Visit the official Visual Studio Code website: `https://code.visualstudio.com/download`",
+                "2. Download the appropriate `.exe` installer (User or System installer for x64/ARM64).",
+                "3. Run the installer and follow the wizard prompts. (Recommended: Add 'Open with Code' to context menus, add to PATH)."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell (as Administrator).",
+                "2. Run: `winget install Microsoft.VisualStudioCode`"
+              ],
+              "installation_query": "winget install Microsoft.VisualStudioCode"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install vscode` (or `choco install vscode --install-arguments='\"/MERGETASKS=!runcode\"'`) to customize desktop icon/context menu options."
+              ],
+              "installation_query": "choco install vscode"
+            },
+            {
+              "method_name": "Homebrew Cask (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed (if not, install with `/bin/bash -c \"$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\"`).",
+                "2. Open Terminal and run: `brew install --cask visual-studio-code`"
+              ],
+              "installation_query": "brew install --cask visual-studio-code"
+            },
+            {
+              "method_name": "Direct Download (macOS)",
+              "type": "ZIP / DMG",
+              "instructions": [
+                "1. Visit the official Visual Studio Code website: `https://code.visualstudio.com/download`",
+                "2. Download the `.zip` or `.dmg` file for your architecture (Intel or Apple Silicon).",
+                "3. For `.dmg`, open and drag 'Visual Studio Code.app' to your Applications folder.",
+                "4. For `.zip`, unzip the archive and drag 'Visual Studio Code.app' to your Applications folder."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add Microsoft's GPG key: `sudo apt-get install wget gpg && wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > packages.microsoft.gpg && sudo install -D -o root -g root -m 644 packages.microsoft.gpg /etc/apt/keyrings/packages.microsoft.gpg`",
+                "2. Add the repository: `sudo sh -c 'echo \"deb [arch=amd64,arm64,armhf signed-by=/etc/apt/keyrings/packages.microsoft.gpg] https://packages.microsoft.com/repos/code stable main\" > /etc/apt/sources.list.d/vscode.list'`",
+                "3. Update and install: `rm -f packages.microsoft.gpg && sudo apt install apt-transport-https && sudo apt update && sudo apt install code`"
+              ],
+              "installation_query": "sudo apt install code (after repo setup)"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add the Microsoft yum repository: `sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc && sudo sh -c 'echo -e \"[code]\\nname=Visual Studio Code\\nbaseurl=https://packages.microsoft.com/yumrepos/vscode\\nenabled=1\\ngpgcheck=1\\ngpgkey=https://packages.microsoft.com/keys/microsoft.asc\" > /etc/yum.repos.d/vscode.repo'`",
+                "2. Install: `sudo dnf check-update && sudo dnf install code` (Fedora 22+) or `sudo yum install code` (older versions)."
+              ],
+              "installation_query": "sudo dnf install code (after repo setup)"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Snap is installed on your distribution (`sudo apt install snapd` or equivalent).",
+                "2. Run: `sudo snap install --classic code`"
+              ],
+              "installation_query": "sudo snap install --classic code"
+            },
+            {
+              "method_name": "Flatpak (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Flatpak is installed and Flathub is enabled (`flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`).",
+                "2. Run: `flatpak install flathub com.visualstudio.code`"
+              ],
+              "installation_query": "flatpak install flathub com.visualstudio.code"
+            },
+            {
+              "method_name": "Direct Download (.deb/.rpm - Linux)",
+              "type": "Package File",
+              "instructions": [
+                "1. Download the `.deb` (for Debian/Ubuntu) or `.rpm` (for Fedora/RHEL/CentOS) package from `https://code.visualstudio.com/download`.",
+                "2. Install using your distribution's package manager:",
+                "   - Debian/Ubuntu: `sudo dpkg -i code_<version>.deb && sudo apt-get install -f` (to fix dependencies)",
+                "   - Fedora/RHEL/CentOS: `sudo rpm -i code-<version>.rpm`"
+              ],
+              "installation_query": "N/A (manual package installation)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Sublime Text",
+      "publisher": "Sublime HQ",
+      "description": "A sophisticated, fast, and highly customizable cross-platform text editor renowned for its speed, minimal interface, and powerful 'Goto Anything' functionality. While not a full IDE, its extensive plugin system via 'Package Control' allows it to be configured for efficient frontend development.",
+      "frontend_dev_focus": "Sublime Text is excellent for quick file edits, plain text manipulation, and efficient coding. Its multi-selection feature is a massive productivity booster for refactoring and repetitive tasks. With Package Control, developers can add features like Emmet for rapid HTML/CSS coding, linters, and formatters to support various frontend languages.",
+      "popular_extensions": [
+        "Package Control: The essential plugin installer and manager for Sublime Text.",
+        "Emmet: Dramatically speeds up HTML and CSS workflow with powerful abbreviations.",
+        "ColorPicker: A simple and effective color picker for CSS, HTML, and other files.",
+        "HTML-CSS-JS Prettify: Formats HTML, CSS, JavaScript files for consistent style.",
+        "SideBarEnhancements: Provides many useful operations for the files and folders in the sidebar.",
+        "LiveReload: Automatically reloads your browser when you save changes to your code.",
+        "Autoprefixer: Parses CSS and adds vendor prefixes automatically."
+      ],
+      "pros": [
+        "Extremely fast startup and execution.",
+        "Very lightweight with low resource consumption.",
+        "Highly customizable through settings, keybindings, and themes.",
+        "Powerful features like 'Goto Anything', multiple selections, and command palette.",
+        "Stable and reliable."
+      ],
+      "cons": [
+        "Not a full IDE: lacks integrated debugging, project management, and advanced code analysis out-of-the-box (requires plugins).",
+        "Commercial software: requires a paid license after an evaluation period (though the evaluation is perpetual with a nag screen).",
+        "Plugin ecosystem, while extensive, can be less cohesive or consistently maintained than VS Code's."
+      ],
+      "target_audience": "Developers who prioritize speed, minimalism, and customizability. Ideal for quick edits, managing large files, and those who prefer to build their development environment piece-by-piece with specific plugins.",
+      "versions": [
+        {
+          "version_name": "Sublime Text 4 (Latest Stable)",
+          "release_date": "Continuously updated since May 2021",
+          "supported_oses": ["Windows 10/11 (x64)", "macOS 10.12+ (Intel, Apple Silicon)", "Linux (Debian/Ubuntu, Fedora/RHEL, Arch, Snap, Flatpak)"],
+          "notes": "Introduced tab multi-select, vastly improved auto-complete, GPU rendering for smoother UI, TypeScript/JSX support, and Apple Silicon native builds. It maintains the core speed and efficiency of previous versions.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Visit the official Sublime Text website: `https://www.sublimetext.com/download`",
+                "2. Download the `.exe` installer (x64) for Windows.",
+                "3. Run the installer and follow the prompts."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install --id=SublimeHQ.SublimeText.4 -e`"
+              ],
+              "installation_query": "winget install --id=SublimeHQ.SublimeText.4 -e"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install sublimetext4`"
+              ],
+              "installation_query": "choco install sublimetext4"
+            },
+            {
+              "method_name": "Homebrew Cask (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Open Terminal and run: `brew install --cask sublime-text`"
+              ],
+              "installation_query": "brew install --cask sublime-text"
+            },
+            {
+              "method_name": "Direct Download (macOS)",
+              "type": "DMG / ZIP",
+              "instructions": [
+                "1. Visit the official Sublime Text website: `https://www.sublimetext.com/download`",
+                "2. Download the `.dmg` or `.zip` file for macOS (Intel or Apple Silicon).",
+                "3. For `.dmg`, open and drag 'Sublime Text.app' to your Applications folder.",
+                "4. For `.zip`, unzip and drag 'Sublime Text.app' to your Applications folder."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Import the GPG key: `wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/sublimehq-archive.gpg > /dev/null`",
+                "2. Add the stable repository: `echo \"deb https://download.sublimetext.com/ apt/stable/\" | sudo tee /etc/apt/sources.list.d/sublime-text.list`",
+                "3. Update and install: `sudo apt update && sudo apt install apt-transport-https && sudo apt install sublime-text`"
+              ],
+              "installation_query": "sudo apt install sublime-text (after repo setup)"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Import the GPG key: `sudo rpm -v --import https://download.sublimetext.com/sublimehq-rpm-pub.gpg`",
+                "2. Add the stable repository: `sudo dnf config-manager --add-repo https://download.sublimetext.com/rpm/stable/x86_64/sublime-text.repo`",
+                "3. Install: `sudo dnf install sublime-text`"
+              ],
+              "installation_query": "sudo dnf install sublime-text (after repo setup)"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add the GPG key and repository to your `pacman.conf` (refer to official Sublime Text Linux installation guide for detailed Arch-specific repo setup).",
+                "2. Run: `sudo pacman -Syu sublime-text`"
+              ],
+              "installation_query": "sudo pacman -Syu sublime-text (after repo setup)"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Snap is installed.",
+                "2. Run: `sudo snap install sublime-text --classic`"
+              ],
+              "installation_query": "sudo snap install sublime-text --classic"
+            },
+            {
+              "method_name": "Flatpak (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Flatpak is installed and Flathub is enabled.",
+                "2. Run: `flatpak install flathub com.sublimetext.three` (Note: `com.sublimetext.four` might replace `three` in Flathub soon, check Flathub for latest ID)."
+              ],
+              "installation_query": "flatpak install flathub com.sublimetext.three"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WebStorm",
+      "publisher": "JetBrains",
+      "description": "A powerful, intelligent, and feature-rich Integrated Development Environment (IDE) from JetBrains, specifically tailored for JavaScript, TypeScript, HTML, and CSS development. It offers deep code understanding, advanced refactoring tools, comprehensive debugging, and seamless integration with various web technologies and frameworks.",
+      "frontend_dev_focus": "WebStorm provides unparalleled support for modern frontend frameworks like React, Angular, Vue.js, and Svelte, offering context-aware code completion, component-specific navigation, and integrated tooling. Its powerful static code analysis, built-in debugger for Node.js and browsers, integrated terminal, VCS support, and REST client make it a one-stop solution for complex web projects.",
+      "popular_features_builtin": [
+        "Smart Code Completion: Highly accurate and context-aware code completion for all web technologies.",
+        "On-the-Fly Error Detection: Real-time analysis and suggestions for code quality and potential issues.",
+        "Powerful Debugging: Integrated debugger for client-side JavaScript, Node.js, and even mobile web applications.",
+        "Advanced Refactoring: Robust refactoring capabilities that understand the structure of JavaScript, TypeScript, and JSX/TSX.",
+        "Version Control System (VCS) Integration: Seamless integration with Git, SVN, Mercurial, etc.",
+        "Integrated Terminal: Directly run commands within the IDE context.",
+        "Testing Tools Integration: Supports popular testing frameworks like Jest, Mocha, Karma, and Protractor.",
+        "Built-in REST Client: Test RESTful web services directly from the IDE.",
+        "Live Edit: See changes instantly in your browser without manual refresh (for some scenarios)."
+      ],
+      "pros": [
+        "Most comprehensive and intelligent IDE for JavaScript/TypeScript development.",
+        "Deep understanding of modern frontend frameworks and libraries.",
+        "Superior refactoring capabilities compared to text editors.",
+        "Excellent integrated debugging experience.",
+        "All-in-one solution with many development tools built-in.",
+        "Consistent and reliable performance for large projects."
+      ],
+      "cons": [
+        "Resource-intensive: requires more RAM and CPU compared to lightweight editors.",
+        "Commercial product: requires a paid subscription.",
+        "Steeper learning curve for beginners due to its vast feature set.",
+        "Can feel 'heavy' for quick edits or small projects."
+      ],
+      "target_audience": "Professional frontend developers, full-stack JavaScript developers, and teams working on large, complex web applications who benefit from deep integration, advanced code analysis, and powerful debugging tools.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (Major Releases Annually, Updates Bi-weekly)",
+          "release_date": "Constantly updated (e.g., '2024.1.4' released May 2024, '2024.2' expected soon)",
+          "supported_oses": ["Windows 10/11 (x64, ARM64 experimental)", "macOS 10.15+ (Intel, Apple Silicon)", "Linux (x64, ARM64 experimental)"],
+          "notes": "JetBrains follows a rapid release cycle, with several major updates per year (e.g., 2024.1, 2024.2, 2024.3) bringing new features, performance enhancements, and bug fixes. The Toolbox App simplifies managing different versions and updates.",
+          "installation_methods": [
+            {
+              "method_name": "JetBrains Toolbox App (Cross-platform)",
+              "type": "Centralized Manager",
+              "instructions": [
+                "1. Download and install the JetBrains Toolbox App from: `https://www.jetbrains.com/lp/toolbox/`",
+                "2. Open the Toolbox App. It automatically detects and lists available JetBrains IDEs.",
+                "3. Locate 'WebStorm' in the list and click 'Install'. You can also choose specific versions to install."
+              ],
+              "installation_query": "N/A (GUI tool for installation)"
+            },
+            {
+              "method_name": "Direct Download (Windows - .exe)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Visit the official JetBrains WebStorm download page: `https://www.jetbrains.com/webstorm/download/`",
+                "2. Download the `.exe` installer for Windows (x64).",
+                "3. Run the installer and follow the prompts. (Recommended: Create desktop shortcut, add 'Open Folder as Project' context menu, associate with common web files)."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install --id=JetBrains.WebStorm -e`"
+              ],
+              "installation_query": "winget install --id=JetBrains.WebStorm -e"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install webstorm`"
+              ],
+              "installation_query": "choco install webstorm"
+            },
+            {
+              "method_name": "Homebrew Cask (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Open Terminal and run: `brew install --cask webstorm`"
+              ],
+              "installation_query": "brew install --cask webstorm"
+            },
+            {
+              "method_name": "Direct Download (macOS - .dmg)",
+              "type": "DMG Installer",
+              "instructions": [
+                "1. Visit the official JetBrains WebStorm download page: `https://www.jetbrains.com/webstorm/download/`",
+                "2. Download the `.dmg` installer for your macOS architecture (Intel or Apple Silicon).",
+                "3. Open the `.dmg` file and drag 'WebStorm.app' to your Applications folder."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Snap is installed.",
+                "2. Run: `sudo snap install webstorm --classic`"
+              ],
+              "installation_query": "sudo snap install webstorm --classic"
+            },
+            {
+              "method_name": "Flatpak (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Flatpak is installed and Flathub is enabled.",
+                "2. Run: `flatpak install flathub com.jetbrains.WebStorm`"
+              ],
+              "installation_query": "flatpak install flathub com.jetbrains.WebStorm"
+            },
+            {
+              "method_name": "Manual Tarball (Linux)",
+              "type": "Archive Extraction",
+              "instructions": [
+                "1. Download the `.tar.gz` archive from the official WebStorm download page (select x64 or ARM64 version).",
+                "2. Extract to a suitable directory, e.g., `/opt/`: `sudo tar xzf WebStorm-*.tar.gz -C /opt/`",
+                "3. Navigate to the extracted directory's `bin` folder and run the executable: `/opt/WebStorm-*/bin/webstorm.sh`",
+                "4. (Optional) Create a desktop entry for easier launching."
+              ],
+              "installation_query": "N/A (manual extraction)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Core_Runtimes_and_Package_Managers": [
+    {
+      "name": "Node.js & npm (Node Package Manager)",
+      "publisher": "OpenJS Foundation",
+      "description": "A JavaScript runtime environment that executes JavaScript code outside a web browser, bundled with npm, the world's largest software registry for JavaScript packages. Essential for running build tools, bundlers, testing frameworks, and development servers in frontend workflows.",
+      "versions": [
+        {
+          "version_name": "Latest LTS (Long Term Support)",
+          "release_date": "Constantly updated (current LTS: Node.js 20.x, next LTS: Node.js 22.x in Oct 2024)",
+          "supported_oses": ["Windows", "macOS", "Linux", "WSL"],
+          "notes": "Foundational for modern frontend development. LTS versions are recommended for stability, critical bug fixes, and security updates, making them suitable for production environments. Enables a vast ecosystem of tools and libraries.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows)",
+              "type": "Executable Installer (.msi)",
+              "instructions": [
+                "1. Visit the official Node.js website: https://nodejs.org/en/download/",
+                "2. Download the LTS `.msi` installer for your Windows architecture (x64/ARM64).",
+                "3. Run the installer and follow the prompts.",
+                "4. Verify: `node -v` and `npm -v` in a new Command Prompt/PowerShell."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "nvm-windows (Node Version Manager for Windows)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Uninstall any existing Node.js installations.",
+                "2. Download the `nvm-setup.exe` from nvm-windows GitHub releases: https://github.com/coreybutler/nvm-windows/releases",
+                "3. Run the installer.",
+                "4. Verify: `nvm -v`",
+                "5. Install Node.js: `nvm install <version>` (e.g., `nvm install lts`)",
+                "6. Use a version: `nvm use <version>`",
+                "7. Set default (optional): `nvm alias default <version>`"
+              ],
+              "installation_query": "N/A (GUI installer, then CLI for versions)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install OpenJS.NodeJS.LTS` (for LTS) or `winget install OpenJS.NodeJS` (for current).",
+                "3. Verify: `node -v`"
+              ],
+              "installation_query": "winget install OpenJS.NodeJS.LTS"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install nodejs-lts` (for LTS) or `choco install nodejs` (for current).",
+                "3. Verify: `node -v`"
+              ],
+              "installation_query": "choco install nodejs-lts"
+            },
+            {
+              "method_name": "WSL (Windows Subsystem for Linux)",
+              "type": "Linux Package Manager (within WSL)",
+              "instructions": [
+                "1. Open your WSL Linux distribution.",
+                "2. Run: `sudo apt update && sudo apt install nodejs npm`",
+                "3. Verify: `node -v` and `npm -v`"
+              ],
+              "installation_query": "sudo apt update && sudo apt install nodejs npm"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Open Terminal and run: `brew update && brew install node`",
+                "3. Verify: `node -v` and `npm -v`"
+              ],
+              "installation_query": "brew install node"
+            },
+            {
+              "method_name": "nvm (Node Version Manager for macOS/Linux)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Open Terminal and run: `curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash`",
+                "2. Reload your shell (e.g., `source ~/.bashrc` or `source ~/.zshrc`).",
+                "3. Install Node.js: `nvm install node --lts` (for latest LTS) or `nvm install <version>`",
+                "4. Use a version: `nvm use <version>`",
+                "5. Verify: `node -v` and `npm -v`"
+              ],
+              "installation_query": "curl -fsSL https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo apt update && sudo apt install nodejs npm`",
+                "2. For latest versions, consider NodeSource PPA for official packages: `curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash - && sudo apt-get install -y nodejs` (replace `lts.x` with specific LTS version if needed)."
+              ],
+              "installation_query": "sudo apt update && sudo apt install nodejs npm"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo dnf install nodejs` (Fedora 22+) or `sudo yum install nodejs` (older versions).",
+                "2. For specific versions, NodeSource provides RPMs (refer to NodeSource documentation for repository setup)."
+              ],
+              "installation_query": "sudo dnf install nodejs"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo pacman -S nodejs npm`"
+              ],
+              "installation_query": "sudo pacman -S nodejs npm"
+            },
+            {
+              "method_name": "Snap (Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Snap is installed.",
+                "2. Run: `sudo snap install node --classic`"
+              ],
+              "installation_query": "sudo snap install node --classic"
+            }
+          ]
+        },
+        {
+          "version_name": "Current Release",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux", "WSL"],
+          "notes": "Bleeding edge features and improvements. May introduce breaking changes. Generally not recommended for production unless specific new features are required.",
+          "installation_methods": [
+            {
+              "method_name": "Direct Download (Windows)",
+              "type": "Executable Installer (.msi)",
+              "instructions": [
+                "1. Visit the official Node.js website: https://nodejs.org/en/download/",
+                "2. Download the 'Current' `.msi` installer for your Windows architecture.",
+                "3. Run the installer and follow the prompts.",
+                "4. Verify: `node -v` and `npm -v`."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "nvm-windows (Node Version Manager for Windows)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Follow nvm-windows installation steps.",
+                "2. Install current Node.js: `nvm install latest`",
+                "3. Use: `nvm use latest`"
+              ],
+              "installation_query": "N/A (GUI installer, then CLI for versions)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install OpenJS.NodeJS`",
+                "3. Verify: `node -v`"
+              ],
+              "installation_query": "winget install OpenJS.NodeJS"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install nodejs`",
+                "3. Verify: `node -v`"
+              ],
+              "installation_query": "choco install nodejs"
+            },
+            {
+              "method_name": "nvm (Node Version Manager for macOS/Linux)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Follow nvm installation steps.",
+                "2. Install current Node.js: `nvm install node`",
+                "3. Use: `nvm use node`"
+              ],
+              "installation_query": "N/A (script, then CLI for versions)"
+            },
+            {
+              "method_name": "NodeSource PPA (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - && sudo apt-get install -y nodejs`"
+              ],
+              "installation_query": "curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash - && sudo apt-get install -y nodejs"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Yarn",
+      "publisher": "Meta (formerly Facebook)",
+      "description": "A JavaScript package manager designed for speed, reliability, and security, offering an alternative to npm with features like lock files, offline mode, Plug'n'Play (PnP) for faster startup, and robust workspace management for monorepos.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (Yarn Berry/Yarn 2+ via Corepack)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "The modern iteration of Yarn (often called Yarn Berry or Yarn 2+). It introduced Plug'n'Play (PnP) for significantly faster dependency resolution and reduced `node_modules` size, along with advanced workspace features for monorepos. Requires Node.js 16.10+ for Corepack integration. Ideal for large-scale projects and monorepos.",
+          "installation_methods": [
+            {
+              "method_name": "Corepack (Recommended, Node.js 16.10+)",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. Ensure Node.js 16.10 or higher is installed.",
+                "2. Enable Corepack (globally enabled with Node.js 16.10+): `corepack enable`",
+                "3. Install latest stable Yarn version for current project: `corepack prepare yarn@stable --activate` (This makes `yarn` command use the specified version in the project).",
+                "4. To use a specific version globally: `corepack prepare yarn@<version> --activate` (e.g., `corepack prepare yarn@3.6.4 --activate`)."
+              ],
+              "installation_query": "corepack enable && corepack prepare yarn@stable --activate"
+            },
+            {
+              "method_name": "npm (Global, Classic Yarn - Deprecated for new projects)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. Ensure Node.js and npm are installed.",
+                "2. Run: `npm install --global yarn`",
+                "3. Verify: `yarn --version` (This will install Yarn 1.x, the 'Classic' version)."
+              ],
+              "installation_query": "npm install --global yarn"
+            },
+            {
+              "method_name": "Direct Download (Windows MSI Installer - Classic Yarn)",
+              "type": "Executable Installer (.msi)",
+              "instructions": [
+                "1. Visit the official Yarn Classic website: https://classic.yarnpkg.com/en/docs/install/#windows-stable",
+                "2. Download the `.msi` installer.",
+                "3. Run the installer and follow the wizard.",
+                "4. Verify: `yarn --version`"
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install yarn` (will install Classic Yarn and Node.js if missing)."
+              ],
+              "installation_query": "choco install yarn"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell.",
+                "2. Run: `scoop install yarn` (will prompt to install Node.js if missing)."
+              ],
+              "installation_query": "scoop install yarn"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Run: `brew update && brew install yarn`",
+                "3. Verify: `yarn --version`"
+              ],
+              "installation_query": "brew install yarn"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux - via Repository)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add the GPG key and Yarn repository (refer to official Yarn documentation for up-to-date repository instructions for Yarn 1.x or Yarn 2+ with Corepack setup).",
+                "2. For Yarn 1.x: `curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add - && echo \"deb https://dl.yarnpkg.com/debian/ stable main\" | sudo tee /etc/apt/sources.list.d/yarn.list && sudo apt update && sudo apt install yarn`"
+              ],
+              "installation_query": "N/A (multi-step repo setup)"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux - via Repository)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add the Yarn RPM repository (refer to official Yarn documentation).",
+                "2. Install: `sudo dnf install yarn` or `sudo yum install yarn`"
+              ],
+              "installation_query": "N/A (multi-step repo setup)"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo pacman -S yarn`"
+              ],
+              "installation_query": "sudo pacman -S yarn"
+            }
+          ]
+        },
+        {
+          "version_name": "Yarn 1.x (Classic Yarn)",
+          "release_date": "No longer actively developed, but widely used.",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "The original Yarn version. Still commonly used in older projects or those not yet migrated to Yarn Berry. Offers `yarn.lock` for deterministic installations and caching. Less efficient with disk space compared to pnpm or Yarn Berry.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Global)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. Run: `npm install --global yarn@1.22.19` (or a specific 1.x version)",
+                "2. Verify: `yarn --version`"
+              ],
+              "installation_query": "npm install --global yarn@1.22.19"
+            },
+            {
+              "method_name": "Direct Download (Windows MSI Installer)",
+              "type": "Executable Installer (.msi)",
+              "instructions": [
+                "1. Visit: https://classic.yarnpkg.com/en/docs/install/#windows-stable and download the installer."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "pnpm",
+      "publisher": "Zoltan Kochan",
+      "description": "A performant package manager for Node.js, distinguished by its efficient use of disk space (content-addressable storage, hard linking) and faster installation times, especially for monorepos. It creates a strict, non-flat `node_modules` structure, preventing phantom dependencies.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Requires Node.js v18.12+ for optimal use (standalone executable has fewer Node.js version requirements). Offers significant performance and disk space benefits over npm/Yarn, particularly in projects with many dependencies or monorepos. Its strict `node_modules` structure helps avoid common dependency issues.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Global)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. Ensure Node.js and npm are installed.",
+                "2. Run: `npm install -g pnpm`",
+                "3. Verify: `pnpm -v`"
+              ],
+              "installation_query": "npm install -g pnpm"
+            },
+            {
+              "method_name": "Corepack (Recommended)",
+              "type": "CLI Tool",
+              "instructions": [
+                "1. Ensure Corepack is enabled (`corepack enable`).",
+                "2. Run: `corepack prepare pnpm@latest --activate` (This makes `pnpm` command use the latest version in the project).",
+                "3. To use a specific version globally: `corepack prepare pnpm@<version> --activate` (e.g., `corepack prepare pnpm@8.15.5 --activate`)."
+              ],
+              "installation_query": "corepack enable pnpm"
+            },
+            {
+              "method_name": "PowerShell Script (Windows Standalone)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open PowerShell.",
+                "2. Run: `Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression`",
+                "3. This method installs pnpm as a standalone executable, not relying on Node.js being globally installed beforehand.",
+                "4. Note: Windows Defender might flag the executable; consider npm/Corepack if issues arise."
+              ],
+              "installation_query": "Invoke-WebRequest https://get.pnpm.io/install.ps1 -UseBasicParsing | Invoke-Expression"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install -e --id pnpm.pnpm`"
+              ],
+              "installation_query": "winget install -e --id pnpm.pnpm"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell.",
+                "2. Run: `scoop install nodejs-lts pnpm`"
+              ],
+              "installation_query": "scoop install nodejs-lts pnpm"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install pnpm`"
+              ],
+              "installation_query": "choco install pnpm"
+            },
+            {
+              "method_name": "Volta (Windows)",
+              "type": "Version Manager",
+              "instructions": [
+                "1. Ensure Volta is installed (https://volta.sh/).",
+                "2. Run: `volta install pnpm`"
+              ],
+              "installation_query": "volta install pnpm"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Run: `brew install pnpm`",
+                "3. Verify: `pnpm -v`"
+              ],
+              "installation_query": "brew install pnpm"
+            },
+            {
+              "method_name": "Standalone Script (POSIX - macOS/Linux)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open Terminal.",
+                "2. Run: `curl -fsSL https://get.pnpm.io/install.sh | sh -`",
+                "3. This method installs pnpm as a standalone executable, not relying on Node.js being globally installed beforehand.",
+                "4. Verify: `pnpm -v`"
+              ],
+              "installation_query": "curl -fsSL https://get.pnpm.io/install.sh | sh -"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux - via Repository)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add the pnpm RPM repository (refer to official pnpm documentation for repository setup).",
+                "2. Install: `sudo dnf install pnpm -y`"
+              ],
+              "installation_query": "sudo dnf install pnpm -y"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bun",
+      "publisher": "Jarred Sumner (Oven Labs)",
+      "description": "An all-in-one JavaScript runtime, bundler, test runner, and package manager designed for speed. Aims to be a faster, more integrated alternative to Node.js, npm, Webpack, Babel, Jest, etc., powered by the Zig programming language.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (rapid release cycle)",
+          "supported_oses": ["macOS", "Linux", "WSL", "Experimental Windows Native"],
+          "notes": "Still relatively new but gaining rapid adoption due to its impressive performance. Offers a Web-compatible API, built-in transpilation for JSX/TypeScript, and a fast development experience. While production-ready for many use cases, its ecosystem is still maturing.",
+          "installation_methods": [
+            {
+              "method_name": "Shell Script (macOS/Linux/WSL - Recommended)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open Terminal/WSL.",
+                "2. Run: `curl -fsSL https://bun.sh/install | bash`",
+                "3. Follow the on-screen instructions to add Bun to your PATH.",
+                "4. Verify: `bun --version`"
+              ],
+              "installation_query": "curl -fsSL https://bun.sh/install | bash"
+            },
+            {
+              "method_name": "npm (Global - for specific projects)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. For project-specific use if you already have Node.js and npm:",
+                "2. Run: `npm install -g bun` (This installs the Bun executable, but Bun itself is a runtime, so typically the shell script is preferred).",
+                "3. Verify: `bun --version`"
+              ],
+              "installation_query": "npm install -g bun"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Run: `brew tap oven-sh/bun && brew install bun`",
+                "3. Verify: `bun --version`"
+              ],
+              "installation_query": "brew tap oven-sh/bun && brew install bun"
+            },
+            {
+              "method_name": "Windows Native (Experimental)",
+              "type": "Executable",
+              "instructions": [
+                "1. Download the executable from the official Bun GitHub releases: https://github.com/oven-sh/bun/releases",
+                "2. Add the executable to your system's PATH.",
+                "3. Note: Native Windows support is still in active development and might have limitations compared to WSL/macOS/Linux."
+              ],
+              "installation_query": "N/A (manual download and PATH configuration)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Deno",
+      "publisher": "Deno Land Inc.",
+      "description": "A secure runtime for JavaScript and TypeScript, built with V8, Rust, and Tokio. It aims to be a modern alternative to Node.js, offering built-in security, TypeScript support out-of-the-box, and a focus on web standards.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Emphasizes security (e.g., explicit permissions for file system, network access) and a more opinionated development experience. Provides a comprehensive standard library and a `deno.json` configuration file. While primarily a backend runtime, its strong web-standards alignment and built-in tooling make it appealing for certain frontend build processes and server-side rendering setups.",
+          "installation_methods": [
+            {
+              "method_name": "Shell Script (macOS/Linux/WSL)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open Terminal/WSL.",
+                "2. Run: `curl -fsSL https://deno.land/x/install/install.sh | sh`",
+                "3. Follow the instructions to add Deno to your PATH.",
+                "4. Verify: `deno --version`"
+              ],
+              "installation_query": "curl -fsSL https://deno.land/x/install/install.sh | sh"
+            },
+            {
+              "method_name": "PowerShell Script (Windows)",
+              "type": "Shell Script",
+              "instructions": [
+                "1. Open PowerShell.",
+                "2. Run: `irm https://deno.land/install.ps1 | iex`",
+                "3. Verify: `deno --version`"
+              ],
+              "installation_query": "irm https://deno.land/install.ps1 | iex"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Run: `brew install deno`",
+                "3. Verify: `deno --version`"
+              ],
+              "installation_query": "brew install deno"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install Deno.Deno`"
+              ],
+              "installation_query": "winget install Deno.Deno"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell.",
+                "2. Run: `scoop install deno`"
+              ],
+              "installation_query": "scoop install deno"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install deno`"
+              ],
+              "installation_query": "choco install deno"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux - via Repository)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Add the Deno repository (refer to official Deno documentation for `apt-key` and `sources.list` setup).",
+                "2. Run: `sudo apt update && sudo apt install deno`"
+              ],
+              "installation_query": "N/A (multi-step repo setup)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "Version_Control_Systems": [
+    {
+      "name": "Git",
+      "publisher": "Linus Torvalds (original author), Git Development Community",
+      "description": "A free and open-source distributed version control system designed to handle everything from small to very large projects with speed and efficiency. Essential for collaborative software development.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Industry standard for version control. Integrated into most IDEs and editors. Requires initial user configuration (`git config`). Supports branching, merging, and distributed workflows. Crucial for managing source code, configuration files, and even static assets in front-end projects.",
+          "installation_methods": [
+            {
+              "method_name": "Git for Windows (Installer)",
+              "type": "Executable Installer",
+              "instructions": [
+                "1. Download from: https://git-scm.com/download/win",
+                "2. Run the installer (`.exe`) and follow the prompts. Recommended to keep default options.",
+                "3. Verify in a new terminal: `git --version`"
+              ],
+              "installation_query": "N/A (GUI installer, silent installation possible)"
+            },
+            {
+              "method_name": "Winget (Windows 10/11)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open Command Prompt or PowerShell.",
+                "2. Run: `winget install --id Git.Git -e --source winget`"
+              ],
+              "installation_query": "winget install --id Git.Git -e --source winget"
+            },
+            {
+              "method_name": "Chocolatey (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Open PowerShell as Administrator.",
+                "2. Run: `choco install git`"
+              ],
+              "installation_query": "choco install git"
+            },
+            {
+              "method_name": "Scoop (Windows)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Scoop is installed.",
+                "2. Run: `scoop install git`"
+              ],
+              "installation_query": "scoop install git"
+            },
+            {
+              "method_name": "Homebrew (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Homebrew is installed.",
+                "2. Run: `brew install git`",
+                "3. Verify: `git --version`"
+              ],
+              "installation_query": "brew install git"
+            },
+            {
+              "method_name": "MacPorts (macOS)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure MacPorts is installed.",
+                "2. Update MacPorts: `sudo port selfupdate`",
+                "3. Install Git: `sudo port install git +bash_completion +credential_osxkeychain +doc`"
+              ],
+              "installation_query": "sudo port install git +bash_completion +credential_osxkeychain +doc"
+            },
+            {
+              "method_name": "Direct Download (macOS)",
+              "type": "PKG Installer",
+              "instructions": [
+                "1. Download the `.pkg` installer from https://git-scm.com/download/mac.",
+                "2. Run the installer and follow the prompts."
+              ],
+              "installation_query": "N/A (GUI installer)"
+            },
+            {
+              "method_name": "APT (Debian/Ubuntu Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo apt-get update && sudo apt-get install git -y`",
+                "2. For latest stable, add Git PPA: `sudo apt-add-repository ppa:git-core/ppa && sudo apt update; sudo apt install git`"
+              ],
+              "installation_query": "sudo apt-get update && sudo apt-get install git -y"
+            },
+            {
+              "method_name": "DNF/YUM (Fedora/RHEL/CentOS Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo dnf install git -y` (Fedora 22+) or `sudo yum install git -y` (older versions)."
+              ],
+              "installation_query": "sudo dnf install git -y"
+            },
+            {
+              "method_name": "Pacman (Arch Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo pacman -S git`"
+              ],
+              "installation_query": "sudo pacman -S git"
+            },
+            {
+              "method_name": "Zypper (openSUSE Linux)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Run: `sudo zypper install git`"
+              ],
+              "installation_query": "sudo zypper install git"
+            },
+            {
+              "method_name": "Snap (Linux - Cross-distribution)",
+              "type": "Package Manager",
+              "instructions": [
+                "1. Ensure Snapd is installed.",
+                "2. Run: `sudo snap install git --classic`"
+              ],
+              "installation_query": "sudo snap install git --classic"
+            },
+            {
+              "method_name": "From Source (Linux/macOS)",
+              "type": "Source Compilation",
+              "instructions": [
+                "1. Install build dependencies (e.g., `make`, `gcc`, `libcurl-dev`, `zlib-dev`).",
+                "2. Download source from https://git-scm.com/downloads.",
+                "3. Extract and navigate to directory.",
+                "4. Run: `make prefix=/usr/local all`",
+                "5. Run: `sudo make prefix=/usr/local install`"
+              ],
+              "installation_query": "N/A (manual compilation steps)"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "Build_Tools_and_Bundlers": [
+    {
+      "name": "Webpack",
+      "publisher": "Webpack Contributors",
+      "description": "A powerful and highly configurable module bundler primarily used to compile JavaScript modules for web applications. It creates optimized bundles for production, enabling advanced features like code splitting, asset management (images, fonts, stylesheets), and Hot Module Replacement (HMR) for faster development iterations. Webpack is framework-agnostic and widely adopted in complex single-page applications.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (follow semver)",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js v10.13.0 LTS or higher. Webpack's core functionality is extended via a vast ecosystem of loaders and plugins. Best practice is local installation per project to ensure consistent builds across different developer environments and CI/CD pipelines.  Configuration is done via `webpack.config.js`.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev webpack webpack-cli` (webpack-cli provides the command-line interface).",
+                "3. To add a basic webpack development server: `npm install --save-dev webpack-dev-server`",
+                "4. Verify local installation by adding a script to your `package.json`: `\"scripts\": { \"build\": \"webpack\", \"start\": \"webpack serve\" }` then run `npm run build` or `npm run start`."
+              ],
+              "installation_query": "npm install --save-dev webpack webpack-cli webpack-dev-server"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev webpack webpack-cli`",
+                "3. To add a basic webpack development server: `yarn add --dev webpack-dev-server`",
+                "4. Verify local installation by adding a script to your `package.json`: `\"scripts\": { \"build\": \"webpack\", \"start\": \"webpack serve\" }` then run `yarn build` or `yarn start`."
+              ],
+              "installation_query": "yarn add --dev webpack webpack-cli webpack-dev-server"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add --save-dev webpack webpack-cli`",
+                "3. To add a basic webpack development server: `pnpm add --save-dev webpack-dev-server`",
+                "4. Verify local installation by adding a script to your `package.json`: `\"scripts\": { \"build\": \"webpack\", \"start\": \"webpack serve\" }` then run `pnpm build` or `pnpm start`."
+              ],
+              "installation_query": "pnpm add --save-dev webpack webpack-cli webpack-dev-server"
+            },
+            {
+              "method_name": "npm (Global - Not Recommended for Projects)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. Run: `npm install --global webpack webpack-cli` (While possible, it's generally discouraged for project builds due to potential version conflicts between projects. Primarily useful for quick experiments or learning purposes.)"
+              ],
+              "installation_query": "npm install --global webpack webpack-cli"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vite",
+      "publisher": "Evan You, Vite Contributors",
+      "description": "A modern, lightweight, and extremely fast frontend build tool renowned for its instant feedback during development (Hot Module Replacement via native ES modules) and highly optimized production builds leveraging Rollup. It aims to provide a faster and smoother development experience, especially for projects using modern JavaScript frameworks like Vue, React, Svelte, and Lit.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (follow semver)",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js 16+. Vite utilizes native ES modules in development, eliminating the bundling step and allowing for near-instant server startup. For production, it bundles with Rollup for highly optimized output. Offers pre-configured templates (scaffolding) for various frameworks, simplifying project setup.",
+          "installation_methods": [
+            {
+              "method_name": "npm (CLI - Create New Project)",
+              "type": "npm CLI",
+              "instructions": [
+                "1. Run: `npm create vite@latest my-vite-app` (Replace `my-vite-app` with your desired project name).",
+                "2. Follow the prompts to select a framework (e.g., vanilla, vue, react, preact, lit, svelte) and variant (e.g., JavaScript, TypeScript).",
+                "3. Navigate into the new project directory: `cd my-vite-app`",
+                "4. Install dependencies: `npm install`",
+                "5. Start the development server: `npm run dev`"
+              ],
+              "installation_query": "npm create vite@latest"
+            },
+            {
+              "method_name": "Yarn (CLI - Create New Project)",
+              "type": "Yarn CLI",
+              "instructions": [
+                "1. Run: `yarn create vite my-vite-app`",
+                "2. Follow the prompts to select a framework and variant.",
+                "3. Navigate into the new project directory: `cd my-vite-app`",
+                "4. Install dependencies: `yarn install`",
+                "5. Start the development server: `yarn dev`"
+              ],
+              "installation_query": "yarn create vite"
+            },
+            {
+              "method_name": "pnpm (CLI - Create New Project)",
+              "type": "pnpm CLI",
+              "instructions": [
+                "1. Run: `pnpm create vite my-vite-app`",
+                "2. Follow the prompts to select a framework and variant.",
+                "3. Navigate into the new project directory: `cd my-vite-app`",
+                "4. Install dependencies: `pnpm install`",
+                "5. Start the development server: `pnpm dev`"
+              ],
+              "installation_query": "pnpm create vite"
+            },
+            {
+              "method_name": "npm (Local - Add to Existing Project)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your existing project directory.",
+                "2. Run: `npm install vite --save-dev`",
+                "3. Add scripts to your `package.json` for development and build, e.g., `\"scripts\": { \"dev\": \"vite\", \"build\": \"vite build\", \"preview\": \"vite preview\" }`."
+              ],
+              "installation_query": "npm install vite --save-dev"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Parcel",
+      "publisher": "Devon Govett, Parcel Contributors",
+      "description": "A web application bundler distinguished by its developer-centric experience, offering high performance with zero configuration ('zero-config' approach). It automatically detects and processes various web assets (JavaScript, CSS, HTML, images, etc.) without requiring explicit configuration files. This makes it ideal for rapid prototyping, small to medium-sized projects, and developers who prefer a simpler setup.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (v2.x)",
+          "release_date": "Constantly updated (follow semver)",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js. Parcel 2 is a complete rewrite, focusing on extensibility, performance, and improved diagnostics. While 'zero-config' by default, it supports plugins for custom transformations and asset types. Local installation is generally recommended for project consistency.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory (ensure `package.json` exists or run `npm init -y`).",
+                "2. Run: `npm install parcel --save-dev`",
+                "3. Add scripts to your `package.json` for development and build: `\"scripts\": { \"start\": \"parcel index.html\", \"build\": \"parcel build index.html\" }` (replace `index.html` with your entry file).",
+                "4. Run: `npm start` or `npm run build`."
+              ],
+              "installation_query": "npm install parcel --save-dev"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add parcel --dev`",
+                "3. Add scripts to your `package.json` for development and build (similar to npm instructions).",
+                "4. Run: `yarn start` or `yarn build`."
+              ],
+              "installation_query": "yarn add parcel --dev"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add parcel --save-dev`",
+                "3. Add scripts to your `package.json` for development and build (similar to npm instructions).",
+                "4. Run: `pnpm start` or `pnpm build`."
+              ],
+              "installation_query": "pnpm add parcel --save-dev"
+            },
+            {
+              "method_name": "npm (Global - Deprecated for v2)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. For Parcel v1, you could install globally: `npm install -g parcel-bundler`. However, for Parcel v2, local installation is the recommended and standard approach as the CLI is part of the local `parcel` package."
+              ],
+              "installation_query": "npm install -g parcel-bundler"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Rollup",
+      "publisher": "Rich Harris, Rollup Contributors",
+      "description": "A JavaScript module bundler primarily designed for JavaScript libraries and smaller applications. It excels at creating highly optimized, 'tree-shaken' bundles by only including the code that is actually used, resulting in smaller file sizes. It's often chosen over Webpack for library development due to its simpler output and focus on ES module output.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (follow semver)",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js. Rollup's strength lies in its efficient tree-shaking and ability to output various module formats (ESM, CommonJS, UMD, AMD, IIFE). It's commonly used by library authors (e.g., Vue, React, D3) to produce highly optimized packages.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev rollup`",
+                "3. To use common Rollup plugins (e.g., for Babel or Node.js modules): `npm install --save-dev @rollup/plugin-node-resolve @rollup/plugin-commonjs @rollup/plugin-babel`",
+                "4. Create a `rollup.config.js` file for configuration."
+              ],
+              "installation_query": "npm install --save-dev rollup @rollup/plugin-node-resolve @rollup/plugin-commonjs @rollup/plugin-babel"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev rollup`",
+                "3. To use common Rollup plugins: `yarn add --dev @rollup/plugin-node-resolve @rollup/plugin-commonjs @rollup/plugin-babel`",
+                "4. Create a `rollup.config.js` file for configuration."
+              ],
+              "installation_query": "yarn add --dev rollup @rollup/plugin-node-resolve @rollup/plugin-commonjs @rollup/plugin-babel"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Esbuild",
+      "publisher": "Evan Wallace",
+      "description": "An extremely fast JavaScript bundler and minifier written in Go. Esbuild prioritizes speed, making it an excellent choice for rapid development and build times, especially for larger codebases. While it's relatively new compared to Webpack, its performance gains are significant.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (follow semver)",
+          "supported_oses": ["Windows", "macOS", "Linux"],
+          "notes": "Esbuild is written in Go, so it compiles to native code, offering superior performance. It can be used directly as a CLI or integrated into other build tools. While powerful for bundling and minification, its plugin ecosystem is smaller than Webpack's.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev esbuild`",
+                "3. To bundle your code, add a script to `package.json`: `\"scripts\": { \"build\": \"esbuild app.js --bundle --outfile=bundle.js\" }`",
+                "4. Run: `npm run build`"
+              ],
+              "installation_query": "npm install --save-dev esbuild"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev esbuild`",
+                "3. To bundle your code, add a script to `package.json`: `\"scripts\": { \"build\": \"esbuild app.js --bundle --outfile=bundle.js\" }`",
+                "4. Run: `yarn build`"
+              ],
+              "installation_query": "yarn add --dev esbuild"
+            },
+            {
+              "method_name": "Go (Global - for CLI access)",
+              "type": "Go Global Install",
+              "instructions": [
+                "1. Ensure you have Go installed on your system.",
+                "2. Run: `go install github.com/evanw/esbuild/cmd/esbuild@latest`",
+                "3. Verify: `esbuild --version`"
+              ],
+              "installation_query": "go install github.com/evanw/esbuild/cmd/esbuild@latest"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Gulp CLI",
+      "publisher": "Gulp.js Team",
+      "description": "A JavaScript-based task runner used for automating repetitive development tasks through a streaming build system. Gulp emphasizes a code-over-configuration approach, where tasks are defined using JavaScript functions, providing flexibility and expressiveness. Common uses include compilation (Sass/Less), minification, linting, image optimization, and live-reloading.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (v4.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js and npm. The Gulp CLI (Command Line Interface) is installed globally to allow running Gulp commands from any directory, while the Gulp core library (`gulp`) is installed locally per project. This ensures project-specific versions and dependencies.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Global - Gulp CLI)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. Open terminal/Command Prompt (as Administrator on Windows or with `sudo` on Linux/macOS if necessary).",
+                "2. Run: `npm install --global gulp-cli`",
+                "3. Verify installation: `gulp -v` (This should show both local and global Gulp versions if applicable)."
+              ],
+              "installation_query": "npm install --global gulp-cli"
+            },
+            {
+              "method_name": "npm (Local - Gulp library)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory (ensure `package.json` exists or run `npm init -y`).",
+                "2. Run: `npm install --save-dev gulp`",
+                "3. Create a `gulpfile.js` in your project root to define your tasks."
+              ],
+              "installation_query": "npm install --save-dev gulp"
+            },
+            {
+              "method_name": "Yarn (Global - Gulp CLI)",
+              "type": "Yarn Global Install",
+              "instructions": [
+                "1. Run: `yarn global add gulp-cli`",
+                "2. Verify: `gulp -v`"
+              ],
+              "installation_query": "yarn global add gulp-cli"
+            },
+            {
+              "method_name": "Yarn (Local - Gulp library)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev gulp`",
+                "3. Create a `gulpfile.js` in your project root to define your tasks."
+              ],
+              "installation_query": "yarn add --dev gulp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Grunt CLI",
+      "publisher": "Grunt Team",
+      "description": "A JavaScript task runner that automates common development tasks like linting, compilation, unit testing, concatenation, and minification. Grunt operates on a 'configuration-over-convention' approach, where tasks are defined in a `Gruntfile.js` using JSON-like configurations. It has a rich ecosystem of plugins for various development needs.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (v1.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js and npm. Similar to Gulp, the Grunt CLI is installed globally, while the Grunt core library (`grunt`) is installed locally per project. This separation allows for project-specific Grunt versions and dependencies. Ensure npm is up-to-date for best compatibility.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Global - Grunt CLI)",
+              "type": "npm Global Install",
+              "instructions": [
+                "1. Open terminal/Command Prompt (as Administrator on Windows or with `sudo` on Linux/macOS if necessary).",
+                "2. Run: `npm install --global grunt-cli`",
+                "3. Verify installation: `grunt -V` (This will show the global CLI version and local Grunt version if found in the current directory)."
+              ],
+              "installation_query": "npm install --global grunt-cli"
+            },
+            {
+              "method_name": "npm (Local - Grunt library)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory (ensure `package.json` exists or run `npm init -y`).",
+                "2. Run: `npm install --save-dev grunt`",
+                "3. Create a `Gruntfile.js` in your project root to define your tasks and load Grunt plugins."
+              ],
+              "installation_query": "npm install --save-dev grunt"
+            },
+            {
+              "method_name": "Yarn (Global - Grunt CLI)",
+              "type": "Yarn Global Install",
+              "instructions": [
+                "1. Run: `yarn global add grunt-cli`",
+                "2. Verify: `grunt -V`"
+              ],
+              "installation_query": "yarn global add grunt-cli"
+            },
+            {
+              "method_name": "Yarn (Local - Grunt library)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev grunt`",
+                "3. Create a `Gruntfile.js` in your project root to define your tasks."
+              ],
+              "installation_query": "yarn add --dev grunt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Babel",
+      "publisher": "Babel Team",
+      "description": "A popular JavaScript compiler that primarily converts ECMAScript 2015+ code into a backward-compatible version of JavaScript that can be run by older browsers or environments. It's essential for utilizing modern JavaScript features while ensuring broad browser compatibility for frontend applications. Babel is often integrated with build tools like Webpack or Rollup.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (v7.x)",
+          "release_date": "Constantly updated (follow semver)",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js. Babel consists of a core package (`@babel/core`) and various plugins and presets (collections of plugins). `babel-loader` is commonly used with Webpack for seamless integration. Configuration is typically done via `babel.config.js` or `.babelrc`.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev @babel/core @babel/cli @babel/preset-env` (Core, CLI for direct use, and preset for modern JS features).",
+                "3. For React support: `npm install --save-dev @babel/preset-react`",
+                "4. Create a `babel.config.js` file:"
+              ],
+              "code_example": "module.exports = {\n  presets: [\n    ['@babel/preset-env', { targets: { node: 'current' } }],\n    '@babel/preset-react'\n  ],\n};",
+              "installation_query": "npm install --save-dev @babel/core @babel/cli @babel/preset-env @babel/preset-react"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev @babel/core @babel/cli @babel/preset-env`",
+                "3. For React support: `yarn add --dev @babel/preset-react`",
+                "4. Create a `babel.config.js` file (same as npm example)."
+              ],
+              "installation_query": "yarn add --dev @babel/core @babel/cli @babel/preset-env @babel/preset-react"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "PostCSS",
+      "publisher": "Andrey Sitnik, PostCSS Contributors",
+      "description": "A tool for transforming CSS with JavaScript plugins. PostCSS itself is not a preprocessor like Sass or Less, but rather a powerful ecosystem that allows you to write custom CSS transformations, use future CSS features today (e.g., via `postcss-preset-env`), optimize CSS, and integrate with various CSS methodologies (e.g., Tailwind CSS).",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js. PostCSS is highly modular and relies on plugins to perform transformations. It is often integrated into build processes using tools like Webpack (`postcss-loader`), Gulp, or Grunt. Configuration is typically via `postcss.config.js`.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev postcss postcss-cli` (postcss-cli for direct CLI usage).",
+                "3. Install desired PostCSS plugins, e.g., for autoprefixing: `npm install --save-dev autoprefixer`",
+                "4. Create a `postcss.config.js` file:"
+              ],
+              "code_example": "module.exports = {\n  plugins: [\n    require('autoprefixer'),\n    // Add other PostCSS plugins here\n  ],\n};",
+              "installation_query": "npm install --save-dev postcss postcss-cli autoprefixer"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev postcss postcss-cli`",
+                "3. Install desired PostCSS plugins: `yarn add --dev autoprefixer`",
+                "4. Create a `postcss.config.js` file (same as npm example)."
+              ],
+              "installation_query": "yarn add --dev postcss postcss-cli autoprefixer"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tailwind CSS CLI",
+      "publisher": "Adam Wathan, Jonathan Reinink",
+      "description": "A utility-first CSS framework that provides a vast set of low-level utility classes to build designs directly in your markup. The CLI is used to compile your Tailwind CSS configuration and generate the final CSS stylesheet, often with features like JIT (Just-In-Time) mode for incredibly fast compilation and PurgeCSS integration for removing unused styles.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (v3.x)",
+          "release_date": "Constantly updated",
+          "supported_oses": ["N/A (Node.js application)"],
+          "notes": "Requires Node.js. Tailwind CSS is not a traditional CSS framework but a set of utilities that need to be processed. The CLI is the primary way to use it, either directly or integrated into build tools like PostCSS or Webpack. Highly customizable via `tailwind.config.js`.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev tailwindcss postcss autoprefixer` (PostCSS and Autoprefixer are common peer dependencies).",
+                "3. Initialize Tailwind CSS: `npx tailwindcss init -p` (This creates `tailwind.config.js` and `postcss.config.js`).",
+                "4. Configure `tailwind.config.js` to scan your template files for Tailwind classes.",
+                "5. Create an `input.css` file with Tailwind directives (e.g., `@tailwind base; @tailwind components; @tailwind utilities;`).",
+                "6. Add a build script to `package.json`: `\"scripts\": { \"build:css\": \"tailwindcss -i ./input.css -o ./output.css --minify\" }`",
+                "7. Run: `npm run build:css`"
+              ],
+              "installation_query": "npm install --save-dev tailwindcss postcss autoprefixer"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev tailwindcss postcss autoprefixer`",
+                "3. Initialize Tailwind CSS: `yarn tailwindcss init -p`",
+                "4. Configure `tailwind.config.js` and create `input.css` (same as npm example).",
+                "5. Add a build script to `package.json`: `\"scripts\": { \"build:css\": \"tailwindcss -i ./input.css -o ./output.css --minify\" }`",
+                "6. Run: `yarn build:css`"
+              ],
+              "installation_query": "yarn add --dev tailwindcss postcss autoprefixer"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+
+  "Testing_Frameworks": [
+    {
+      "name": "Jest",
+      "publisher": "Meta (formerly Facebook)",
+      "description": "A popular JavaScript testing framework designed to ensure the correctness of code, catch bugs early, and verify that functions, modules, or components work as expected. Focus on simplicity, speed, and snapshot testing. Often used for unit and integration testing of React, Vue, Angular, and plain JavaScript applications.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (typically monthly minor releases, quarterly major releases)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v14+. Recommended for project-specific installation. Comes with JSDOM for a browser-like environment. Integrates well with testing utilities like React Testing Library and Enzyme.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev jest`",
+                "3. Add script to `package.json`: `\"test\": \"jest\"`",
+                "4. Verify: `npm test` or `npx jest --version`"
+              ],
+              "installation_query": "npm install --save-dev jest",
+              "post_installation_steps": [
+                "Configure `jest.config.js` for custom settings.",
+                "Create `__tests__` directory for test files."
+              ],
+              "example_usage": "Create a file `sum.js`: `function sum(a, b) { return a + b; } module.exports = sum;`\nCreate a file `sum.test.js`: `const sum = require('./sum'); test('adds 1 + 2 to equal 3', () => { expect(sum(1, 2)).toBe(3); });`\nRun tests: `npm test`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev jest`"
+              ],
+              "installation_query": "yarn add --dev jest",
+              "post_installation_steps": [
+                "Configure `jest.config.js` for custom settings.",
+                "Create `__tests__` directory for test files."
+              ],
+              "example_usage": "Run tests: `yarn test` (after adding `\"test\": \"jest\"` to `package.json`)"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add --save-dev jest`"
+              ],
+              "installation_query": "pnpm add --save-dev jest",
+              "post_installation_steps": [
+                "Configure `jest.config.js` for custom settings.",
+                "Create `__tests__` directory for test files."
+              ],
+              "example_usage": "Run tests: `pnpm test` (after adding `\"test\": \"jest\"` to `package.json`)"
+            },
+            {
+              "method_name": "npm (CLI - Initialize Project)",
+              "type": "npm CLI",
+              "instructions": [
+                "1. Run: `npm init jest@latest` (will install Jest, set up basic configuration, and add a test script to `package.json`)."
+              ],
+              "installation_query": "npm init jest@latest",
+              "post_installation_steps": [
+                "Follow prompts for configuration.",
+                "Review generated `package.json` and `jest.config.js`."
+              ],
+              "example_usage": "After initialization, run `npm test` to execute default generated test."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cypress",
+      "publisher": "Cypress.io",
+      "description": "A JavaScript-based end-to-end testing framework designed for the modern web, running tests directly in the browser and providing a fast, reliable, and integrated testing experience. Excellent for writing integration and end-to-end tests, with a focus on developer experience.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (bi-weekly minor releases, regular major releases)",
+          "supported_oses": [
+            "Windows (7+)",
+            "macOS (10.13+)",
+            "Linux (Ubuntu 12.04+, Debian 8+)"
+          ],
+          "notes": "Requires Node.js v10+ (recommended v12+). Project-specific installation is recommended. Offers a powerful Test Runner UI with real-time reloads and debugging features. Supports various browsers like Chrome, Firefox, Edge, Electron.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory (ensure `package.json` exists).",
+                "2. Run: `npm install cypress --save-dev`",
+                "3. Launch Test Runner: `npx cypress open` (first time will generate example tests and config files)."
+              ],
+              "installation_query": "npm install cypress --save-dev",
+              "post_installation_steps": [
+                "Cypress will create a `cypress/` folder and `cypress.config.js`.",
+                "Explore example tests in `cypress/e2e`.",
+                "Add `\"cypress\": \"cypress open\"` to `package.json` scripts for easy access."
+              ],
+              "example_usage": "Create a file `cypress/e2e/spec.cy.js`: `describe('My First Test', () => { it('Visits the Kitchen Sink', () => { cy.visit('https://example.cypress.io'); cy.contains('type').click(); cy.url().should('include', '/commands/actions'); }); });`\nRun tests: `npx cypress open` or `npm run cypress` (if added to scripts)"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add cypress --dev`"
+              ],
+              "installation_query": "yarn add cypress --dev",
+              "post_installation_steps": [
+                "Launch Test Runner: `yarn cypress open`.",
+                "Cypress will create a `cypress/` folder and `cypress.config.js`."
+              ],
+              "example_usage": "Run tests: `yarn cypress open`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add --save-dev cypress`"
+              ],
+              "installation_query": "pnpm add --save-dev cypress",
+              "post_installation_steps": [
+                "Launch Test Runner: `pnpm cypress open`.",
+                "Cypress will create a `cypress/` folder and `cypress.config.js`."
+              ],
+              "example_usage": "Run tests: `pnpm cypress open`"
+            },
+            {
+              "method_name": "Direct Download (Binary .zip)",
+              "type": "ZIP Archive",
+              "instructions": [
+                "1. Visit the official Cypress website: https://docs.cypress.io/guides/getting-started/installing-cypress#Direct-download",
+                "2. Download the `.zip` file for your OS and architecture.",
+                "3. Unzip the file to your desired location.",
+                "4. Run the executable directly (e.g., `./Cypress.app/Contents/MacOS/Cypress` on macOS or `Cypress.exe` on Windows).",
+                "5. Note: This method does not support recording runs to Cypress Cloud or integrating with `package.json` scripts as seamlessly."
+              ],
+              "installation_query": "N/A (manual download and extraction)",
+              "notes": "Primarily for quick evaluation or environments without Node.js. Less common for project development."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Playwright",
+      "publisher": "Microsoft",
+      "description": "A powerful framework for automating web browsers, providing a clean, easy-to-use API for writing automated browser tests and scripts across Chromium, WebKit, and Firefox. Supports multiple languages (JavaScript/TypeScript, Python, Java, C#) and offers robust features for end-to-end and component testing.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (monthly releases with new features and bug fixes)",
+          "supported_oses": [
+            "Windows (7+)",
+            "macOS (10.14+)",
+            "Linux (Ubuntu 18.04+, Debian 10+)"
+          ],
+          "notes": "Supports JavaScript/TypeScript (Node.js 14+), Python (3.8+), Java (8+), and C# (.NET 6+). Automatically downloads browser binaries (Chromium, Firefox, WebKit) for cross-browser testing. Features include auto-wait, parallel execution, codegen, and trace viewer.",
+          "installation_methods": [
+            {
+              "method_name": "npm (JavaScript/TypeScript Projects)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. To install Playwright Test runner and browsers: `npm init playwright@latest` (interactive, creates config and example tests).",
+                "2. Alternatively, for just the Playwright library: `npm i playwright` (installs API only, then run `npx playwright install` to download browsers)."
+              ],
+              "installation_query": "npm init playwright@latest",
+              "post_installation_steps": [
+                "Review `playwright.config.ts` (or `.js`) and `tests/example.spec.ts`.",
+                "Run tests: `npx playwright test`."
+              ],
+              "example_usage": "After `npm init playwright@latest`, a sample test will be generated. Run `npx playwright test` to execute it. Example test in `tests/example.spec.ts`: `import { test, expect } from '@playwright/test'; test('has title', async ({ page }) => { await page.goto('https://playwright.dev/'); await expect(page).toHaveTitle(/Playwright/); });`"
+            },
+            {
+              "method_name": "Yarn (JavaScript/TypeScript Projects)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. For Playwright Test runner and browsers: `yarn create playwright`.",
+                "2. For just the Playwright library: `yarn add playwright` then `npx playwright install`."
+              ],
+              "installation_query": "yarn create playwright",
+              "post_installation_steps": [
+                "Review generated files.",
+                "Run tests: `yarn playwright test`."
+              ],
+              "example_usage": "Run tests: `yarn playwright test`"
+            },
+            {
+              "method_name": "pnpm (JavaScript/TypeScript Projects)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. For Playwright Test runner and browsers: `pnpm create playwright`.",
+                "2. For just the Playwright library: `pnpm add playwright` then `pnpm playwright install`."
+              ],
+              "installation_query": "pnpm create playwright",
+              "post_installation_steps": [
+                "Review generated files.",
+                "Run tests: `pnpm playwright test`."
+              ],
+              "example_usage": "Run tests: `pnpm playwright test`"
+            },
+            {
+              "method_name": "pip (Python Projects)",
+              "type": "Python Package Manager",
+              "instructions": [
+                "1. Ensure Python 3.8+ is installed and a virtual environment is activated.",
+                "2. Install Playwright with Pytest plugin: `pip install pytest-playwright`",
+                "3. Install browser binaries (Chromium, Firefox, WebKit): `playwright install`"
+              ],
+              "installation_query": "pip install pytest-playwright",
+              "post_installation_steps": [
+                "Create a test file (e.g., `test_example.py`).",
+                "Run tests: `pytest`."
+              ],
+              "example_usage": "Create `test_example.py`: `from playwright.sync_api import Page, expect; def test_example_has_title(page: Page): page.goto('https://playwright.dev/'); expect(page).to_have_title(r'Playwright');`\nRun tests: `pytest`"
+            },
+            {
+              "method_name": "Maven (Java Projects)",
+              "type": "Java Build Tool",
+              "instructions": [
+                "1. Add Playwright dependency to your `pom.xml`:",
+                "   ```xml",
+                "   <dependency>",
+                "       <groupId>com.microsoft.playwright</groupId>",
+                "       <artifactId>playwright</artifactId>",
+                "       <version>1.x.x</version> ",
+                "   </dependency>",
+                "   ```",
+                "2. Run `mvn install` to download the library and browsers."
+              ],
+              "installation_query": "N/A (Maven dependency)",
+              "example_usage": "Create a Java test class and use Playwright APIs."
+            },
+            {
+              "method_name": "NuGet (.NET/C# Projects)",
+              "type": ".NET Package Manager",
+              "instructions": [
+                "1. In your .NET project, run: `dotnet add package Microsoft.Playwright`",
+                "2. Then: `dotnet run playwright install` to download browsers."
+              ],
+              "installation_query": "dotnet add package Microsoft.Playwright",
+              "example_usage": "Create a C# test class and use Playwright APIs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mocha",
+      "publisher": "Open Source Community",
+      "description": "A flexible and widely-used JavaScript test framework running on Node.js and in the browser, making asynchronous testing simple and fun. Often paired with assertion libraries like Chai or Expect.js.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (regular minor and patch releases)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v14+. Highly customizable with various reporters, interfaces, and plugins. Does not include an assertion library, so you'll typically install one separately.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev mocha`",
+                "3. To add an assertion library (e.g., Chai): `npm install --save-dev chai`",
+                "4. Add script to `package.json`: `\"test\": \"mocha\"`"
+              ],
+              "installation_query": "npm install --save-dev mocha chai",
+              "post_installation_steps": [
+                "Create a `test/` directory for your test files.",
+                "Configure `.mocharc.json` for custom settings if needed."
+              ],
+              "example_usage": "Create `test/test.js`: `const assert = require('chai').assert; describe('Array', function() { describe('#indexOf()', function() { it('should return -1 when the value is not present', function() { assert.equal([1, 2, 3].indexOf(4), -1); }); }); });`\nRun tests: `npm test`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev mocha chai`"
+              ],
+              "installation_query": "yarn add --dev mocha chai",
+              "post_installation_steps": [
+                "Run tests: `yarn test` (after adding `\"test\": \"mocha\"` to `package.json`)"
+              ],
+              "example_usage": "Run tests: `yarn test`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add --save-dev mocha chai`"
+              ],
+              "installation_query": "pnpm add --save-dev mocha chai",
+              "post_installation_steps": [
+                "Run tests: `pnpm test` (after adding `\"test\": \"mocha\"` to `package.json`)"
+              ],
+              "example_usage": "Run tests: `pnpm test`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Karma",
+      "publisher": "Google",
+      "description": "A JavaScript test runner that provides a powerful environment to execute tests in real browsers. Ideal for testing client-side code, allowing you to run tests against multiple browsers (Chrome, Firefox, Safari, IE) and devices simultaneously.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Updated periodically (less frequent than others, but stable)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js. Typically used with a testing framework like Mocha or Jasmine, and a browser launcher (e.g., `karma-chrome-launcher`). Configuration can be complex initially but offers great flexibility.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev karma karma-cli karma-jasmine karma-chrome-launcher jasmine-core` (example with Jasmine and Chrome)",
+                "3. Initialize Karma config: `npx karma init` (follow prompts to create `karma.conf.js`).",
+                "4. Add script to `package.json`: `\"test\": \"karma start\"`"
+              ],
+              "installation_query": "npm install --save-dev karma karma-cli karma-jasmine karma-chrome-launcher jasmine-core",
+              "post_installation_steps": [
+                "Configure `karma.conf.js` to specify test files, frameworks, and browsers.",
+                "Ensure necessary browser launchers are installed for your target browsers."
+              ],
+              "example_usage": "After configuration, `npm test` will launch specified browsers and run tests."
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev karma karma-cli karma-jasmine karma-chrome-launcher jasmine-core`"
+              ],
+              "installation_query": "yarn add --dev karma karma-cli karma-jasmine karma-chrome-launcher jasmine-core",
+              "post_installation_steps": [
+                "Initialize Karma config: `yarn karma init`.",
+                "Run tests: `yarn test` (after adding `\"test\": \"karma start\"` to `package.json`)"
+              ],
+              "example_usage": "Run tests: `yarn test`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add --save-dev karma karma-cli karma-jasmine karma-chrome-launcher jasmine-core`"
+              ],
+              "installation_query": "pnpm add --save-dev karma karma-cli karma-jasmine karma-chrome-launcher jasmine-core",
+              "post_installation_steps": [
+                "Initialize Karma config: `pnpm karma init`.",
+                "Run tests: `pnpm test` (after adding `\"test\": \"karma start\"` to `package.json`)"
+              ],
+              "example_usage": "Run tests: `pnpm test`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Jasmine",
+      "publisher": "Telerik / Pivotal Labs (now independent)",
+      "description": "A behavior-driven development (BDD) testing framework for JavaScript. It's a standalone framework, meaning it doesn't rely on any other JavaScript frameworks or DOM. Provides a clean, readable syntax for writing tests and comes with its own assertion library.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Regularly updated",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux",
+            "Browser-based (can run in any modern browser)"
+          ],
+          "notes": "Can run standalone in a browser, or with Node.js. Often used with Karma for browser testing. No external dependencies required for basic usage (includes its own assertion library).",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended - Node.js)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev jasmine`",
+                "3. Initialize Jasmine: `npx jasmine init` (creates `spec/support/jasmine.json` and `spec/` directory).",
+                "4. Add script to `package.json`: `\"test\": \"jasmine\"`"
+              ],
+              "installation_query": "npm install --save-dev jasmine",
+              "post_installation_steps": [
+                "Write tests in `spec/` directory.",
+                "Configure `spec/support/jasmine.json` for test file patterns."
+              ],
+              "example_usage": "Create `spec/example.spec.js`: `describe('A suite', function() { it('contains spec with an expectation', function() { expect(true).toBe(true); }); });`\nRun tests: `npm test`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended - Node.js)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `yarn add --dev jasmine`"
+              ],
+              "installation_query": "yarn add --dev jasmine",
+              "post_installation_steps": [
+                "Initialize Jasmine: `yarn jasmine init`.",
+                "Run tests: `yarn test` (after adding `\"test\": \"jasmine\"` to `package.json`)"
+              ],
+              "example_usage": "Run tests: `yarn test`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended - Node.js)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `pnpm add --save-dev jasmine`"
+              ],
+              "installation_query": "pnpm add --save-dev jasmine",
+              "post_installation_steps": [
+                "Initialize Jasmine: `pnpm jasmine init`.",
+                "Run tests: `pnpm test` (after adding `\"test\": \"jasmine\"` to `package.json`)"
+              ],
+              "example_usage": "Run tests: `pnpm test`"
+            },
+            {
+              "method_name": "Standalone (Browser)",
+              "type": "Direct Download/CDN",
+              "instructions": [
+                "1. Download `jasmine.zip` from GitHub releases: `https://github.com/jasmine/jasmine/releases`",
+                "2. Extract the contents.",
+                "3. Create an `index.html` file that links to `jasmine.js`, `jasmine-html.js`, `boot.js`, and your spec files.",
+                "4. Open `index.html` in a browser."
+              ],
+              "installation_query": "N/A (manual download and HTML integration)",
+              "notes": "Good for simple, static project testing or learning. Less common for complex applications managed by build tools."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "React Testing Library",
+      "publisher": "Kent C. Dodds and the Open Source Community",
+      "description": "A set of utilities for testing React components in a way that closely resembles how users interact with your application. Focuses on testing user-facing behavior rather than implementation details, promoting more robust and maintainable tests.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": [
+            "N/A (JavaScript library - runs on any OS supporting Node.js)"
+          ],
+          "notes": "Not a test runner or framework itself, but a library of utilities that works best with test runners like Jest or Vitest. Emphasizes accessibility and simulating real user interactions.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your React project directory (assuming Jest is already installed).",
+                "2. Run: `npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event`",
+                "3. Import utilities in your test files."
+              ],
+              "installation_query": "npm install --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event",
+              "post_installation_steps": [
+                "Configure Jest to extend `jest-dom` matchers (often automatically handled by `create-react-app`).",
+                "Write tests that query for elements the user would see or interact with."
+              ],
+              "example_usage": "Create `src/components/Button.js`: `function Button({ onClick, children }) { return <button onClick={onClick}>{children}</button>; } export default Button;`\nCreate `src/components/Button.test.js`: `import { render, screen } from '@testing-library/react'; import userEvent from '@testing-library/user-event'; import Button from './Button'; test('button clicks', async () => { const user = userEvent.setup(); const handleClick = jest.fn(); render(<Button onClick={handleClick}>Click Me</Button>); await user.click(screen.getByText('Click Me')); expect(handleClick).toHaveBeenCalledTimes(1); });`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your React project directory.",
+                "2. Run: `yarn add --dev @testing-library/react @testing-library/jest-dom @testing-library/user-event`"
+              ],
+              "installation_query": "yarn add --dev @testing-library/react @testing-library/jest-dom @testing-library/user-event",
+              "example_usage": "Import and use in tests as above."
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your React project directory.",
+                "2. Run: `pnpm add --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event`"
+              ],
+              "installation_query": "pnpm add --save-dev @testing-library/react @testing-library/jest-dom @testing-library/user-event",
+              "example_usage": "Import and use in tests as above."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Enzyme",
+      "publisher": "Airbnb",
+      "description": "A JavaScript testing utility for React that makes it easier to assert, manipulate, and traverse your React Components' output. Provides methods for shallow rendering, full DOM rendering, and static markup rendering.",
+      "versions": [
+        {
+          "version_name": "Latest Stable (Note: Less actively developed compared to RTL)",
+          "release_date": "Last major update in 2021 (v3.11.0), with minor updates for React compatibility.",
+          "supported_oses": [
+            "N/A (JavaScript library - runs on any OS supporting Node.js)"
+          ],
+          "notes": "Requires an adapter for your specific React version (e.g., `enzyme-adapter-react-18`). Focuses on component internal implementation details, which can lead to brittle tests. React Testing Library is generally recommended for new projects due to its user-centric approach.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your React project directory (assuming Jest is installed).",
+                "2. Run: `npm install --save-dev enzyme enzyme-adapter-react-18` (replace `18` with your React version).",
+                "3. Configure Jest setup file (e.g., `src/setupTests.js`):",
+                "   `import Enzyme from 'enzyme';`",
+                "   `import Adapter from '@wojtekmaj/enzyme-adapter-react-18';`",
+                "   `Enzyme.configure({ adapter: new Adapter() });`"
+              ],
+              "installation_query": "npm install --save-dev enzyme enzyme-adapter-react-18",
+              "post_installation_steps": [
+                "Ensure Jest is configured to run the `setupTests.js` file (e.g., in `jest.config.js` or `package.json` under `setupFilesAfterEnv`).",
+                "Write tests using `shallow`, `mount`, or `render` functions."
+              ],
+              "example_usage": "Create `src/components/Welcome.js`: `import React from 'react'; function Welcome({ name }) { return <h1>Hello, {name}</h1>; } export default Welcome;`\nCreate `src/components/Welcome.test.js`: `import React from 'react'; import { shallow } from 'enzyme'; import Welcome from './Welcome'; describe('<Welcome />', () => { it('renders a welcome message', () => { const wrapper = shallow(<Welcome name=\"Alice\" />); expect(wrapper.find('h1').text()).toEqual('Hello, Alice'); }); });`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your React project directory.",
+                "2. Run: `yarn add --dev enzyme enzyme-adapter-react-18`"
+              ],
+              "installation_query": "yarn add --dev enzyme enzyme-adapter-react-18",
+              "example_usage": "Configure and use in tests as above."
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your React project directory.",
+                "2. Run: `pnpm add --save-dev enzyme enzyme-adapter-react-18`"
+              ],
+              "installation_query": "pnpm add --save-dev enzyme enzyme-adapter-react-18",
+              "example_usage": "Configure and use in tests as above."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Vitest",
+      "publisher": "Vue.js Team / Vite Community",
+      "description": "A lightning-fast unit test framework powered by Vite. It's designed to provide a similar experience to Jest but with Vite's performance benefits and integrated development experience, including HMR (Hot Module Replacement) for tests.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (rapid development)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v14+. Tightly integrated with Vite, making it an excellent choice for Vite-based projects (Vue, React, Svelte, etc.). Supports Jest-compatible APIs out of the box.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your Vite project directory.",
+                "2. Run: `npm install --save-dev vitest`",
+                "3. Add script to `package.json`: `\"test\": \"vitest\"`",
+                "4. Add `test` object to `vite.config.js` or `vite.config.ts` for configuration (optional but recommended)."
+              ],
+              "installation_query": "npm install --save-dev vitest",
+              "post_installation_steps": [
+                "Create test files with `.test.js`, `.test.ts`, `.spec.js`, or `.spec.ts` suffixes.",
+                "Configure `vite.config.js` for test options (e.g., `test: { environment: 'jsdom' }` for browser environment)."
+              ],
+              "example_usage": "Create `src/utils.js`: `export function add(a, b) { return a + b; }`\nCreate `src/utils.test.js`: `import { describe, it, expect } from 'vitest'; import { add } from './utils'; describe('add', () => { it('adds two numbers', () => { expect(add(1, 2)).toBe(3); }); });`\nRun tests: `npm test`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Navigate to your Vite project directory.",
+                "2. Run: `yarn add --dev vitest`"
+              ],
+              "installation_query": "yarn add --dev vitest",
+              "example_usage": "Run tests: `yarn test`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Navigate to your Vite project directory.",
+                "2. Run: `pnpm add --save-dev vitest`"
+              ],
+              "installation_query": "pnpm add --save-dev vitest",
+              "example_usage": "Run tests: `pnpm test`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Storybook",
+      "publisher": "Storybook Team",
+      "description": "An open-source tool for developing UI components in isolation for React, Vue, Angular, and more. While primarily a UI development environment, it has robust add-ons and integrations that enable visual regression testing, accessibility testing, and interaction testing, making it a powerful testing companion.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (bi-weekly minor releases, regular major releases)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v14+. Used for component-driven development and offers a living style guide. Testing capabilities are extended via add-ons like `@storybook/addon-interactions` (for interaction testing with Jest/Vitest) and integrations with visual regression tools like Chromatic.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project root.",
+                "2. Run: `npx storybook@latest init` (auto-detects framework and sets up).",
+                "3. Start Storybook: `npm run storybook`"
+              ],
+              "installation_query": "npx storybook@latest init",
+              "post_installation_steps": [
+                "Explore the generated `.storybook/` folder and `src/stories/` for examples.",
+                "Add stories for your components.",
+                "Install `@storybook/addon-interactions` and `@storybook/test` for interaction testing."
+              ],
+              "example_usage": "After `npx storybook@latest init`, a sample Button story will be created. Run `npm run storybook` to view it. For interaction testing, add `import { userEvent, within } from '@storybook/test';` to your story and use `play` function: `const Primary = { args: { primary: true, label: 'Button', }, play: async ({ canvasElement }) => { const canvas = within(canvasElement); await userEvent.click(canvas.getByRole('button')); expect(canvas.getByText('Button clicked!')).toBeInTheDocument(); }, };`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Run: `yarn dlx storybook@latest init`",
+                "2. Start Storybook: `yarn storybook`"
+              ],
+              "installation_query": "yarn dlx storybook@latest init",
+              "example_usage": "Run Storybook: `yarn storybook`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Run: `pnpm dlx storybook@latest init`",
+                "2. Start Storybook: `pnpm storybook`"
+              ],
+              "installation_query": "pnpm dlx storybook@latest init",
+              "example_usage": "Run Storybook: `pnpm storybook`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Puppeteer",
+      "publisher": "Google Chrome Team",
+      "description": "A Node.js library that provides a high-level API to control headless (or full) Chrome or Chromium over the DevTools Protocol. It's often used for web scraping, PDF generation, and automated testing, especially for end-to-end scenarios where you need direct browser control.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (frequent releases)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v14+. Downloads a bundled version of Chromium by default, ensuring compatibility. Can be used for end-to-end testing, but typically requires a test runner like Jest or Mocha to structure tests and assertions.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev puppeteer`",
+                "3. If you want to use it with a test runner, install that as well (e.g., `npm install --save-dev jest`)."
+              ],
+              "installation_query": "npm install --save-dev puppeteer",
+              "post_installation_steps": [
+                "Puppeteer will download a Chromium binary upon installation.",
+                "Write test scripts using Puppeteer's API to interact with pages."
+              ],
+              "example_usage": "Create `test.js`: `const puppeteer = require('puppeteer'); (async () => { const browser = await puppeteer.launch(); const page = await browser.newPage(); await page.goto('https://example.com'); await page.screenshot({ path: 'example.png' }); await browser.close(); })();`\nRun: `node test.js` (for a standalone script) or integrate into a test runner."
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Run: `yarn add --dev puppeteer`"
+              ],
+              "installation_query": "yarn add --dev puppeteer",
+              "example_usage": "Use Puppeteer API in your tests."
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Run: `pnpm add --save-dev puppeteer`"
+              ],
+              "installation_query": "pnpm add --save-dev puppeteer",
+              "example_usage": "Use Puppeteer API in your tests."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TestCafe",
+      "publisher": "DevExpress",
+      "description": "An open-source Node.js end-to-end testing framework that runs tests in all popular browsers. It doesn't use WebDriver, making it fast and easy to set up. Provides a simple and fluent API for writing robust and reliable tests.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v10+. Runs tests directly in the browser using JavaScript and provides a proxy-based mechanism. Supports TypeScript out of the box and offers built-in assertions.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev testcafe`",
+                "3. Add script to `package.json`: `\"test\": \"testcafe chrome test/\"` (to run tests in Chrome from `test/` folder)."
+              ],
+              "installation_query": "npm install --save-dev testcafe",
+              "post_installation_steps": [
+                "Create a `test/` directory for your test files.",
+                "Write tests using TestCafe's `fixture` and `test` syntax."
+              ],
+              "example_usage": "Create `test/first-test.js`: `fixture('My First Fixture').page('http://devexpress.github.io/testcafe/example'); test('My first test', async t => { await t .typeText('#developer-name', 'John Smith') .click('#submit-button'); });`\nRun tests: `npm test`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Run: `yarn add --dev testcafe`"
+              ],
+              "installation_query": "yarn add --dev testcafe",
+              "example_usage": "Run tests: `yarn testcafe chrome test/`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Run: `pnpm add --save-dev testcafe`"
+              ],
+              "installation_query": "pnpm add --save-dev testcafe",
+              "example_usage": "Run tests: `pnpm testcafe chrome test/`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WebdriverIO",
+      "publisher": "OpenJS Foundation",
+      "description": "A progressive automation framework for testing modern web and mobile applications. It's built on top of WebDriver and Chrome DevTools Protocol, providing a flexible and extensible solution for end-to-end, component, and unit testing.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (frequent releases)",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v16+. Supports various test runners (Mocha, Jasmine, Cucumber) and different reporting formats. Can run tests locally, on Selenium Grid, or cloud services. Highly configurable.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm init wdio` (interactive CLI to set up project and dependencies).",
+                "3. Follow prompts to select framework (Mocha, Jasmine, Cucumber), browser (Chrome, Firefox, Edge, etc.), and reporters.",
+                "4. Start tests: `npx wdio run wdio.conf.js`"
+              ],
+              "installation_query": "npm init wdio",
+              "post_installation_steps": [
+                "Review `wdio.conf.js` for configuration details.",
+                "Write test specs in the generated `test/specs` directory."
+              ],
+              "example_usage": "After `npm init wdio`, a sample test file will be created. Run `npx wdio run wdio.conf.js` to execute it."
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Run: `yarn create wdio`",
+                "2. Follow interactive setup.",
+                "3. Start tests: `yarn wdio run wdio.conf.js`"
+              ],
+              "installation_query": "yarn create wdio",
+              "example_usage": "Run tests: `yarn wdio run wdio.conf.js`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Run: `pnpm create wdio`",
+                "2. Follow interactive setup.",
+                "3. Start tests: `pnpm wdio run wdio.conf.js`"
+              ],
+              "installation_query": "pnpm create wdio",
+              "example_usage": "Run tests: `pnpm wdio run wdio.conf.js`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Playwright Test",
+      "publisher": "Microsoft",
+      "description": "The official test runner for Playwright. It provides an all-in-one solution for writing fast, reliable, and capable end-to-end tests with Playwright. It includes test runner capabilities, assertion library, and rich reporting.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated (monthly releases)",
+          "supported_oses": [
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Built on top of Playwright. Offers parallel test execution, sharding, test retries, and comprehensive reporting (HTML reporter, etc.). This is generally the recommended way to use Playwright for testing.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. The easiest way to get started is using the init command: `npm init playwright@latest` (this installs Playwright, Playwright Test, and sets up configuration).",
+                "2. If Playwright is already installed, you can just install the test runner: `npm install --save-dev @playwright/test`"
+              ],
+              "installation_query": "npm init playwright@latest",
+              "post_installation_steps": [
+                "A `playwright.config.ts` (or `.js`) file and `tests/example.spec.ts` will be created.",
+                "Run tests: `npx playwright test`."
+              ],
+              "example_usage": "Already covered under Playwright's general entry, as Playwright Test is its primary testing interface."
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. `yarn create playwright`",
+                "2. `yarn add --dev @playwright/test` (if not already installed)"
+              ],
+              "installation_query": "yarn create playwright",
+              "example_usage": "Run tests: `yarn playwright test`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. `pnpm create playwright`",
+                "2. `pnpm add --save-dev @playwright/test` (if not already installed)"
+              ],
+              "installation_query": "pnpm create playwright",
+              "example_usage": "Run tests: `pnpm playwright test`"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Cucumber.js",
+      "publisher": "Cucumber Open",
+      "description": "A behavior-driven development (BDD) framework for JavaScript and TypeScript. It allows you to write tests in a human-readable format (Gherkin syntax) collaboratively with non-technical stakeholders, then implement the 'step definitions' in code.",
+      "versions": [
+        {
+          "version_name": "Latest Stable",
+          "release_date": "Constantly updated",
+          "supported_oses": [
+            "N/A (Node.js library - runs on any OS supporting Node.js)",
+            "Windows",
+            "macOS",
+            "Linux"
+          ],
+          "notes": "Requires Node.js v14+. Needs to be paired with an assertion library (e.g., Chai) and potentially a browser automation tool (e.g., Playwright, Selenium) for end-to-end scenarios.",
+          "installation_methods": [
+            {
+              "method_name": "npm (Local, Recommended)",
+              "type": "npm Project Dependency",
+              "instructions": [
+                "1. Navigate to your project directory.",
+                "2. Run: `npm install --save-dev @cucumber/cucumber`",
+                "3. Create a `features/` directory for `.feature` files and `step_definitions/` for `.js` or `.ts` step files.",
+                "4. Add script to `package.json`: `\"test\": \"cucumber-js\"`"
+              ],
+              "installation_query": "npm install --save-dev @cucumber/cucumber",
+              "post_installation_steps": [
+                "Write feature files describing scenarios using Gherkin (`Given`, `When`, `Then`).",
+                "Implement JavaScript/TypeScript functions for each step in `step_definitions`."
+              ],
+              "example_usage": "Create `features/example.feature`: `Feature: Simple Math Scenario: Add two numbers Given I have two numbers 5 and 3 When I add them Then the result should be 8`\nCreate `step_definitions/math_steps.js`: `const { Given, When, Then } = require('@cucumber/cucumber'); const assert = require('assert'); let num1, num2, result; Given('I have two numbers {int} and {int}', function (n1, n2) { num1 = n1; num2 = n2; }); When('I add them', function () { result = num1 + num2; }); Then('the result should be {int}', function (expected) { assert.strictEqual(result, expected); });`\nRun tests: `npm test`"
+            },
+            {
+              "method_name": "Yarn (Local, Recommended)",
+              "type": "Yarn Project Dependency",
+              "instructions": [
+                "1. Run: `yarn add --dev @cucumber/cucumber`"
+              ],
+              "installation_query": "yarn add --dev @cucumber/cucumber",
+              "example_usage": "Run tests: `yarn cucumber-js`"
+            },
+            {
+              "method_name": "pnpm (Local, Recommended)",
+              "type": "pnpm Project Dependency",
+              "instructions": [
+                "1. Run: `pnpm add --save-dev @cucumber/cucumber`"
+              ],
+              "installation_query": "pnpm add --save-dev @cucumber/cucumber",
+              "example_usage": "Run tests: `pnpm cucumber-js`"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+    "CSS_Preprocessors_and_Frameworks": [
+      {
+        "name": "Sass (Syntactically Awesome Style Sheets)",
+        "publisher": "Google (Dart Sass)",
+        "description": "A powerful CSS preprocessor that extends CSS with features like variables, nesting, mixins, functions, and more, making CSS easier to maintain and develop.",
+        "versions": [
+          {
+            "version_name": "Latest Stable (Dart Sass)",
+            "release_date": "Constantly updated",
+            "supported_oses": ["N/A (Node.js/Ruby application)"],
+            "notes": "Modern frontend workflows primarily use Dart Sass via npm. Historically, Ruby Sass was used.",
+            "installation_methods": [
+              {
+                "method_name": "npm (Global)",
+                "type": "npm Global Install",
+                "instructions": [
+                  "1. Ensure Node.js and npm are installed.",
+                  "2. Run: `npm install -g sass`",
+                  "3. Verify: `sass --version`"
+                ],
+                "installation_query": "npm install -g sass"
+              },
+              {
+                "method_name": "npm (Local)",
+                "type": "npm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `npm install --save-dev sass`"
+                ],
+                "installation_query": "npm install --save-dev sass"
+              },
+              {
+                "method_name": "Ruby Gem (Legacy/Alternative)",
+                "type": "Ruby Package Manager",
+                "instructions": [
+                  "1. Install Ruby (from https://www.ruby-lang.org/en/downloads/ or via system package manager).",
+                  "2. Add Ruby `bin` to PATH.",
+                  "3. Run: `gem install sass`"
+                ],
+                "installation_query": "N/A (manual Ruby setup then gem install)"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Less (Leaner Style Sheets)",
+        "publisher": "Alexis Sellier, Less.js Team",
+        "description": "A dynamic stylesheet language that extends CSS with features like variables, mixins, and functions, and is compiled into standard CSS.",
+        "versions": [
+          {
+            "version_name": "Latest Stable",
+            "release_date": "Constantly updated",
+            "supported_oses": ["N/A (Node.js application)"],
+            "notes": "Requires Node.js for npm-based installation. Can also be used for client-side compilation via `less.js`.",
+            "installation_methods": [
+              {
+                "method_name": "npm (Global)",
+                "type": "npm Global Install",
+                "instructions": [
+                  "1. Ensure Node.js and npm are installed.",
+                  "2. Run: `npm install less -g`",
+                  "3. Verify: `lessc -v`"
+                ],
+                "installation_query": "npm install less -g"
+              },
+              {
+                "method_name": "npm (Local)",
+                "type": "npm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `npm install less --save-dev`"
+                ],
+                "installation_query": "npm install less --save-dev"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Tailwind CSS",
+        "publisher": "Tailwind Labs",
+        "description": "A utility-first CSS framework that enables rapid UI development by providing low-level utility classes directly in HTML, which are then processed at build time to generate highly optimized CSS.",
+        "versions": [
+          {
+            "version_name": "Latest Stable",
+            "release_date": "Constantly updated",
+            "supported_oses": ["N/A (Node.js library)"],
+            "notes": "Requires Node.js and npm. Integrates with existing build tools for CSS compilation.",
+            "installation_methods": [
+              {
+                "method_name": "npm (Local)",
+                "type": "npm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `npm install -D tailwindcss`",
+                  "3. Generate config file: `npx tailwindcss init`"
+                ],
+                "installation_query": "npm install -D tailwindcss && npx tailwindcss init"
+              },
+              {
+                "method_name": "Yarn (Local)",
+                "type": "Yarn Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `yarn add -D tailwindcss`",
+                  "3. Generate config file: `yarn tailwind init`"
+                ],
+                "installation_query": "yarn add -D tailwindcss && yarn tailwind init"
+              },
+              {
+                "method_name": "pnpm (Local)",
+                "type": "pnpm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `pnpm add -D tailwindcss`",
+                  "3. Generate config file: `pnpm tailwind init`"
+                ],
+                "installation_query": "pnpm add -D tailwindcss && pnpm tailwind init"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Code_Quality_Tools": [
+      {
+        "name": "ESLint",
+        "publisher": "ESLint Team",
+        "description": "A powerful and highly configurable linter for identifying and reporting on patterns found in JavaScript code, helping to maintain code quality and consistency. Supports pluggable rules and custom parsers.",
+        "versions": [
+          {
+            "version_name": "Latest Stable",
+            "release_date": "Constantly updated",
+            "supported_oses": ["N/A (Node.js library)"],
+            "notes": "Requires Node.js (^18.18.0, ^20.9.0, or >=21.1.0). Strongly recommended for local (project-specific) installation.",
+            "installation_methods": [
+              {
+                "method_name": "npm (CLI - Quick Start Recommended)",
+                "type": "npm CLI",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `npm init @eslint/config@latest` (guides through setup and installs locally).",
+                  "3. Verify: `npx eslint <file.js>`"
+                ],
+                "installation_query": "npm init @eslint/config@latest"
+              },
+              {
+                "method_name": "Yarn (CLI - Quick Start Recommended)",
+                "type": "Yarn CLI",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `yarn create @eslint/config`"
+                ],
+                "installation_query": "yarn create @eslint/config"
+              },
+              {
+                "method_name": "pnpm (CLI - Quick Start Recommended)",
+                "type": "pnpm CLI",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `pnpm create @eslint/config@latest`",
+                  "3. For pnpm, add to `.npmrc`: `auto-install-peers=true` and `node-linker=hoisted` for compatibility."
+                ],
+                "installation_query": "pnpm create @eslint/config@latest"
+              },
+              {
+                "method_name": "npm (Manual Local)",
+                "type": "npm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `npm install --save-dev eslint@latest @eslint/js@latest`"
+                ],
+                "installation_query": "npm install --save-dev eslint@latest @eslint/js@latest"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Prettier",
+        "publisher": "Prettier Team",
+        "description": "An opinionated code formatter that enforces a consistent style across an entire codebase, automatically reformatting code to adhere to predefined rules. Integrates with editors and pre-commit hooks.",
+        "versions": [
+          {
+            "version_name": "Latest Stable",
+            "release_date": "Constantly updated",
+            "supported_oses": ["N/A (Node.js library)"],
+            "notes": "Strongly advocated for local and exact version installation (`--save-exact`) to ensure consistency across teams.",
+            "installation_methods": [
+              {
+                "method_name": "npm (Local, Recommended)",
+                "type": "npm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `npm install --save-dev --save-exact prettier`",
+                  "3. Create empty config file (e.g., `.prettierrc`) in project root.",
+                  "4. Verify: `npx prettier . --check`"
+                ],
+                "installation_query": "npm install --save-dev --save-exact prettier"
+              },
+              {
+                "method_name": "Yarn (Local, Recommended)",
+                "type": "Yarn Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `yarn add --dev --exact prettier`"
+                ],
+                "installation_query": "yarn add --dev --exact prettier"
+              },
+              {
+                "method_name": "pnpm (Local, Recommended)",
+                "type": "pnpm Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `pnpm add --save-dev --save-exact prettier`"
+                ],
+                "installation_query": "pnpm add --save-dev --save-exact prettier"
+              },
+              {
+                "method_name": "Bun (Local, Recommended)",
+                "type": "Bun Project Dependency",
+                "instructions": [
+                  "1. Navigate to your project directory.",
+                  "2. Run: `bun add --dev --exact prettier`"
+                ],
+                "installation_query": "bun add --dev --exact prettier"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "API_Clients": [
+      {
+        "name": "Postman",
+        "publisher": "Postman, Inc.",
+        "description": "A widely used API platform that simplifies the process of developing, testing, and collaborating on APIs, primarily through a graphical user interface. Supports REST, GraphQL, SOAP, etc.",
+        "versions": [
+          {
+            "version_name": "Latest Stable",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "GUI-based tool for API development. Automatic updates for Snap installation on Linux.",
+            "installation_methods": [
+              {
+                "method_name": "Direct Download (Windows)",
+                "type": "Executable Installer",
+                "instructions": [
+                  "1. Visit the official Postman website: https://www.postman.com/downloads/",
+                  "2. Download the `.exe` installer.",
+                  "3. Run the installer and follow the prompts."
+                ],
+                "installation_query": "N/A (GUI installer)"
+              },
+              {
+                "method_name": "Winget (Windows 10/11)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Open Command Prompt or PowerShell.",
+                  "2. Run: `winget install --id=Postman.Postman -e`"
+                ],
+                "installation_query": "winget install --id=Postman.Postman -e"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Open PowerShell as Administrator.",
+                  "2. Run: `choco install postman`"
+                ],
+                "installation_query": "choco install postman"
+              },
+              {
+                "method_name": "Homebrew Cask (macOS)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Ensure Homebrew is installed.",
+                  "2. Open Terminal and run: `brew install --cask postman`"
+                ],
+                "installation_query": "brew install --cask postman"
+              },
+              {
+                "method_name": "Direct Download (macOS)",
+                "type": "ZIP Installer",
+                "instructions": [
+                  "1. Visit the official Postman website: https://www.postman.com/downloads/",
+                  "2. Download the `.zip` file.",
+                  "3. Unzip the file and drag 'Postman.app' to your Applications folder."
+                ],
+                "installation_query": "N/A (manual extraction)"
+              },
+              {
+                "method_name": "Snap (Linux - Recommended)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Ensure Snap is installed.",
+                  "2. Run: `sudo snap install postman`",
+                  "3. Benefits from automatic updates."
+                ],
+                "installation_query": "sudo snap install postman"
+              },
+              {
+                "method_name": "Flatpak (Linux)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Ensure Flatpak is installed and Flathub is enabled.",
+                  "2. Run: `flatpak install flathub com.getpostman.Postman`"
+                ],
+                "installation_query": "flatpak install flathub com.getpostman.Postman"
+              },
+              {
+                "method_name": "Manual Tarball (Linux)",
+                "type": "Archive Extraction",
+                "instructions": [
+                  "1. Download the `.tar.gz` archive from the official website.",
+                  "2. Extract: `tar -xzf postman-linux-x64.tar.gz`",
+                  "3. Move to `/opt/`: `sudo mv Postman /opt/`",
+                  "4. Create symlink: `sudo ln -s /opt/Postman/Postman /usr/local/bin/postman`"
+                ],
+                "installation_query": "N/A (manual extraction and setup)"
+              },
+              {
+                "method_name": "Pacman (Arch Linux AUR)",
+                "type": "AUR Helper",
+                "instructions": [
+                  "1. Ensure an AUR helper (e.g., `yay`) is installed.",
+                  "2. Run: `yay -S postman-bin`"
+                ],
+                "installation_query": "yay -S postman-bin"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Insomnia",
+        "publisher": "Kong Inc.",
+        "description": "An open-source, GUI-based API testing and debugging tool that supports various API protocols, including HTTP, REST, GraphQL, and WebSockets.",
+        "versions": [
+          {
+            "version_name": "Latest Stable",
+            "release_date": "Constantly updated",
+            "supported_oses": ["Windows", "macOS", "Linux"],
+            "notes": "Similar to Postman, offering a strong alternative. Automatic updates for `.exe` (Windows) and Snap (Linux) installations.",
+            "installation_methods": [
+              {
+                "method_name": "Direct Download (Windows)",
+                "type": "Executable Installer",
+                "instructions": [
+                  "1. Visit the official Insomnia website: https://insomnia.rest/download",
+                  "2. Download the `.exe` installer.",
+                  "3. Double-click the file to install. Automatic updates enabled."
+                ],
+                "installation_query": "N/A (GUI installer)"
+              },
+              {
+                "method_name": "Winget (Windows 10/11)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Open Command Prompt or PowerShell.",
+                  "2. Run: `winget install --id=Insomnia.Insomnia -e`"
+                ],
+                "installation_query": "winget install --id=Insomnia.Insomnia -e"
+              },
+              {
+                "method_name": "Chocolatey (Windows)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Open PowerShell as Administrator.",
+                  "2. Run: `choco install insomnia`"
+                ],
+                "installation_query": "choco install insomnia"
+              },
+              {
+                "method_name": "Homebrew Cask (macOS)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Ensure Homebrew is installed.",
+                  "2. Open Terminal and run: `brew install --cask insomnia`"
+                ],
+                "installation_query": "brew install --cask insomnia"
+              },
+              {
+                "method_name": "Direct Download (macOS)",
+                "type": "DMG Installer",
+                "instructions": [
+                  "1. Visit the official Insomnia website: https://insomnia.rest/download",
+                  "2. Download the `.dmg` disk image.",
+                  "3. Drag 'Insomnia.app' to your Applications folder."
+                ],
+                "installation_query": "N/A (GUI installer)"
+              },
+              {
+                "method_name": "Snap (Linux - Recommended)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Ensure Snap is installed.",
+                  "2. Run: `sudo snap install insomnia`",
+                  "3. Benefits from automatic updates."
+                ],
+                "installation_query": "sudo snap install insomnia"
+              },
+              {
+                "method_name": "Flatpak (Linux)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Ensure Flatpak is installed and Flathub is enabled.",
+                  "2. Run: `flatpak install flathub rest.insomnia.Insomnia`",
+                  "3. Note: May have issues on immutable OS like Project Bluefin due to bus connection failures."
+                ],
+                "installation_query": "flatpak install flathub rest.insomnia.Insomnia"
+              },
+              {
+                "method_name": "APT (Debian/Ubuntu Linux - via Repository)",
+                "type": "Package Manager",
+                "instructions": [
+                  "1. Add Kong HQ repository and GPG key (refer to Insomnia's official install docs for precise script, e.g., `curl -1sLf 'https://packages.konghq.com/public/insomnia/setup.deb.sh' | sudo -E distro=ubuntu codename=focal bash`).",
+                  "2. Update and install: `sudo apt-get update && sudo apt-get install insomnia`"
+                ],
+                "installation_query": "N/A (multi-step repo setup)"
+              },
+              {
+                "method_name": "Direct Download (.deb/.rpm - Linux)",
+                "type": "Package File",
+                "instructions": [
+                  "1. Download the `.deb` or `.rpm` package from https://insomnia.rest/download.",
+                  "2. Install using your package manager (e.g., `sudo dpkg -i insomnia_<version>.deb` or `sudo rpm -i insomnia-<version>.rpm`)."
+                ],
+                "installation_query": "N/A (manual package installation)"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
