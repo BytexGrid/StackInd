@@ -1,4 +1,4 @@
-# Datasets For Stack Hub AI Projects
+# Datasets For Software Stack Hub AI Projects
 - **java polished.json:** Java Developers Datastet
 - **android.json:** Android Developers Datastet
 
