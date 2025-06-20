@@ -4,4 +4,4 @@
 
 #Coming Soon
 
-- Template creation using llm and  list of templates(Template Market Place)  
+- **Web App:** Template creation using llm and  list of templates(Template Market Place)  
