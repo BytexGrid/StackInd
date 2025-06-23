@@ -3,4 +3,9 @@
 - **android.json:** Android Developers Datastet
 - **frontend.json:** Frontend Developers Datastet
 - **backend new.json:** Backend Developers Datastet
- 
+- **graphic designer.json:** Graphic Designer Dataset
+- **hlinux small.json:** Small Linux Hacking Setup
+- **hwindows.json:** Small Windows Hacking Setup
+- **sound engineer polished new.json** Sound Engineer Setup
+- **streamer.json:** Streamer Dataset
+- **teacher cbse.json:** Commmon Utilities Used By A Cbse Teacher
