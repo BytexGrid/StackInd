@@ -1,0 +1,314 @@
+[
+  {
+    "name": "Nmap",
+    "category": "Network Scanning",
+    "description": "A powerful network scanning tool used for host discovery, port scanning, service enumeration, and OS fingerprinting.",
+    "homepage": "https://nmap.org/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install nmap"],
+      "arch_linux": ["sudo pacman -S nmap"],
+      "rhel_centos_fedora": ["sudo dnf install nmap"]
+    },
+    "common_usage_examples": [
+      "nmap -sV -sC <target_IP>",
+      "nmap -p 1-1000 -T4 -A -v <target_IP>",
+      "nmap -sn 192.168.1.0/24"
+    ]
+  },
+  {
+    "name": "Metasploit Framework",
+    "category": "Exploitation Framework",
+    "description": "A comprehensive penetration testing platform that provides exploits, payloads, and auxiliary modules for vulnerability assessment and exploitation.",
+    "homepage": "https://www.metasploit.com/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install metasploit-framework"],
+      "arch_linux": ["sudo pacman -S metasploit"],
+      "rhel_centos_fedora": ["sudo dnf install metasploit-framework"]
+    },
+    "common_usage_examples": [
+      "msfconsole",
+      "use exploit/multi/handler",
+      "set payload linux/x86/meterpreter/reverse_tcp"
+    ]
+  },
+  {
+    "name": "Burp Suite Community Edition",
+    "category": "Web Application Hacking",
+    "description": "An integrated platform for performing security testing of web applications, including proxy interception, scanning, and manual testing tools.",
+    "homepage": "https://portswigger.net/burp/communitydownload",
+    "installation": {
+      "debian_ubuntu": ["wget https://portswigger.net/burp/releases/download?product=community&version=latest -O burp.sh", "chmod +x burp.sh", "./burp.sh"],
+      "arch_linux": ["yay -S burp-suite"],
+      "rhel_centos_fedora": ["Refer to official documentation for manual installation"]
+    },
+    "common_usage_examples": [
+      "Launch from application menu or run 'burpsuite'",
+      "Configure browser proxy to 127.0.0.1:8080"
+    ]
+  },
+  {
+    "name": "John the Ripper",
+    "category": "Password Cracking",
+    "description": "A fast password cracker that supports multiple hash types and is commonly used for offline password recovery.",
+    "homepage": "https://www.openwall.com/john/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install john"],
+      "arch_linux": ["sudo pacman -S john"],
+      "rhel_centos_fedora": ["sudo dnf install john"]
+    },
+    "common_usage_examples": [
+      "john --wordlist=<wordlist.txt> <hashfile>",
+      "john --format=nt <ntlm_hashes.txt>",
+      "john --show <cracked_hashes.txt>"
+    ]
+  },
+  {
+    "name": "Wireshark",
+    "category": "Packet Sniffer/Network Analyzer",
+    "description": "A network protocol analyzer that lets you capture and interactively browse the traffic running on a computer network.",
+    "homepage": "https://www.wireshark.org/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install wireshark"],
+      "arch_linux": ["sudo pacman -S wireshark-qt"],
+      "rhel_centos_fedora": ["sudo dnf install wireshark"]
+    },
+    "common_usage_examples": [
+      "wireshark",
+      "tshark -i <interface> -w capture.pcap",
+      "tshark -r capture.pcap -Y 'http.request'"
+    ]
+  },
+  {
+    "name": "Aircrack-ng",
+    "category": "Wireless Attacks",
+    "description": "A complete suite of tools to assess WiFi network security, including packet capture, WEP/WPA/WPA2 cracking, and analysis.",
+    "homepage": "https://www.aircrack-ng.org/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install aircrack-ng"],
+      "arch_linux": ["sudo pacman -S aircrack-ng"],
+      "rhel_centos_fedora": ["sudo dnf install aircrack-ng"]
+    },
+    "common_usage_examples": [
+      "airmon-ng start <interface>",
+      "airodump-ng <monitor_interface>",
+      "aircrack-ng -w <wordlist.txt> capture.cap"
+    ]
+  },
+  {
+    "name": "sqlmap",
+    "category": "Web Application Hacking",
+    "description": "An automatic SQL injection and database takeover tool that supports various database backends and exploitation techniques.",
+    "homepage": "http://sqlmap.org/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install sqlmap"],
+      "arch_linux": ["sudo pacman -S sqlmap"],
+      "rhel_centos_fedora": ["sudo dnf install sqlmap"]
+    },
+    "common_usage_examples": [
+      "sqlmap -u 'http://example.com/page.php?id=1' --dbs",
+      "sqlmap -u 'http://example.com/page.php?id=1' -D dbname --tables",
+      "sqlmap -u 'http://example.com/page.php?id=1' --os-shell"
+    ]
+  },
+  {
+    "name": "Hydra",
+    "category": "Password Cracking",
+    "description": "A fast and flexible network login cracker that supports numerous protocols for brute-force attacks.",
+    "homepage": "https://github.com/vanhauser-thc/thc-hydra",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install hydra"],
+      "arch_linux": ["sudo pacman -S hydra"],
+      "rhel_centos_fedora": ["sudo dnf install hydra"]
+    },
+    "common_usage_examples": [
+      "hydra -l <username> -P <wordlist.txt> <target_IP> ssh",
+      "hydra -L <userlist.txt> -p <password> <target_IP> ftp",
+      "hydra -C <creds.txt> <target_IP> http-post-form '/login.php:user=^USER^&pass=^PASS^:F=incorrect'"
+    ]
+  },
+  {
+    "name": "Ghidra",
+    "category": "Reverse Engineering",
+    "description": "A software reverse engineering framework developed by NSA that helps analyze malicious code and malware.",
+    "homepage": "https://ghidra-sre.org/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install ghidra"],
+      "arch_linux": ["yay -S ghidra"],
+      "rhel_centos_fedora": ["Refer to official documentation for manual installation"]
+    },
+    "common_usage_examples": [
+      "ghidraRun",
+      "Launch from application menu"
+    ]
+  },
+  {
+    "name": "The Social-Engineer Toolkit (SET)",
+    "category": "Social Engineering",
+    "description": "An open-source penetration testing framework designed for social engineering attacks with numerous attack vectors.",
+    "homepage": "https://github.com/trustedsec/social-engineer-toolkit",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install set"],
+      "arch_linux": ["sudo pacman -S set"],
+      "rhel_centos_fedora": ["git clone https://github.com/trustedsec/social-engineer-toolkit/", "cd social-engineer-toolkit", "pip3 install -r requirements.txt", "python setup.py"]
+    },
+    "common_usage_examples": [
+      "setoolkit",
+      "Select attack vectors from menu"
+    ]
+  },
+  {
+    "name": "Autopsy",
+    "category": "Forensics",
+    "description": "A digital forensics platform and graphical interface to The Sleuth Kit for analyzing disk images and file systems.",
+    "homepage": "https://www.autopsy.com/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install autopsy"],
+      "arch_linux": ["yay -S autopsy"],
+      "rhel_centos_fedora": ["sudo dnf install autopsy"]
+    },
+    "common_usage_examples": [
+      "autopsy",
+      "Launch from application menu"
+    ]
+  },
+  {
+    "name": "Responder",
+    "category": "Network Attacks",
+    "description": "A LLMNR, NBT-NS and MDNS poisoner that answers specific NBT-NS queries, leading to credential harvesting.",
+    "homepage": "https://github.com/lgandx/Responder",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install responder"],
+      "arch_linux": ["sudo pacman -S responder"],
+      "rhel_centos_fedora": ["git clone https://github.com/lgandx/Responder", "cd Responder"]
+    },
+    "common_usage_examples": [
+      "sudo python Responder.py -I <interface>",
+      "sudo python Responder.py -I eth0 -wrf"
+    ]
+  },
+  {
+    "name": "LinPEAS",
+    "category": "Privilege Escalation",
+    "description": "A script that searches for possible paths to escalate privileges on Linux/Unix systems.",
+    "homepage": "https://github.com/carlospolop/PEASS-ng/tree/master/linPEAS",
+    "installation": {
+      "debian_ubuntu": ["curl -L https://github.com/carlospolop/PEASS-ng/releases/latest/download/linpeas.sh -o linpeas.sh", "chmod +x linpeas.sh"],
+      "arch_linux": ["Same as Debian/Ubuntu"],
+      "rhel_centos_fedora": ["Same as Debian/Ubuntu"]
+    },
+    "common_usage_examples": [
+      "./linpeas.sh",
+      "./linpeas.sh -a"
+    ]
+  },
+  {
+    "name": "CrackMapExec",
+    "category": "Post-Exploitation",
+    "description": "A post-exploitation tool that helps automate assessing the security of large Active Directory networks.",
+    "homepage": "https://github.com/byt3bl33d3r/CrackMapExec",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install crackmapexec"],
+      "arch_linux": ["yay -S crackmapexec"],
+      "rhel_centos_fedora": ["pip3 install crackmapexec"]
+    },
+    "common_usage_examples": [
+      "crackmapexec smb <target_IP> -u <userlist> -p <password>",
+      "crackmapexec winrm <target_IP> -u admin -p password --execute whoami"
+    ]
+  },
+  {
+    "name": "Impacket",
+    "category": "Network Exploitation",
+    "description": "A collection of Python classes for working with network protocols, useful for crafting and decoding network packets.",
+    "homepage": "https://github.com/SecureAuthCorp/impacket",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install python3-impacket"],
+      "arch_linux": ["sudo pacman -S impacket"],
+      "rhel_centos_fedora": ["pip3 install impacket"]
+    },
+    "common_usage_examples": [
+      "python3 /usr/share/doc/python3-impacket/examples/smbserver.py share /tmp/share",
+      "python3 /usr/share/doc/python3-impacket/examples/secretsdump.py DOMAIN/user:password@target"
+    ]
+  },
+  {
+    "name": "Nikto",
+    "category": "Web Application Hacking",
+    "description": "A web server scanner that performs comprehensive tests against web servers for multiple vulnerabilities.",
+    "homepage": "https://github.com/sullo/nikto",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install nikto"],
+      "arch_linux": ["sudo pacman -S nikto"],
+      "rhel_centos_fedora": ["sudo dnf install nikto"]
+    },
+    "common_usage_examples": [
+      "nikto -h http://example.com",
+      "nikto -h http://example.com -p 80,443",
+      "nikto -h http://example.com -Tuning 1,2,3"
+    ]
+  },
+  {
+    "name": "Binwalk",
+    "category": "Forensics",
+    "description": "A tool for searching binary images for embedded files and executable code, useful for firmware analysis.",
+    "homepage": "https://github.com/ReFirmLabs/binwalk",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install binwalk"],
+      "arch_linux": ["sudo pacman -S binwalk"],
+      "rhel_centos_fedora": ["sudo dnf install binwalk"]
+    },
+    "common_usage_examples": [
+      "binwalk firmware.bin",
+      "binwalk -e firmware.bin",
+      "binwalk -M firmware.bin"
+    ]
+  },
+  {
+    "name": "Gobuster",
+    "category": "Web Application Hacking",
+    "description": "A directory/file brute-forcing tool that can also check for virtual hosts and DNS subdomains.",
+    "homepage": "https://github.com/OJ/gobuster",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install gobuster"],
+      "arch_linux": ["sudo pacman -S gobuster"],
+      "rhel_centos_fedora": ["sudo dnf install gobuster"]
+    },
+    "common_usage_examples": [
+      "gobuster dir -u http://example.com -w /usr/share/wordlists/dirb/common.txt",
+      "gobuster dns -d example.com -w /usr/share/wordlists/dns/subdomains-top1million-5000.txt",
+      "gobuster vhost -u http://example.com -w /usr/share/wordlists/dirb/common.txt"
+    ]
+  },
+  {
+    "name": "FFUF",
+    "category": "Web Application Hacking",
+    "description": "A fast web fuzzer written in Go that can be used for directory brute-forcing, parameter fuzzing, and virtual host discovery.",
+    "homepage": "https://github.com/ffuf/ffuf",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install ffuf"],
+      "arch_linux": ["sudo pacman -S ffuf"],
+      "rhel_centos_fedora": ["sudo dnf install ffuf"]
+    },
+    "common_usage_examples": [
+      "ffuf -u http://example.com/FUZZ -w /usr/share/wordlists/dirb/common.txt",
+      "ffuf -u http://example.com/?param=FUZZ -w /usr/share/wordlists/params.txt",
+      "ffuf -u http://example.com -H 'Host: FUZZ.example.com' -w /usr/share/wordlists/subdomains.txt"
+    ]
+  },
+  {
+    "name": "WPScan",
+    "category": "Web Application Hacking",
+    "description": "A WordPress security scanner that checks for vulnerabilities in WordPress sites, themes, and plugins.",
+    "homepage": "https://wpscan.com/",
+    "installation": {
+      "debian_ubuntu": ["sudo apt update", "sudo apt install wpscan"],
+      "arch_linux": ["sudo pacman -S wpscan"],
+      "rhel_centos_fedora": ["sudo dnf install wpscan"]
+    },
+    "common_usage_examples": [
+      "wpscan --url http://example.com",
+      "wpscan --url http://example.com --enumerate p",
+      "wpscan --url http://example.com --passwords /path/to/wordlist.txt --usernames admin"
+    ]
+  }
+]

@@ -1,0 +1,314 @@
+{
+  "category": "Education: CBSE Teacher Tools",
+  "description": "A comprehensive list of essential resources, applications, and tools for teachers in CBSE (Central Board of Secondary Education) affiliated schools in India, covering various aspects of teaching, learning, assessment, and professional development.",
+  "tools": [
+    {
+      "name": "DIKSHA (Digital Infrastructure for Knowledge Sharing)",
+      "developer": "Ministry of Education, Government of India / NCERT",
+      "type": "Official CBSE Resource, Learning Platform",
+      "description": "The national platform for school education, offering high-quality e-content (e.g., e-textbooks, audio, video, interactive learning materials) aligned with CBSE and NCERT curricula. Teachers can access training modules (NISHTHA), create content, and participate in online courses.",
+      "versions": ["Latest Web Version", "Android App", "iOS App"],
+      "installation_methods": {
+        "Web": "Access directly via diksha.gov.in (India)",
+        "Android": "Download from Google Play Store",
+        "iOS": "Download from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Essential for accessing official CBSE/NCERT resources and teacher training. Content often available in multiple Indian languages."
+    },
+    {
+      "name": "CBSE Academic Website",
+      "developer": "Central Board of Secondary Education (CBSE)",
+      "type": "Official CBSE Resource",
+      "description": "The official hub for all CBSE academic updates, circulars, syllabi, sample papers, previous year question papers, marking schemes, advisories, and curriculum documents. Crucial for staying updated with board policies and exam patterns.",
+      "versions": ["Latest Web Content"],
+      "installation_methods": {
+        "Web": "Access directly via cbseacademic.nic.in"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Mobile Browsers"],
+      "notes": "Primary source for official CBSE curriculum and examination-related information."
+    },
+    {
+      "name": "Google Workspace for Education (formerly G Suite for Education)",
+      "developer": "Google",
+      "type": "LMS, Productivity Suite, Collaboration Tool",
+      "description": "A comprehensive suite of tools including Google Classroom (for class management, assignments, grading), Google Docs, Sheets, Slides (for content creation and collaboration), Google Meet (for virtual classes), Google Forms (for quizzes and surveys), and Google Drive (for cloud storage). Widely adopted by CBSE schools.",
+      "versions": ["Current versions (regularly updated)"],
+      "installation_methods": {
+        "Web": "Access via browser (classroom.google.com, drive.google.com etc.)",
+        "Desktop Apps": "Google Drive for Desktop (optional sync client for Windows/macOS)",
+        "Mobile Apps": "Download individual apps (Classroom, Docs, Meet, etc.) from Google Play Store / Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Windows", "macOS", "Android", "iOS/iPadOS"],
+      "notes": "Free for educational institutions. Requires school domain setup. Highly versatile for blended and online learning."
+    },
+    {
+      "name": "Microsoft 365 Education (with Microsoft Teams)",
+      "developer": "Microsoft",
+      "type": "LMS, Productivity Suite, Collaboration Tool",
+      "description": "Similar to Google Workspace, offering Microsoft Teams (for virtual classrooms, collaboration, chat), Word, Excel, PowerPoint (for document creation), Outlook (email), and OneDrive (cloud storage). Integrated with many school IT infrastructures.",
+      "versions": ["Current versions (regularly updated)"],
+      "installation_methods": {
+        "Web": "Access via browser (teams.microsoft.com, office.com etc.)",
+        "Desktop Apps": "Microsoft 365 Apps (installer for Windows/macOS)",
+        "Mobile Apps": "Download individual apps (Teams, Word, Excel, etc.) from Google Play Store / Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Windows", "macOS", "Android", "iOS/iPadOS"],
+      "notes": "Often provided free or at discounted rates for educational institutions. Strong integration for schools using Microsoft ecosystems."
+    },
+    {
+      "name": "myCBSEguide",
+      "developer": "Etoos Education Pvt Ltd",
+      "type": "Content Resource, Test Generator",
+      "description": "A popular platform in India providing study material, sample papers, NCERT solutions, test papers, and a question paper generator for CBSE students and teachers. Covers various classes and subjects.",
+      "versions": ["Latest Web Version", "Android App", "iOS App"],
+      "installation_methods": {
+        "Web": "Access directly via mycbseguide.com",
+        "Android": "Download from Google Play Store",
+        "iOS": "Download from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Highly used by teachers for creating practice tests and accessing curriculum-aligned resources."
+    },
+    {
+      "name": "Extramarks",
+      "developer": "Extramarks Education India Pvt. Ltd.",
+      "type": "Learning Platform, Content Resource",
+      "description": "An online learning platform offering K-12 educational solutions with digital content, assessments, and learning modules aligned with CBSE curriculum. Provides interactive learning experiences.",
+      "versions": ["Latest Web Version", "Android App", "iOS App"],
+      "installation_methods": {
+        "Web": "Access directly via extramarks.com",
+        "Android": "Download from Google Play Store",
+        "iOS": "Download from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Offers a blend of self-study and teacher-led features. Often adopted by schools for integrated learning."
+    },
+    {
+      "name": "BYJU'S / Vedantu / Unacademy",
+      "developer": "Various EdTech Companies",
+      "type": "Online Tutoring/Learning Platforms (can be supplemental resources)",
+      "description": "Major Indian EdTech platforms offering live classes, recorded lessons, practice questions, and mock tests for various subjects and competitive exams. Teachers might use these for supplementary content or to refer students.",
+      "versions": ["Current versions (regularly updated)"],
+      "installation_methods": {
+        "Web": "Access via their respective websites (byjus.com, vedantu.com, unacademy.com)",
+        "Mobile Apps": "Download from Google Play Store / Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Primarily student-focused but contain a wealth of content that teachers can leverage for examples, problem-solving, or recommending to students."
+    },
+    {
+      "name": "Canva",
+      "developer": "Canva Pty Ltd",
+      "type": "Graphic Design, Presentation Tool",
+      "description": "User-friendly design platform for creating visually appealing presentations, worksheets, posters, infographics, and social media graphics. Offers a wide range of educational templates.",
+      "versions": ["Latest Web Version", "Desktop App (Windows, macOS)", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via canva.com",
+        "Windows": "Download from Microsoft Store or official website",
+        "macOS": "Download from official website or Mac App Store",
+        "Android": "Download from Google Play Store",
+        "iOS": "Download from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Windows", "macOS", "Android", "iOS/iPadOS"],
+      "notes": "Freemium model with a robust free tier and special 'Canva for Education' program for schools."
+    },
+    {
+      "name": "Kahoot!",
+      "developer": "Kahoot!",
+      "type": "Gamified Learning, Assessment Tool",
+      "description": "Platform for creating and playing interactive quizzes (Kahoots) to engage students, assess understanding, and reinforce learning in a fun, competitive format.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via kahoot.com (teacher creates, students join via kahoot.it)",
+        "Android": "Download 'Kahoot!' app from Google Play Store",
+        "iOS": "Download 'Kahoot!' app from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Excellent for formative assessment, warm-ups, and review sessions. Free version offers good functionality."
+    },
+    {
+      "name": "Quizizz",
+      "developer": "Quizizz Inc.",
+      "type": "Gamified Learning, Assessment Tool",
+      "description": "Another popular interactive quiz platform, similar to Kahoot! but often preferred for self-paced assignments due to its question-by-question progression. Teachers can create quizzes or use existing ones.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via quizizz.com",
+        "Android": "Download 'Quizizz' app from Google Play Store",
+        "iOS": "Download 'Quizizz' app from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Great for homework, individual practice, and in-class assessments. Offers detailed performance reports."
+    },
+    {
+      "name": "Padlet",
+      "developer": "Wallwisher Inc.",
+      "type": "Collaborative Digital Whiteboard/Bulletin Board",
+      "description": "An online collaborative board where teachers and students can post text, images, videos, links, and documents. Useful for brainstorming, collecting ideas, sharing resources, and interactive discussions.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via padlet.com",
+        "Android": "Download 'Padlet' app from Google Play Store",
+        "iOS": "Download 'Padlet' app from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Simple to use, highly visual, and promotes active participation from all students."
+    },
+    {
+      "name": "Flip (formerly Flipgrid)",
+      "developer": "Microsoft",
+      "type": "Video Discussion Platform",
+      "description": "Allows teachers to create topics and students to respond with short videos. Excellent for fostering student voice, encouraging creative expression, and assessing comprehension in a multimodal way.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via info.flip.com",
+        "Android": "Download 'Flip' app from Google Play Store",
+        "iOS": "Download 'Flip' app from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Free for educators. Integrates well with other Microsoft tools. Great for language arts, social studies, and creative subjects."
+    },
+    {
+      "name": "ClassDojo",
+      "developer": "ClassDojo, Inc.",
+      "type": "Classroom Management, Communication Tool",
+      "description": "A platform for classroom management, student behavior tracking, communication with parents, and sharing classroom moments. Teachers can give positive feedback, manage points, and communicate securely.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via classdojo.com",
+        "Android": "Download 'ClassDojo' app from Google Play Store",
+        "iOS": "Download 'ClassDojo' app from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Popular for younger grades to manage behavior and foster home-school connections."
+    },
+    {
+      "name": "NCERT Books (PDFs and e-Books)",
+      "developer": "National Council of Educational Research and Training (NCERT)",
+      "type": "Official Curriculum Resource",
+      "description": "The primary textbooks and supplementary materials for CBSE curriculum. Available as free PDFs on the NCERT website and through various e-reader apps.",
+      "versions": ["Latest editions of textbooks"],
+      "installation_methods": {
+        "Web (PDF)": "Download directly from NCERT website (ncert.nic.in/textbook.php)",
+        "Mobile Apps": "Download dedicated NCERT e-book apps or general PDF readers (e.g., Adobe Acrobat Reader, Google Play Books) on Android/iOS"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS", "e-readers"],
+      "notes": "Fundamental resource for lesson planning and content delivery. Ensure to use the latest editions."
+    },
+    {
+      "name": "YouTube",
+      "developer": "Google",
+      "type": "Video Platform, Educational Content Hub",
+      "description": "Vast repository of educational videos, tutorials, and lectures. Many educators and coaching institutes create CBSE-specific content. Useful for visual explanations, flipped classroom models, and supplementing lessons.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via youtube.com",
+        "Android": "Download 'YouTube' app from Google Play Store",
+        "iOS": "Download 'YouTube' app from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS", "Smart TVs"],
+      "notes": "Requires careful curation to find high-quality, relevant content. Teachers can create their own channels."
+    },
+    {
+      "name": "Socrative",
+      "developer": "Socrative",
+      "type": "Assessment Tool, Interactive Quizzes",
+      "description": "Allows teachers to create quick quizzes, polls, exit tickets, and space races (gamified quizzes) to assess student understanding in real-time. Provides instant feedback and reports.",
+      "versions": ["Latest Web Version", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access directly via socrative.com (teacher uses 'Socrative Teacher', students use 'Socrative Student')",
+        "Android": "Download 'Socrative Teacher' / 'Socrative Student' apps from Google Play Store",
+        "iOS": "Download 'Socrative Teacher' / 'Socrative Student' apps from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Android", "iOS/iPadOS"],
+      "notes": "Excellent for formative assessment and immediate feedback."
+    },
+    {
+      "name": "OneNote / Evernote",
+      "developer": "Microsoft / Evernote Corporation",
+      "type": "Note-taking, Organization, Digital Notebook",
+      "description": "Digital note-taking applications that allow teachers to organize lesson plans, meeting notes, student records, research, and resource links. Supports text, images, audio, and web clippings.",
+      "versions": ["Current versions (regularly updated)"],
+      "installation_methods": {
+        "Web": "Access via onenote.com / evernote.com",
+        "Desktop Apps": "Download installer from official websites (Windows, macOS)",
+        "Mobile Apps": "Download from Google Play Store / Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Windows", "macOS", "Android", "iOS/iPadOS"],
+      "notes": "Helps in personal organization, lesson planning, and creating digital content for students."
+    },
+    {
+      "name": "Trello / Asana",
+      "developer": "Atlassian / Asana, Inc.",
+      "type": "Project Management, Task Organization",
+      "description": "Visual project management tools using boards, lists, and cards to organize tasks, assignments, and collaborative projects. Useful for managing school events, department projects, or even student group work.",
+      "versions": ["Latest Web Version", "Desktop App (Windows, macOS)", "Mobile App (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access via trello.com / asana.com",
+        "Windows": "Download from Microsoft Store or official website",
+        "macOS": "Download from official website or Mac App Store",
+        "Android": "Download from Google Play Store",
+        "iOS": "Download from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Windows", "macOS", "Android", "iOS/iPadOS"],
+      "notes": "Helpful for teachers juggling multiple classes, projects, and administrative tasks."
+    },
+    {
+      "name": "Grammarly",
+      "developer": "Grammarly, Inc.",
+      "type": "Writing Assistant, Proofreading Tool",
+      "description": "AI-powered writing assistant that checks for grammar, spelling, punctuation, clarity, engagement, and delivery errors. Essential for teachers preparing written materials, communicating with parents, or providing feedback on student essays.",
+      "versions": ["Latest Web Version", "Browser Extension", "Desktop App (Windows, macOS)", "Mobile Keyboard (Android, iOS)"],
+      "installation_methods": {
+        "Web": "Access via app.grammarly.com",
+        "Browser Extension": "Install from Chrome Web Store, Firefox Add-ons, Edge Add-ons, Safari Extensions",
+        "Windows": "Download installer from official website",
+        "macOS": "Download installer from official website",
+        "Android": "Install 'Grammarly Keyboard' from Google Play Store",
+        "iOS": "Install 'Grammarly Keyboard' from Apple App Store"
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)", "Windows", "macOS", "Android", "iOS/iPadOS"],
+      "notes": "Freemium model with a comprehensive free version. Highly recommended for improving written communication."
+    },
+    {
+      "name": "Turnitin",
+      "developer": "Turnitin, LLC",
+      "type": "Plagiarism Detection, Academic Integrity Tool",
+      "description": "Software used by educational institutions to check student submissions for originality and potential plagiarism. Provides originality reports and tools for grading and feedback.",
+      "versions": ["Latest Web Version"],
+      "installation_methods": {
+        "Web": "Integrated with LMS platforms (e.g., Google Classroom, Moodle) or accessed directly via institution's Turnitin portal."
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)"],
+      "notes": "Subscription-based, typically provided by the school. Crucial for maintaining academic integrity in CBSE schools."
+    },
+    {
+      "name": "AI Tools for Education (e.g., ChatGPT, Google Gemini, MagicSchool.ai)",
+      "developer": "OpenAI, Google, various EdTech companies",
+      "type": "AI Assistant, Content Generation, Lesson Planning",
+      "description": "Generative AI tools that can assist teachers with lesson planning, generating ideas for activities, creating quiz questions, drafting communication, summarizing texts, and even differentiating content for various student levels.",
+      "versions": ["Latest web-based models (constantly updated)"],
+      "installation_methods": {
+        "Web": "Access directly via their respective websites (e.g., chat.openai.com, gemini.google.com, magicschool.ai)",
+        "Browser Extensions": "Some offer extensions for easier integration."
+      },
+      "os_compatibility": ["Web Browser (Windows, macOS, Linux, ChromeOS)"],
+      "notes": "Emerging tools that require careful and ethical use. Can significantly reduce administrative workload when used effectively. Adherence to school's AI policy is important."
+    },
+    {
+      "name": "Smartboard Software / Interactive Flat Panel Software",
+      "developer": "Smart Technologies, Promethean, ViewSonic, etc.",
+      "type": "Interactive Whiteboard Software",
+      "description": "Software designed to work with interactive whiteboards or flat panels, allowing teachers to annotate, draw, present multimedia, and engage students with interactive lessons directly on the board.",
+      "versions": ["Varies by hardware vendor (e.g., Smart Notebook, ActivInspire)"],
+      "installation_methods": {
+        "Windows": "Installer provided by the Smartboard/IFP manufacturer",
+        "macOS": "Installer provided by the Smartboard/IFP manufacturer",
+        "Linux": "Limited support, depends on specific hardware/software"
+      },
+      "os_compatibility": ["Windows", "macOS", "sometimes Linux"],
+      "notes": "Often comes bundled with the school's interactive display hardware. Essential for interactive classroom delivery."
+    }
+  ]
+}

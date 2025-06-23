@@ -1,0 +1,605 @@
+{
+  "hacker_tools_windows": {
+    "Vulnerability_Scanners": [
+      {
+        "name": "Nessus",
+        "description": "A comprehensive vulnerability assessment solution that helps identify vulnerabilities, configuration issues, and malware on a wide range of systems and devices. Nessus Professional is widely used for enterprise vulnerability management.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the Nessus Installer (.msi) from the Tenable website (requires registration/license). Run the installer and follow the prompts. The installer sets up the Nessus service.",
+                "notes": "After installation, access the web interface via https://localhost:8834/ to complete setup (create admin account, enter license key). Firewall rules may need adjustment."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "OpenVAS (GVM)",
+        "description": "Open Vulnerability Assessment System (OpenVAS), now known as Greenbone Vulnerability Management (GVM), is a full-featured vulnerability scanner. It's open-source and provides extensive vulnerability checks and reporting capabilities.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via WSL/VM)"],
+            "installation_methods": [
+              {
+                "method_name": "WSL (Ubuntu/Debian)",
+                "instructions": "Install Windows Subsystem for Linux (WSL) and an Ubuntu/Debian distribution. Then, follow the Linux installation instructions for GVM within WSL. This typically involves adding Greenbone PPAs and installing `gvm` or `openvas` packages.",
+                "notes": "This is the recommended way to run GVM on Windows as it's primarily a Linux-based tool. Performance might vary compared to native Linux."
+              },
+              {
+                "method_name": "Virtual Machine (e.g., Kali Linux)",
+                "instructions": "Install a virtualization software (VirtualBox, VMware Workstation Player). Download a Kali Linux ISO (which includes GVM pre-installed) and create a new virtual machine. Boot Kali and use `gvm-setup`.",
+                "notes": "Provides a dedicated and optimized environment for GVM. Networking configuration within the VM is crucial for scanning targets on the host network."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nmap (Network Mapper)",
+        "description": "A free and open-source utility for network discovery and security auditing. It's used to discover hosts and services on a computer network, thus creating a 'map' of the network. Nmap is essential for reconnaissance.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the latest Windows installer (.exe) from the official Nmap website (https://nmap.org/download.html). Run the installer and follow the prompts. It includes Npcap (for packet capture) and Zenmap (GUI).",
+                "notes": "Ensure you install Npcap during the Nmap setup, as it's required for many of Nmap's advanced features (e.g., raw packet capture, OS detection, version detection). Add Nmap to your system PATH for easy command-line access."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install nmap",
+                "notes": "Requires Chocolatey. Installs Nmap and automatically handles Npcap installation."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install Nmap.Nmap",
+                "notes": "Requires Winget. Installs Nmap and Npcap."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Nikto",
+        "description": "An open-source web server scanner that performs comprehensive tests against web servers for multiple items, including over 6700 potentially dangerous files/CGIs, outdated server versions, and other version-specific problems. It's a quick way to audit a web server.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via Perl/WSL)"],
+            "installation_methods": [
+              {
+                "method_name": "Perl Installation",
+                "instructions": "Nikto is a Perl script. You need to install Perl for Windows (e.g., Strawberry Perl or ActivePerl). Download Nikto from its GitHub repository (https://github.com/sullo/nikto). Extract the archive and run `perl nikto.pl` from the command line in the Nikto directory.",
+                "notes": "Ensure Perl is in your system PATH. Keep Nikto updated by pulling the latest changes from its Git repository."
+              },
+              {
+                "method_name": "WSL (Ubuntu/Debian)",
+                "instructions": "Install Windows Subsystem for Linux (WSL) and an Ubuntu/Debian distribution. Then, follow the Linux installation instructions for Nikto within WSL: `sudo apt update && sudo apt install nikto`.",
+                "notes": "This is often simpler for managing dependencies and updates for Nikto."
+              },
+              {
+                "method_name": "Virtual Machine (e.g., Kali Linux)",
+                "instructions": "Install a VM software and create a Kali Linux VM. Nikto is pre-installed in Kali Linux.",
+                "notes": "Provides an isolated and pre-configured environment for penetration testing tools."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SQLMap",
+        "description": "An open-source penetration testing tool that automates the process of detecting and exploiting SQL injection flaws and taking over database servers. It supports a wide range of database management systems.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via Python)"],
+            "installation_methods": [
+              {
+                "method_name": "Python (Manual/Git)",
+                "instructions": "Ensure Python 3 is installed on your Windows machine (see Python installation details). Download or clone the SQLMap repository from GitHub (https://github.com/sqlmapproject/sqlmap). Navigate to the `sqlmap` directory in your command prompt and run `python sqlmap.py -h`.",
+                "notes": "Add the `sqlmap` directory to your system PATH for easier access from any directory. Python's `pip` is not used for installing sqlmap itself, as it's a standalone script."
+              },
+              {
+                "method_name": "WSL (Ubuntu/Debian)",
+                "instructions": "Install Windows Subsystem for Linux (WSL) and an Ubuntu/Debian distribution. Then, install SQLMap via `sudo apt update && sudo apt install sqlmap`.",
+                "notes": "This is often the most straightforward way to use SQLMap on Windows."
+              },
+              {
+                "method_name": "Virtual Machine (e.g., Kali Linux)",
+                "instructions": "Install a VM software and create a Kali Linux VM. SQLMap is pre-installed in Kali Linux.",
+                "notes": "Provides a dedicated and pre-configured environment."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Exploitation_Frameworks": [
+      {
+        "name": "Metasploit Framework",
+        "description": "A powerful penetration testing framework used for developing, executing, and testing exploit code. It contains a vast array of exploits, payloads, and post-exploitation modules, making it indispensable for ethical hacking.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via WSL/VM)"],
+            "installation_methods": [
+              {
+                "method_name": "WSL (Ubuntu/Debian)",
+                "instructions": "Install Windows Subsystem for Linux (WSL) and an Ubuntu/Debian distribution. Then, follow the Linux installation instructions for Metasploit. This often involves downloading and running the Metasploit installer script or installing via `apt` from the official repositories (if available and up-to-date).",
+                "notes": "Running Metasploit natively on Windows is no longer officially supported. WSL provides a robust Linux environment. You'll need to handle database setup (PostgreSQL) within WSL."
+              },
+              {
+                "method_name": "Virtual Machine (e.g., Kali Linux)",
+                "instructions": "Install a VM software and create a Kali Linux VM. Metasploit is pre-installed and configured in Kali Linux. You can launch it with `msfconsole`.",
+                "notes": "This is the most common and recommended way to use Metasploit on Windows, as Kali provides all necessary dependencies and optimal configuration. Ensure network settings allow communication with target systems."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Burp Suite",
+        "description": "A leading toolkit for web application security testing. It includes an intercepting proxy, scanner, intruder, repeater, and other tools, making it essential for finding vulnerabilities in web applications.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the Burp Suite Community Edition or Professional Edition installer (.exe) from the PortSwigger website (https://portswigger.net/burp/communitydownload). Run the installer and follow the prompts.",
+                "notes": "Burp Suite requires Java. The installer usually bundles a compatible JRE. Configure your browser to use Burp's proxy (default: 127.0.0.1:8080) and install Burp's CA certificate for HTTPS interception."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install burpsuite-community",
+                "notes": "Installs Burp Suite Community Edition. Replace with `burpsuite-pro` for Professional if you have a license. Requires Chocolatey."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Password_Cracking_Tools": [
+      {
+        "name": "John the Ripper",
+        "description": "A popular open-source password cracking tool available for many operating systems. It's used to detect weak Unix passwords and can crack various hash types using dictionary attacks, brute-force, and hybrid methods.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via Cygwin/WSL)"],
+            "installation_methods": [
+              {
+                "method_name": "Cygwin",
+                "instructions": "Install Cygwin (https://www.cygwin.com/setup-x86_64.exe) for a Linux-like environment on Windows. During Cygwin setup, search for and select `john` for installation. Once installed, launch Cygwin terminal and run `john`.",
+                "notes": "Cygwin provides a Unix-like environment, making it easier to compile and run Linux tools. Performance might be less than native Linux."
+              },
+              {
+                "method_name": "WSL (Ubuntu/Debian)",
+                "instructions": "Install Windows Subsystem for Linux (WSL) and an Ubuntu/Debian distribution. Then, install John the Ripper via `sudo apt update && sudo apt install john`.",
+                "notes": "This is generally the preferred method for running Linux tools on Windows due to better integration and performance compared to Cygwin."
+              },
+              {
+                "method_name": "Manual (Compiled Binaries)",
+                "instructions": "Download pre-compiled Windows binaries of John the Ripper from unofficial sources (use with caution and verify integrity). Extract the archive and run `john.exe` from the command prompt.",
+                "notes": "Requires careful sourcing of binaries. Ensure you understand how to use `john.ini` for configuration and paths to wordlists."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Hashcat",
+        "description": "The world's fastest and most advanced password recovery utility, supporting five unique modes of attack for over 300 highly-optimized hashing algorithms. It can leverage CPU, GPU, and other accelerators.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Binaries",
+                "instructions": "Download the latest stable release for Windows from the Hashcat website (https://hashcat.net/hashcat/). Extract the .7z archive to a directory. Ensure your graphics drivers (NVIDIA, AMD) are up-to-date for GPU acceleration. Open a command prompt in the extracted folder and run `hashcat.exe -h`.",
+                "notes": "Hashcat leverages GPU power significantly, so having updated drivers is crucial. Familiarize yourself with command-line arguments and attack modes."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Packet_Analyzers_and_Sniffers": [
+      {
+        "name": "Wireshark",
+        "description": "The world's foremost and widely-used network protocol analyzer. It lets you see what's happening on your network at a microscopic level and is the de facto standard for many commercial and non-profit enterprises, government agencies, and educational institutions.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the official Windows installer (.exe) from the Wireshark website (https://www.wireshark.org/#download). Run the installer. Ensure Npcap is selected for installation (it's required for packet capture).",
+                "notes": "Npcap is crucial for Wireshark to capture live network traffic. Ensure you grant necessary permissions during installation to allow Npcap to run."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install wireshark",
+                "notes": "Requires Chocolatey. Installs Wireshark and its dependencies, including Npcap."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install Wireshark.Wireshark",
+                "notes": "Requires Winget. Installs Wireshark and its dependencies."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Forensics_and_Reverse_Engineering": [
+      {
+        "name": "Volatility Framework",
+        "description": "An open-source memory forensics framework for extracting digital artifacts from volatile memory (RAM) dumps. It's used for malware analysis, incident response, and digital forensics investigations.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via Python)"],
+            "installation_methods": [
+              {
+                "method_name": "Python (Manual/Git)",
+                "instructions": "Ensure Python 3 (Python 3.8+ recommended) is installed on your Windows machine. Download or clone the Volatility 3 repository from GitHub (https://github.com/volatilityfoundation/volatility3). Navigate to the `volatility3` directory in your command prompt and run `python vol.py -h`.",
+                "notes": "Requires specific Python libraries (install via `pip install -r requirements.txt`). For Volatility 2, specific dependencies like 'Pillow' and 'Distorm' might be needed, and Python 2 is often preferred for older versions."
+              },
+              {
+                "method_name": "WSL (Ubuntu/Debian)",
+                "instructions": "Install Windows Subsystem for Linux (WSL) and an Ubuntu/Debian distribution. Then, install Volatility via `pip` or by cloning the repository within WSL.",
+                "notes": "WSL provides a more native environment for Python dependencies."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Ghidra",
+        "description": "A free and open-source reverse engineering tool suite developed by the NSA. It helps analyze compiled code on a variety of platforms and supports a range of processor instruction sets and executable formats. Excellent for malware analysis and vulnerability research.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Distribution (Manual)",
+                "instructions": "Download the latest Ghidra release (.zip) from the official GitHub page (https://github.com/NationalSecurityAgency/ghidra/releases). Extract the archive to a directory (e.g., `C:\\ghidra`). Ghidra requires a Java Development Kit (JDK) 11 or later. Ensure `JAVA_HOME` is set. Run `ghidraRun.bat` from the extracted `ghidra/` directory.",
+                "notes": "Ensure you have a compatible JDK installed and configured. It's a large application and can take some time to load initially."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "IDA Pro",
+        "description": "A proprietary multi-processor disassembler and debugger, widely considered the industry standard for reverse engineering. It supports an extensive list of processors and file formats and offers powerful analysis capabilities.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Commercial)",
+                "instructions": "IDA Pro is a commercial product. Purchase a license from Hex-Rays (https://www.hex-rays.com/ida-pro/purchase/). Download the installer provided after purchase and follow the installation instructions.",
+                "notes": "There is a freeware version (IDA Free) available which is limited but useful for learning. The full version is very expensive."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "OS_and_Virtualization": [
+      {
+        "name": "Kali Linux",
+        "description": "A Debian-derived Linux distribution designed for digital forensics and penetration testing. It comes pre-installed with hundreds of tools for various information security tasks, making it a go-to OS for hackers and security professionals.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via VM/WSL)"],
+            "installation_methods": [
+              {
+                "method_name": "Virtual Machine (Recommended)",
+                "instructions": "Install virtualization software like VirtualBox (https://www.virtualbox.org/wiki/Downloads) or VMware Workstation Player (https://www.vmware.com/products/workstation-player.html). Download the Kali Linux VM image (pre-built for VirtualBox/VMware) from the official Kali Linux website (https://www.kali.org/get-kali/#kali-virtual-machines). Import the image into your virtualization software and run the VM.",
+                "notes": "This is the most common and recommended way to use Kali Linux on a Windows host, providing a full, isolated environment. Ensure you allocate sufficient RAM and CPU cores."
+              },
+              {
+                "method_name": "WSL (Kali Linux App)",
+                "instructions": "Enable Windows Subsystem for Linux (WSL). Open the Microsoft Store and search for 'Kali Linux'. Install the 'Kali Linux' app. Once installed, launch it from the Start Menu to complete setup.",
+                "notes": "This provides a Kali Linux command-line environment within Windows. While many tools work, GUI tools require additional setup (e.g., X server on Windows) and might not perform as well as a full VM."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Parrot OS",
+        "description": "Another Debian-based Linux distribution geared towards security professionals, developers, and privacy-aware users. It offers a rich collection of penetration testing, forensic, and development tools.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (via VM)"],
+            "installation_methods": [
+              {
+                "method_name": "Virtual Machine (Recommended)",
+                "instructions": "Install virtualization software (VirtualBox/VMware). Download the Parrot OS VM image or ISO from the official Parrot Security website (https://parrotsec.org/download/). Create a new VM and install Parrot OS from the ISO or import the pre-built image.",
+                "notes": "Similar to Kali, running Parrot OS in a VM provides the best experience and full access to its tools."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "VirtualBox",
+        "description": "A free and open-source hypervisor for x86 virtualization, developed by Oracle. It allows users to run multiple guest operating systems on a single host computer, essential for setting up isolated lab environments for hacking.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the VirtualBox installer (.exe) for Windows hosts from the official VirtualBox website (https://www.virtualbox.org/wiki/Downloads). Run the installer and follow the prompts. Install the VirtualBox Extension Pack for additional features.",
+                "notes": "Crucial for running Linux-based hacking distributions like Kali or Parrot. Ensure 'Virtualization Technology' (VT-x/AMD-V) is enabled in your computer's BIOS/UEFI settings for optimal performance."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install virtualbox",
+                "notes": "Requires Chocolatey. Also consider `choco install virtualbox-extensionpack`."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install Oracle.VirtualBox",
+                "notes": "Requires Winget. Allows for quick installation."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "VMware Workstation Player",
+        "description": "A free desktop virtualization software for Windows and Linux, allowing users to run virtual machines. It's a popular alternative to VirtualBox for creating and managing isolated hacking labs.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the VMware Workstation Player installer (.exe) from the official VMware website (https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html). Run the installer and follow the prompts.",
+                "notes": "The free version is for non-commercial use. Similar to VirtualBox, ensure virtualization is enabled in your BIOS/UEFI."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Network_Tools": [
+      {
+        "name": "Cain & Abel",
+        "description": "A password recovery tool for Microsoft Operating Systems. It can recover various kinds of passwords by sniffing the network, cracking encrypted passwords using Dictionary, Brute-Force and Cryptanalysis attacks, recording VoIP conversations, decoding scrambled passwords, recovering wireless network keys, revealing password boxes, uncovering cached passwords and analyzing routing protocols.",
+        "versions": [
+          {
+            "supported_oses": ["Windows (Legacy)"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Older Versions)",
+                "instructions": "Cain & Abel is no longer actively maintained and can be difficult to find from official sources. It's often found on older software archives. Search for 'Cain & Abel download' but exercise extreme caution regarding source. Run the installer.",
+                "notes": "This tool is largely outdated and may not work correctly on modern Windows versions (Windows 10/11) or with modern security protocols. It may also trigger antivirus alerts. Use with extreme caution and in isolated lab environments only. Npcap or WinPcap (older) is usually a dependency."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Angry IP Scanner",
+        "description": "A fast and friendly network scanner. It scans IP addresses and ports and has many other features. It's widely used by network administrators and ethical hackers for quick network reconnaissance.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the Windows installer (.exe) from the official Angry IP Scanner website (https://angryip.org/download/). Run the installer and follow the prompts.",
+                "notes": "Requires Java Runtime Environment (JRE) to be installed. The installer might offer to install it."
+              },
+              {
+                "method_name": "Portable Version",
+                "instructions": "Download the .zip archive for Windows from the official website. Extract the contents to a directory and run `ipscan.exe`.",
+                "notes": "No installation needed. Good for quick use or on systems where installations are restricted."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Putty",
+        "description": "A free and open-source terminal emulator, serial console and network file transfer application. It supports several network protocols, including SCP, SSH, Telnet, Rlogin, and raw socket connection. It's essential for remote access to servers.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the PuTTY installer (.msi) from the official PuTTY website (https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html). Run the installer and follow the prompts.",
+                "notes": "Installs PuTTY, PSCP (SCP client), PSFTP (SFTP client), PuTTYgen (key generator), and Pageant (SSH authentication agent)."
+              },
+              {
+                "method_name": "Portable Executable",
+                "instructions": "Download `putty.exe` directly from the official website. Run the executable.",
+                "notes": "No installation needed, can be run from a USB drive. Useful for quick connections or on systems without admin rights."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install putty",
+                "notes": "Requires Chocolatey. Installs PuTTY and its associated tools."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install PuTTY.PuTTY",
+                "notes": "Requires Winget."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Netcat (Ncat)",
+        "description": "A versatile networking utility that reads and writes data across network connections, using TCP or UDP protocol. It's often referred to as a 'network Swiss army knife' for its wide range of uses in network debugging, scanning, and data transfer.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Nmap Installation (Recommended)",
+                "instructions": "Ncat is included as part of the Nmap suite. Install Nmap (see Nmap section for instructions). Ncat will be available in the Nmap installation directory.",
+                "notes": "This is the easiest and most reliable way to get Ncat on Windows."
+              },
+              {
+                "method_name": "Manual (Compiled Binaries)",
+                "instructions": "Search for pre-compiled Netcat (or Ncat) binaries for Windows online. Download the executable(s) and place them in a directory included in your system PATH, or run them from their downloaded location.",
+                "notes": "Be cautious when downloading executables from unofficial sources. Verify integrity. Older versions of Netcat (e.g., `nc.exe`) might be less feature-rich or have security concerns compared to Ncat."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Privacy_and_Anonymity": [
+      {
+        "name": "Tor Browser",
+        "description": "A free and open-source web browser that anonymizes your web traffic by routing it through the Tor network. It's designed to protect users' privacy and anonymity online.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the Tor Browser installer (.exe) from the official Tor Project website (https://www.torproject.org/download/). Run the installer and follow the prompts. Launch Tor Browser, then click 'Connect' to connect to the Tor network.",
+                "notes": "Tor Browser is self-contained and does not require a separate Tor installation. Always download from the official site to ensure authenticity."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "OpenVPN",
+        "description": "An open-source software application that implements virtual private network (VPN) techniques for creating secure point-to-point or site-to-site connections in routed or bridged configurations and remote access facilities. Crucial for secure and anonymous communication.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the OpenVPN Community Edition installer (.exe) for Windows from the official OpenVPN website (https://openvpn.net/community-downloads/). Run the installer. You will need a VPN configuration file (.ovpn) from your VPN provider or custom setup to connect.",
+                "notes": "Installs the OpenVPN client and TAP adapter. Requires administrator privileges to install. Ensure you import your .ovpn profile into the OpenVPN GUI for Windows."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Utilities_and_Miscellaneous": [
+      {
+        "name": "Notepad++",
+        "description": "A free source code editor and Notepad replacement that supports several languages. Running in the MS Windows environment, its use is governed by GPL License. Essential for quick text editing and code review.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the Notepad++ installer (.exe) from the official Notepad++ website (https://notepad-plus-plus.org/downloads/). Run the installer and follow the prompts.",
+                "notes": "Lightweight and highly customizable with plugins."
+              },
+              {
+                "method_name": "Portable Version",
+                "instructions": "Download the portable .zip archive from the official website. Extract and run `notepad++.exe`.",
+                "notes": "No installation needed. Great for USB drives."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install notepadplusplus",
+                "notes": "Requires Chocolatey."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install Notepad++.Notepad++",
+                "notes": "Requires Winget."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Git",
+        "description": "A distributed version control system for tracking changes in source code during software development. It's designed for coordinating work among programmers, but also used to track changes in any set of files. Essential for managing tool source code and scripts.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Git for Windows)",
+                "instructions": "Download the 'Git for Windows' installer (.exe) from the official Git website (https://git-scm.com/download/win). Run the installer and follow the prompts. It includes Git Bash (a Unix-like shell) and Git GUI.",
+                "notes": "Ensure you select the option to add Git to your system PATH during installation. Git Bash is highly recommended for using Git commands and other Linux-like utilities on Windows."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install git",
+                "notes": "Requires Chocolatey. Installs Git and optional Git LFS."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install Git.Git",
+                "notes": "Requires Winget."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Windows Subsystem for Linux (WSL)",
+        "description": "A compatibility layer for running Linux binary executables natively on Windows. It allows developers to run a GNU/Linux environment -- including most command-line tools, utilities, and applications -- directly on Windows, without the overhead of a traditional virtual machine or dual-boot setup.",
+        "versions": [
+          {
+            "supported_oses": ["Windows 10 (Build 17093+) / Windows 11"],
+            "installation_methods": [
+              {
+                "method_name": "Command Line (Recommended for WSL2)",
+                "command": "wsl --install",
+                "instructions": "Open PowerShell or Command Prompt as Administrator. Run `wsl --install`. This command will enable the necessary WSL features, download the latest Linux kernel, set WSL 2 as the default, and install Ubuntu by default. You may need to restart your computer.",
+                "notes": "WSL2 offers full Linux kernel compatibility and better performance for many tools than WSL1. After installation, you can install other Linux distributions from the Microsoft Store (e.g., Kali Linux, Debian, openSUSE)."
+              },
+              {
+                "method_name": "Manual (for older Windows 10 versions or specific setup)",
+                "instructions": "Enable the 'Virtual Machine Platform' and 'Windows Subsystem for Linux' optional features via 'Turn Windows features on or off'. Download the Linux kernel update package. Install a Linux distribution from the Microsoft Store.",
+                "notes": "The `wsl --install` command simplifies this process significantly for newer Windows versions."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "7-Zip",
+        "description": "A free and open-source file archiver with a high compression ratio. It supports 7z, XZ, BZIP2, GZIP, TAR, ZIP, and WIM formats for packing and unpacking, and AR, ARJ, CAB, CHM, CPIO, CramFS, DMG, EXT, FAT, GPT, HFS, IHEX, ISO, LZH, LZMA, MBR, MSI, NSIS, NTFS, QCOW2, RAR, RPM, SquashFS, UDF, UEFI, VDI, VHD, VMDK, WIM, XAR and Z formats for unpacking.",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer",
+                "instructions": "Download the 7-Zip installer (.exe) from the official 7-Zip website (https://www.7-zip.org/download.html). Run the installer and follow the prompts.",
+                "notes": "Essential for extracting compressed archives of many hacking tools."
+              },
+              {
+                "method_name": "Chocolatey",
+                "command": "choco install 7zip",
+                "notes": "Requires Chocolatey."
+              },
+              {
+                "method_name": "Winget",
+                "command": "winget install 7zip.7zip",
+                "notes": "Requires Winget."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

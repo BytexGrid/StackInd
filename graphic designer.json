@@ -1,0 +1,1434 @@
+{
+  "graphic_designer_tools": {
+    "Raster_Graphics_Editing": [
+      {
+        "name": "Adobe Photoshop",
+        "category": "Raster Graphics Editing",
+        "description": "The industry-standard image editing software, widely used for photo manipulation, digital painting, and graphic design with pixel-based images. Offers extensive features for compositing, retouching, and creating complex visuals. Continuously updated with AI-powered features like Generative Fill.",
+        "homepage": "https://www.adobe.com/products/photoshop.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website (https://creativecloud.adobe.com/apps/all/desktop). Log in with your Adobe ID. Locate Photoshop in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription (e.g., Photography Plan, Single App Plan, All Apps Plan). Provides seamless updates, cloud storage, and integration with other Adobe apps like Illustrator, InDesign, and Premiere Pro. Versions typically follow a year-based naming convention (e.g., Photoshop 2024, Photoshop 2023)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website (https://creativecloud.adobe.com/apps/all/desktop). Log in with your Adobe ID. Locate Photoshop in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Integrated with macOS features like Retina display support and Apple Silicon optimization for newer Macs. Versions typically follow a year-based naming convention (e.g., Photoshop 2024, Photoshop 2023)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux"],
+            "installation_methods": [
+              {
+                "method_name": "Not natively supported (Wine/Virtual Machine)",
+                "instructions": "Adobe Photoshop does not officially support Linux. Users typically run it via Wine (a compatibility layer) or in a Windows Virtual Machine (e.g., VirtualBox, VMware Workstation Player).",
+                "notes": "Using Wine (e.g., via Lutris or PlayOnLinux) may lead to stability and performance issues, and not all features may work. A virtual machine offers better compatibility but requires a Windows license and significant system resources (RAM, CPU, disk space). Performance within a VM is often lower than native."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Open the App Store on your iPad, search for 'Adobe Photoshop', and tap 'Get' to download and install. Requires an active Adobe Creative Cloud subscription.",
+                "notes": "A streamlined version of Photoshop optimized for touch and Apple Pencil. Ideal for on-the-go editing and compositing. Features like cloud document sync are available."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "GIMP",
+        "category": "Raster Graphics Editing",
+        "description": "GNU Image Manipulation Program is a free and open-source raster graphics editor used for image retouching and editing, free-form drawing, converting between different image formats, and more specialized tasks. It is a powerful alternative to commercial software with a strong community and extensive plugin support.",
+        "homepage": "https://www.gimp.org/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the latest stable .exe installer from the official GIMP website (https://www.gimp.org/downloads/). Run the installer and follow the on-screen instructions.",
+                "notes": "Recommended for most Windows users. Provides a straightforward installation. Current stable version is GIMP 2.10.x. Development versions (GIMP 2.99.x leading to GIMP 3.0) are also available but less stable."
+              },
+              {
+                "method_name": "Winget",
+                "instructions": "Open PowerShell or Command Prompt as Administrator and run: `winget install GIMP.GIMP`",
+                "notes": "Requires Winget (Windows Package Manager). Offers a quick, command-line installation. Installs the latest stable version available in Winget."
+              },
+              {
+                "method_name": "Chocolatey",
+                "instructions": "Open PowerShell as Administrator and run: `choco install gimp`",
+                "notes": "Requires Chocolatey (Windows Package Manager). Simplifies installation and updates for Windows applications."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the latest stable .dmg file from the official GIMP website (https://www.gimp.org/downloads/). Open the .dmg and drag the GIMP application to your 'Applications' folder.",
+                "notes": "Standard macOS application installation method. Supports both Intel and Apple Silicon Macs via universal binary. Current stable version is GIMP 2.10.x."
+              },
+              {
+                "method_name": "Homebrew Cask",
+                "instructions": "Open Terminal and run: `brew install --cask gimp`",
+                "notes": "Requires Homebrew. Simplifies installation and updates for macOS applications. Installs the latest stable version available via Homebrew Cask."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Debian/Ubuntu)"],
+            "installation_methods": [
+              {
+                "method_name": "APT (Official Repositories)",
+                "instructions": "Open Terminal and run: `sudo apt update && sudo apt install gimp`",
+                "notes": "Installs GIMP from the official Debian/Ubuntu repositories. Generally stable, but may not be the absolute latest version (often a slightly older stable release). Good for general use."
+              },
+              {
+                "method_name": "Flatpak (Recommended for latest stable)",
+                "instructions": "Ensure Flatpak is installed (`sudo apt install flatpak`). Then add the Flathub remote (`flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`). Finally, install GIMP: `flatpak install flathub org.gimp.GIMP`",
+                "notes": "Provides the latest stable version of GIMP, sandboxed, and works across most Linux distributions. Recommended for users who want the newest features and bug fixes without compiling. Requires initial Flatpak setup."
+              },
+              {
+                "method_name": "Snap",
+                "instructions": "Open Terminal and run: `sudo snap install gimp`",
+                "notes": "Another universal Linux packaging system. Provides a sandboxed environment. May not always be the absolute latest, but often more up-to-date than distro repos. Integrated into Ubuntu by default."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Arch Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "Pacman",
+                "instructions": "Open Terminal and run: `sudo pacman -S gimp`",
+                "notes": "Installs GIMP from the official Arch Linux repositories. Typically provides a very recent stable version due to Arch's rolling release nature."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed (`sudo pacman -S flatpak`). Then add the Flathub remote (`flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`). Finally, install GIMP: `flatpak install flathub org.gimp.GIMP`",
+                "notes": "Recommended for the absolute latest stable version and cross-distro compatibility."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Fedora/RHEL/CentOS Stream)"],
+            "installation_methods": [
+              {
+                "method_name": "DNF",
+                "instructions": "Open Terminal and run: `sudo dnf install gimp`",
+                "notes": "Installs GIMP from the official Fedora/RHEL/CentOS Stream repositories. Generally provides a recent stable version."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed (`sudo dnf install flatpak`). Then add the Flathub remote (`flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo`). Finally, install GIMP: `flatpak install flathub org.gimp.GIMP`",
+                "notes": "Provides the latest stable version of GIMP, sandboxed, and works across most Linux distributions. Fedora ships with Flatpak pre-installed."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Affinity Photo",
+        "category": "Raster Graphics Editing",
+        "description": "A professional raster graphics editor from Serif, known for its powerful performance, non-destructive editing, and one-time purchase model (no subscription). Offers features comparable to Photoshop, including advanced photo editing, retouching, and digital painting.",
+        "homepage": "https://affinity.serif.com/en-us/photo/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased from Serif or Microsoft Store)",
+                "instructions": "Purchase Affinity Photo from the Serif website or Microsoft Store. Download the installer (.exe) from your account or the store, then run and follow the instructions.",
+                "notes": "One-time purchase license. Offers excellent performance and a modern UI. Currently in version 2 (e.g., Affinity Photo 2)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased from Serif or Mac App Store)",
+                "instructions": "Purchase Affinity Photo from the Serif website or Mac App Store. Download the application from your account or the store, then drag it to your Applications folder.",
+                "notes": "One-time purchase license. Highly optimized for macOS, including Apple Silicon. Currently in version 2 (e.g., Affinity Photo 2)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Purchase and download Affinity Photo from the Apple App Store on your iPad.",
+                "notes": "A full-featured version optimized for iPad with touch and Apple Pencil support. One-time purchase."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Krita",
+        "category": "Raster Graphics Editing (primarily Digital Painting)",
+        "description": "A free and open-source raster graphics editor, primarily designed for digital painting, 2D animation, and concept art. It offers a comprehensive set of tools for artists, including a wide range of brushes, blending modes, and a customizable interface.",
+        "homepage": "https://krita.org/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the latest stable .exe installer from the official Krita website (https://krita.org/en/download/krita-desktop/). Run the installer and follow the on-screen instructions.",
+                "notes": "Recommended for most Windows users. Current stable version is Krita 5.x.x."
+              },
+              {
+                "method_name": "Microsoft Store",
+                "instructions": "Search for 'Krita' in the Microsoft Store and click 'Get' to install. (Note: This is a paid version in the MS Store, a donation to the project, but the free installer is available from their website).",
+                "notes": "Convenient for Microsoft Store users, but direct download is free."
+              },
+              {
+                "method_name": "Steam",
+                "instructions": "Search for 'Krita' on Steam and purchase/install it. (Note: This is also a paid version, contributing to development).",
+                "notes": "For users who prefer Steam's platform for managing applications."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the latest stable .dmg file from the official Krita website (https://krita.org/en/download/krita-desktop/). Open the .dmg and drag the Krita application to your 'Applications' folder.",
+                "notes": "Standard macOS application installation method. Supports both Intel and Apple Silicon Macs. Current stable version is Krita 5.x.x."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Various Distributions)"],
+            "installation_methods": [
+              {
+                "method_name": "AppImage (Recommended for latest stable)",
+                "instructions": "Download the Krita AppImage from the official website (https://krita.org/en/download/krita-desktop/). Make it executable (`chmod +x Krita-*.AppImage`) and run it.",
+                "notes": "Self-contained executable that runs on most Linux distributions without installation, providing the latest stable version. Ideal for users who want to avoid dependency issues."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed and Flathub remote is added. Then: `flatpak install flathub org.kde.krita`",
+                "notes": "Provides a sandboxed, up-to-date version. Good for consistency across distributions."
+              },
+              {
+                "method_name": "Snap",
+                "instructions": "Open Terminal and run: `sudo snap install krita`",
+                "notes": "Another universal Linux packaging system. Convenient for Ubuntu users."
+              },
+              {
+                "method_name": "Distribution Repositories (APT, DNF, Pacman etc.)",
+                "instructions": "Use your distribution's package manager: e.g., `sudo apt install krita` (Debian/Ubuntu), `sudo dnf install krita` (Fedora), `sudo pacman -S krita` (Arch Linux).",
+                "notes": "Installs from official distribution repositories. May not be the absolute latest version but integrates well with the system."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Android"],
+            "installation_methods": [
+              {
+                "method_name": "Google Play Store",
+                "instructions": "Search for 'Krita' on the Google Play Store and install.",
+                "notes": "Currently in beta for Android, performance may vary depending on device."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Vector_Graphics_Editing": [
+      {
+        "name": "Adobe Illustrator",
+        "category": "Vector Graphics Editing",
+        "description": "The industry-standard vector graphics software, used for creating logos, icons, typography, and complex illustrations. Offers powerful tools for drawing, shape building, and color management, ensuring scalability without loss of quality.",
+        "homepage": "https://www.adobe.com/products/illustrator.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website. Log in with your Adobe ID. Locate Illustrator in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Integrates seamlessly with Photoshop and InDesign."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website. Log in with your Adobe ID. Locate Illustrator in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Optimized for macOS performance."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux"],
+            "installation_methods": [
+              {
+                "method_name": "Not natively supported (Wine/Virtual Machine)",
+                "instructions": "Adobe Illustrator does not officially support Linux. Users typically run it via Wine (compatibility layer) or in a Windows Virtual Machine.",
+                "notes": "Similar limitations to Photoshop on Linux. Performance and stability issues are common with Wine. VM requires a Windows license and more resources."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Open the App Store on your iPad, search for 'Adobe Illustrator', and tap 'Get' to download and install. Requires an active Adobe Creative Cloud subscription.",
+                "notes": "A touch-optimized version for creating vector graphics on the go, with cloud sync."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Inkscape",
+        "category": "Vector Graphics Editing",
+        "description": "A free and open-source vector graphics editor, powerful and versatile, used for creating scalable vector graphics (SVG), illustrations, logos, and web graphics. It supports a wide range of vector features and is a strong alternative to commercial software.",
+        "homepage": "https://inkscape.org/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the latest stable .exe installer from the official Inkscape website (https://inkscape.org/release/inkscape-1.x/). Run the installer and follow the on-screen instructions.",
+                "notes": "Recommended for most Windows users. Current stable version is Inkscape 1.x."
+              },
+              {
+                "method_name": "Winget",
+                "instructions": "Open PowerShell or Command Prompt as Administrator and run: `winget install Inkscape.Inkscape`",
+                "notes": "Requires Winget. Offers a quick, command-line installation."
+              },
+              {
+                "method_name": "Chocolatey",
+                "instructions": "Open PowerShell as Administrator and run: `choco install inkscape`",
+                "notes": "Requires Chocolatey. Simplifies installation and updates."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the latest stable .dmg file from the official Inkscape website (https://inkscape.org/release/inkscape-1.x/). Open the .dmg and drag the Inkscape application to your 'Applications' folder.",
+                "notes": "Standard macOS application installation method. Supports both Intel and Apple Silicon Macs."
+              },
+              {
+                "method_name": "Homebrew Cask",
+                "instructions": "Open Terminal and run: `brew install --cask inkscape`",
+                "notes": "Requires Homebrew. Simplifies installation and updates for macOS applications."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Various Distributions)"],
+            "installation_methods": [
+              {
+                "method_name": "Flatpak (Recommended for latest stable)",
+                "instructions": "Ensure Flatpak is installed and Flathub remote is added. Then: `flatpak install flathub org.inkscape.Inkscape`",
+                "notes": "Provides the latest stable version, sandboxed. Recommended for most Linux users for up-to-date features."
+              },
+              {
+                "method_name": "Snap",
+                "instructions": "Open Terminal and run: `sudo snap install inkscape`",
+                "notes": "Another universal Linux packaging system. Convenient for Ubuntu users."
+              },
+              {
+                "method_name": "Distribution Repositories (APT, DNF, Pacman etc.)",
+                "instructions": "Use your distribution's package manager: e.g., `sudo apt install inkscape` (Debian/Ubuntu), `sudo dnf install inkscape` (Fedora), `sudo pacman -S inkscape` (Arch Linux).",
+                "notes": "Installs from official distribution repositories. May be a slightly older version than Flatpak/Snap, but well-integrated."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Affinity Designer",
+        "category": "Vector Graphics Editing",
+        "description": "A professional vector graphics editor from Serif, offering powerful tools for vector illustration, UI/UX design, and pixel-based raster graphics editing within the same application. Known for its performance and one-time purchase model.",
+        "homepage": "https://affinity.serif.com/en-us/designer/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased from Serif or Microsoft Store)",
+                "instructions": "Purchase Affinity Designer from the Serif website or Microsoft Store. Download the installer (.exe) from your account or the store, then run and follow the instructions.",
+                "notes": "One-time purchase license. Offers excellent performance and a modern UI. Currently in version 2 (e.g., Affinity Designer 2)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased from Serif or Mac App Store)",
+                "instructions": "Purchase Affinity Designer from the Serif website or Mac App Store. Download the application from your account or the store, then drag it to your Applications folder.",
+                "notes": "One-time purchase license. Highly optimized for macOS, including Apple Silicon. Currently in version 2 (e.g., Affinity Designer 2)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Purchase and download Affinity Designer from the Apple App Store on your iPad.",
+                "notes": "A full-featured version optimized for iPad with touch and Apple Pencil support. One-time purchase."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "CorelDRAW Graphics Suite",
+        "category": "Vector Graphics Editing",
+        "description": "A comprehensive suite of graphic design software, with CorelDRAW being the core vector illustration program. Widely used for creating logos, signs, flyers, and marketing materials. Includes tools for page layout, photo editing (Corel Photo-Paint), and font management.",
+        "homepage": "https://www.coreldraw.com/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased license or subscription)",
+                "instructions": "Purchase CorelDRAW Graphics Suite from the official Corel website. Download the installer and follow the on-screen instructions.",
+                "notes": "Available as a perpetual license or subscription. Includes multiple applications for a complete design workflow. Current versions are typically named after the year (e.g., CorelDRAW Graphics Suite 2024)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased license or subscription)",
+                "instructions": "Purchase CorelDRAW Graphics Suite from the official Corel website. Download the installer and follow the on-screen instructions.",
+                "notes": "Available as a perpetual license or subscription. Offers a native macOS experience."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Figma",
+        "category": "Vector Graphics Editing (UI/UX Focus)",
+        "description": "A collaborative web-based interface design tool, primarily used for UI/UX design, prototyping, and vector graphics. Enables real-time collaboration, making it popular for team projects. Also supports basic vector illustration.",
+        "homepage": "https://www.figma.com/",
+        "versions": [
+          {
+            "supported_oses": ["Web-based (Browser)"],
+            "installation_methods": [
+              {
+                "method_name": "Web Application (No Installation)",
+                "instructions": "Access Figma directly through your web browser (Chrome, Firefox, Safari, Edge) by visiting https://www.figma.com/. Sign up for a free or paid account.",
+                "notes": "Most common and recommended method. Provides cross-platform accessibility without local installation. Automatic updates."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (.exe)",
+                "instructions": "Download the Figma Desktop App installer from the Figma website (https://www.figma.com/downloads/). Run the installer and follow the instructions.",
+                "notes": "Provides a dedicated application window and better font handling than the browser version, especially for local fonts. Offers a slightly more integrated experience."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (.dmg)",
+                "instructions": "Download the Figma Desktop App .dmg from the Figma website (https://www.figma.com/downloads/). Open the .dmg and drag the Figma application to your 'Applications' folder.",
+                "notes": "Provides a dedicated application window and better font handling. Recommended for heavy users."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (Unofficial via Electron/Community)",
+                "instructions": "While no official Linux desktop app, community-maintained Electron wrappers exist (e.g., 'Figma-Linux' on GitHub). Some users also use Flatpak or Snap versions of these wrappers. Alternatively, use the web-based version.",
+                "notes": "Unofficial clients may not always be up-to-date or stable. The web application is the most reliable option for Linux users."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Layout_and_Publishing": [
+      {
+        "name": "Adobe InDesign",
+        "category": "Layout and Publishing",
+        "description": "The industry-standard desktop publishing software for creating professional layouts for print and digital media. Used for magazines, brochures, books, interactive PDFs, and ePubs. Offers precise control over typography and graphics.",
+        "homepage": "https://www.adobe.com/products/indesign.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website. Log in with your Adobe ID. Locate InDesign in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Essential for print-ready documents and digital publishing workflows."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website. Log in with your Adobe ID. Locate InDesign in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Optimized for macOS performance and font rendering."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux"],
+            "installation_methods": [
+              {
+                "method_name": "Not natively supported (Wine/Virtual Machine)",
+                "instructions": "Adobe InDesign does not officially support Linux. Users typically run it via Wine (compatibility layer) or in a Windows Virtual Machine.",
+                "notes": "Similar limitations to other Adobe applications on Linux."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Scribus",
+        "category": "Layout and Publishing",
+        "description": "A free and open-source desktop publishing (DTP) application similar to Adobe InDesign. Used for creating newsletters, brochures, posters, books, and interactive PDFs. Supports professional publishing features like CMYK colors, spot colors, ICC color management, and PDF/X export.",
+        "homepage": "https://www.scribus.net/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the latest stable .exe installer from the official Scribus website (https://www.scribus.net/downloads/). Run the installer and follow the on-screen instructions.",
+                "notes": "Recommended for most Windows users. Current stable version is Scribus 1.5.x (development for 1.6.x)."
+              },
+              {
+                "method_name": "Chocolatey",
+                "instructions": "Open PowerShell as Administrator and run: `choco install scribus`",
+                "notes": "Requires Chocolatey. Convenient for managing installations."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the latest stable .dmg file from the official Scribus website (https://www.scribus.net/downloads/). Open the .dmg and drag the Scribus application to your 'Applications' folder.",
+                "notes": "Standard macOS application installation method. Supports both Intel and Apple Silicon Macs."
+              },
+              {
+                "method_name": "Homebrew Cask",
+                "instructions": "Open Terminal and run: `brew install --cask scribus`",
+                "notes": "Requires Homebrew. Simplifies installation and updates."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Various Distributions)"],
+            "installation_methods": [
+              {
+                "method_name": "AppImage (Recommended for latest stable)",
+                "instructions": "Download the Scribus AppImage from the official website (https://www.scribus.net/downloads/). Make it executable (`chmod +x scribus-*.AppImage`) and run it.",
+                "notes": "Self-contained executable, providing the latest stable version. Good for avoiding dependency issues."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed and Flathub remote is added. Then: `flatpak install flathub net.scribus.Scribus`",
+                "notes": "Provides a sandboxed, up-to-date version."
+              },
+              {
+                "method_name": "Distribution Repositories (APT, DNF, Pacman etc.)",
+                "instructions": "Use your distribution's package manager: e.g., `sudo apt install scribus` (Debian/Ubuntu), `sudo dnf install scribus` (Fedora), `sudo pacman -S scribus` (Arch Linux).",
+                "notes": "Installs from official distribution repositories. May be a slightly older version but well-integrated."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Affinity Publisher",
+        "category": "Layout and Publishing",
+        "description": "A professional desktop publishing application from Serif, designed for creating books, magazines, brochures, posters, and reports. It integrates seamlessly with Affinity Photo and Affinity Designer through 'StudioLink' technology, allowing direct editing of raster and vector assets within the layout.",
+        "homepage": "https://affinity.serif.com/en-us/publisher/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased from Serif or Microsoft Store)",
+                "instructions": "Purchase Affinity Publisher from the Serif website or Microsoft Store. Download the installer (.exe) from your account or the store, then run and follow the instructions.",
+                "notes": "One-time purchase license. Excellent for integrated workflows with other Affinity apps. Currently in version 2 (e.g., Affinity Publisher 2)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased from Serif or Mac App Store)",
+                "instructions": "Purchase Affinity Publisher from the Serif website or Mac App Store. Download the application from your account or the store, then drag it to your Applications folder.",
+                "notes": "One-time purchase license. Highly optimized for macOS, including Apple Silicon. Currently in version 2 (e.g., Affinity Publisher 2)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Purchase and download Affinity Publisher from the Apple App Store on your iPad.",
+                "notes": "A full-featured version optimized for iPad with touch and Apple Pencil support. One-time purchase."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "UI_UX_Design_and_Prototyping": [
+      {
+        "name": "Adobe XD",
+        "category": "UI/UX Design and Prototyping",
+        "description": "A vector-based tool for designing and prototyping user experiences for web and mobile apps. Features include wireframing, designing, prototyping interactions, animation, and sharing design specifications. Often used in conjunction with Photoshop and Illustrator.",
+        "homepage": "https://www.adobe.com/products/xd.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website. Log in with your Adobe ID. Locate Adobe XD in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Offers seamless integration with other Adobe products."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App from the Adobe website. Log in with your Adobe ID. Locate Adobe XD in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Optimized for macOS."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Sketch",
+        "category": "UI/UX Design and Prototyping",
+        "description": "A vector-based design tool primarily used for UI/UX design, mobile app interfaces, and web design. Known for its intuitive interface, extensive plugin ecosystem, and focus on collaborative workflows. macOS exclusive.",
+        "homepage": "https://www.sketch.com/",
+        "versions": [
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Purchased License)",
+                "instructions": "Purchase a Sketch license from the official Sketch website. Download the `.dmg` file from your account and drag the Sketch application to your 'Applications' folder. Updates are handled within the app.",
+                "notes": "Subscription-based for updates and cloud features. Designed exclusively for macOS, taking full advantage of the operating system's capabilities."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Figma",
+        "category": "UI/UX Design and Prototyping",
+        "description": "A collaborative web-based interface design tool, primarily used for UI/UX design, prototyping, and vector graphics. Enables real-time collaboration, making it popular for team projects. Offers extensive prototyping features and design system capabilities.",
+        "homepage": "https://www.figma.com/",
+        "versions": [
+          {
+            "supported_oses": ["Web-based (Browser)"],
+            "installation_methods": [
+              {
+                "method_name": "Web Application (No Installation)",
+                "instructions": "Access Figma directly through your web browser (Chrome, Firefox, Safari, Edge) by visiting https://www.figma.com/. Sign up for a free or paid account.",
+                "notes": "Most common and recommended method. Provides cross-platform accessibility without local installation. Automatic updates and real-time collaboration."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (.exe)",
+                "instructions": "Download the Figma Desktop App installer from the Figma website (https://www.figma.com/downloads/). Run the installer and follow the instructions.",
+                "notes": "Provides a dedicated application window and better font handling than the browser version, especially for local fonts. Offers a slightly more integrated experience."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (.dmg)",
+                "instructions": "Download the Figma Desktop App .dmg from the Figma website (https://www.figma.com/downloads/). Open the .dmg and drag the Figma application to your 'Applications' folder.",
+                "notes": "Provides a dedicated application window and better font handling. Recommended for heavy users."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (Unofficial via Electron/Community)",
+                "instructions": "While no official Linux desktop app, community-maintained Electron wrappers exist (e.g., 'Figma-Linux' on GitHub). Some users also use Flatpak or Snap versions of these wrappers. Alternatively, the web-based version is fully functional.",
+                "notes": "Unofficial clients may not always be up-to-date or stable. The web application is the most reliable option for Linux users."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "ProtoPie",
+        "category": "UI/UX Design and Prototyping",
+        "description": "A high-fidelity prototyping tool that allows designers to create highly realistic and interactive prototypes without writing any code. Focuses on sensor-based interactions and complex animations, making it suitable for IoT, automotive, and mobile app prototyping.",
+        "homepage": "https://www.protopie.io/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the ProtoPie Studio installer from the official website (https://www.protopie.io/download/). Run the installer and follow the on-screen instructions.",
+                "notes": "Requires a subscription. The studio app is where you create prototypes, which can then be viewed on mobile devices via the ProtoPie Player app."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the ProtoPie Studio .dmg from the official website (https://www.protopie.io/download/). Open the .dmg and drag the application to your 'Applications' folder.",
+                "notes": "Requires a subscription. Optimized for macOS."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iOS", "Android"],
+            "installation_methods": [
+              {
+                "method_name": "ProtoPie Player App (App Store/Google Play)",
+                "instructions": "Download 'ProtoPie Player' from the Apple App Store or Google Play Store on your mobile device. Use this app to preview prototypes created in ProtoPie Studio.",
+                "notes": "Essential for testing interactive prototypes on actual devices."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Blender",
+        "category": "3D Modeling and Animation (for UI/UX elements)",
+        "description": "While primarily a 3D modeling and animation suite, Blender is increasingly used by UI/UX designers to create complex 3D assets, icons, and animations that can be incorporated into user interfaces for a more immersive experience. It's free and open-source.",
+        "homepage": "https://www.blender.org/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.msi)",
+                "instructions": "Download the .msi installer from the official Blender website (https://www.blender.org/download/). Run the installer and follow the instructions.",
+                "notes": "Current stable version is Blender 4.x. Offers long-term support (LTS) versions as well for stability."
+              },
+              {
+                "method_name": "Steam",
+                "instructions": "Search for 'Blender' on Steam and install it.",
+                "notes": "Convenient for users who manage their software through Steam."
+              },
+              {
+                "method_name": "Microsoft Store",
+                "instructions": "Search for 'Blender' in the Microsoft Store and click 'Get'.",
+                "notes": "Another convenient distribution method for Windows users."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the .dmg file from the official Blender website (https://www.blender.org/download/). Open the .dmg and drag the Blender application to your 'Applications' folder.",
+                "notes": "Supports both Intel and Apple Silicon Macs. Recommended for optimal performance."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Various Distributions)"],
+            "installation_methods": [
+              {
+                "method_name": "Snap (Recommended for ease)",
+                "instructions": "Open Terminal and run: `sudo snap install blender --classic`",
+                "notes": "Provides an easy, universal installation. The `--classic` flag is often needed for full functionality."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed and Flathub remote is added. Then: `flatpak install flathub org.blender.Blender`",
+                "notes": "Provides a sandboxed, up-to-date version."
+              },
+              {
+                "method_name": "AppImage",
+                "instructions": "Download the Blender AppImage from the official website (https://www.blender.org/download/). Make it executable (`chmod +x blender-*.AppImage`) and run it.",
+                "notes": "Self-contained executable, offering the latest stable version without system-wide installation."
+              },
+              {
+                "method_name": "Distribution Repositories (APT, DNF, Pacman etc.)",
+                "instructions": "Use your distribution's package manager: e.g., `sudo apt install blender` (Debian/Ubuntu), `sudo dnf install blender` (Fedora), `sudo pacman -S blender` (Arch Linux).",
+                "notes": "May install a slightly older version, but well-integrated with the system."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "3D_Modeling_and_Rendering": [
+      {
+        "name": "Blender",
+        "category": "3D Modeling and Rendering",
+        "description": "A comprehensive free and open-source 3D creation suite. It supports the entirety of the 3D pipeline—modeling, rigging, animation, simulation, rendering, compositing and motion tracking, even video editing and game creation. Essential for product visualization, architectural renders, and character design.",
+        "homepage": "https://www.blender.org/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.msi)",
+                "instructions": "Download the latest stable .msi installer from the official Blender website (https://www.blender.org/download/). Run the installer and follow the instructions.",
+                "notes": "Current stable version is Blender 4.x. Offers long-term support (LTS) versions as well for stability, which are recommended for production environments. Supports GPU rendering with NVIDIA (CUDA/OptiX) and AMD (HIP) cards."
+              },
+              {
+                "method_name": "Steam",
+                "instructions": "Search for 'Blender' on Steam and install it.",
+                "notes": "Convenient for users who manage their software through Steam. Automatic updates through the platform."
+              },
+              {
+                "method_name": "Microsoft Store",
+                "instructions": "Search for 'Blender' in the Microsoft Store and click 'Get'.",
+                "notes": "Another convenient distribution method for Windows users, offering automatic updates."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the latest stable .dmg file from the official Blender website (https://www.blender.org/download/). Open the .dmg and drag the Blender application to your 'Applications' folder.",
+                "notes": "Supports both Intel and Apple Silicon Macs (optimized for Metal rendering on Apple Silicon). Recommended for optimal performance."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Various Distributions)"],
+            "installation_methods": [
+              {
+                "method_name": "Snap (Recommended for ease)",
+                "instructions": "Open Terminal and run: `sudo snap install blender --classic`",
+                "notes": "Provides an easy, universal installation. The `--classic` flag is often needed for full functionality, allowing access to system files. Well-maintained by the Blender snap community."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed and Flathub remote is added. Then: `flatpak install flathub org.blender.Blender`",
+                "notes": "Provides a sandboxed, up-to-date version. Good for consistency across distributions and strong isolation from the system."
+              },
+              {
+                "method_name": "AppImage",
+                "instructions": "Download the Blender AppImage from the official website (https://www.blender.org/download/). Make it executable (`chmod +x blender-*.AppImage`) and run it.",
+                "notes": "Self-contained executable, offering the latest stable version without system-wide installation. Great for portability and testing new versions without affecting your main installation."
+              },
+              {
+                "method_name": "Distribution Repositories (APT, DNF, Pacman etc.)",
+                "instructions": "Use your distribution's package manager: e.g., `sudo apt install blender` (Debian/Ubuntu), `sudo dnf install blender` (Fedora), `sudo pacman -S blender` (Arch Linux).",
+                "notes": "May install a slightly older version, but it is well-integrated with the system and follows the distribution's update cycle. Often a good choice for stability within a specific distro version."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Autodesk Maya",
+        "category": "3D Modeling and Rendering",
+        "description": "A professional 3D computer graphics application widely used in the film, television, and game development industries. It offers comprehensive tools for 3D modeling, animation, rigging, simulation, and rendering. Known for its powerful animation capabilities.",
+        "homepage": "https://www.autodesk.com/products/maya/overview",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Autodesk Account)",
+                "instructions": "Purchase a Maya subscription or obtain an educational license from Autodesk. Log into your Autodesk account, download the installer, and follow the on-screen instructions.",
+                "notes": "Industry-standard for high-end 3D production. Requires a significant investment in terms of cost and learning curve. Current versions are year-named (e.g., Maya 2025)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Autodesk Account)",
+                "instructions": "Purchase a Maya subscription or obtain an educational license from Autodesk. Log into your Autodesk account, download the installer, and follow the on-screen instructions.",
+                "notes": "Robust performance on macOS, widely used in studios."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/Red Hat Enterprise Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Autodesk Account)",
+                "instructions": "Maya officially supports specific enterprise Linux distributions. Download the Linux installer from your Autodesk account and follow the provided installation guides.",
+                "notes": "Primarily used in professional studio environments running specific Linux setups for pipeline integration."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Maxon Cinema 4D",
+        "category": "3D Modeling and Rendering",
+        "description": "A popular 3D modeling, animation, rendering, and sculpting software known for its intuitive interface and powerful MoGraph module, making it a favorite among motion graphic designers, VFX artists, and product visualizers. Integrates well with Adobe After Effects.",
+        "homepage": "https://www.maxon.net/en/cinema-4d",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Maxon App / Official Installer",
+                "instructions": "Purchase a Cinema 4D subscription. Download the Maxon App, which manages installation and updates for Cinema 4D and other Maxon products. Alternatively, download a direct installer from your Maxon account.",
+                "notes": "Subscription-based. The MoGraph module is a key differentiator for motion designers. Regularly updated with new features."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Maxon App / Official Installer",
+                "instructions": "Purchase a Cinema 4D subscription. Download the Maxon App, which manages installation and updates for Cinema 4D and other Maxon products. Alternatively, download a direct installer from your Maxon account.",
+                "notes": "Strong performance on macOS, including Apple Silicon optimization."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "SketchUp",
+        "category": "3D Modeling",
+        "description": "An intuitive 3D modeling program widely used for architectural design, interior design, landscape architecture, civil and mechanical engineering, film and video game design. Known for its user-friendly interface and extensive 3D Warehouse for pre-made models.",
+        "homepage": "https://www.sketchup.com/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the SketchUp installer from the official website (requires a Trimble ID and subscription/trial). Run the installer and follow the instructions.",
+                "notes": "Available in Free (web-based), Go, Pro, and Studio versions with varying features. SketchUp Pro is the desktop application."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the SketchUp .dmg from the official website. Open the .dmg and drag the application to your 'Applications' folder.",
+                "notes": "Available in Free (web-based), Go, Pro, and Studio versions. SketchUp Pro is the desktop application."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Web-based (Browser)"],
+            "installation_methods": [
+              {
+                "method_name": "SketchUp Free (Web Application)",
+                "instructions": "Access SketchUp Free directly through your web browser by visiting https://app.sketchup.com/. Requires a Trimble ID.",
+                "notes": "A free, simplified version of SketchUp that runs entirely in the browser. Good for basic modeling and getting started."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Video_Editing_and_Motion_Graphics": [
+      {
+        "name": "Adobe Premiere Pro",
+        "category": "Video Editing and Motion Graphics",
+        "description": "The industry-standard non-linear video editing software for creating professional video content. Used for editing everything from YouTube videos to feature films. Offers robust tools for cutting, color grading, audio mixing, and integrates deeply with After Effects.",
+        "homepage": "https://www.adobe.com/products/premiere.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App. Log in with your Adobe ID. Locate Premiere Pro in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Frequent updates with new features and performance improvements."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App. Log in with your Adobe ID. Locate Premiere Pro in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Optimized for macOS hardware and software features."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Adobe After Effects",
+        "category": "Video Editing and Motion Graphics",
+        "description": "The industry-standard software for motion graphics, visual effects, and compositing. Used for creating animated titles, lower thirds, complex visual effects, and character animation. Essential for enhancing video content with dynamic graphics.",
+        "homepage": "https://www.adobe.com/products/aftereffects.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App. Log in with your Adobe ID. Locate After Effects in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Integrates deeply with Premiere Pro, Photoshop, and Illustrator."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App. Log in with your Adobe ID. Locate After Effects in the 'Apps' tab and click 'Install'.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. Optimized for macOS hardware and software features."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "DaVinci Resolve",
+        "category": "Video Editing and Motion Graphics",
+        "description": "A comprehensive video editing, color correction, visual effects, and audio post-production software. Known for its powerful color grading tools (originally a dedicated color grading system), but now offers a full suite for professional video production. A free version is available.",
+        "homepage": "https://www.blackmagicdesign.com/products/davinciresolve/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the free DaVinci Resolve or paid DaVinci Resolve Studio installer from the Blackmagic Design website. Run the installer and follow the instructions.",
+                "notes": "The free version is highly capable for most users. Studio version unlocks advanced features like HDR, collaborative workflows, and more GPU acceleration. Regularly updated with new features."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.zip)",
+                "instructions": "Download the .zip archive from the Blackmagic Design website. Extract the contents and run the installer package inside.",
+                "notes": "Offers excellent performance on macOS, including Apple Silicon optimization. Free and Studio versions available."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (CentOS/Red Hat Enterprise Linux)"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (Blackmagic Design Website)",
+                "instructions": "DaVinci Resolve officially supports specific enterprise Linux distributions. Download the Linux installer from the Blackmagic Design website and follow the provided installation guides.",
+                "notes": "Common in professional post-production studios running Linux. May require specific graphics drivers."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Download 'DaVinci Resolve for iPad' from the Apple App Store. Free with in-app purchases for Studio features.",
+                "notes": "A powerful, touch-optimized version bringing professional editing and color grading to the iPad. Requires M1/M2 iPad."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "HitFilm (formerly HitFilm Express / Pro)",
+        "category": "Video Editing and Motion Graphics",
+        "description": "A video editing and visual effects software that combines non-linear editing with a powerful compositor. Known for its extensive VFX toolkit, including particle simulators, 3D model import, and a wide array of effects. Offers a free tier.",
+        "homepage": "https://fxhome.com/hitfilm",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the HitFilm installer from the FXhome website. Create an account and follow the installation prompts.",
+                "notes": "Available in Free and Creator/Pro subscription tiers. The free version offers substantial functionality. Good for independent filmmakers and YouTubers."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the HitFilm .dmg from the FXhome website. Drag the application to your 'Applications' folder.",
+                "notes": "Available in Free and Creator/Pro subscription tiers. Offers strong VFX capabilities."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Digital_Painting_and_Illustration": [
+      {
+        "name": "Clip Studio Paint",
+        "category": "Digital Painting and Illustration",
+        "description": "A versatile digital painting software widely used for illustration, comics, manga, and 2D animation. Known for its realistic brush engine, extensive 3D model import capabilities, and specialized features for comic creation (e.g., panel tools, word balloons).",
+        "homepage": "https://www.clipstudio.net/en/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Purchase a Clip Studio Paint license (one-time or monthly plan) or download the trial from the official website. Run the installer and follow the instructions.",
+                "notes": "Available in PRO and EX versions. EX offers more advanced features for multi-page comics and animation. Excellent brush customization and performance."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Purchase a Clip Studio Paint license or download the trial. Open the .dmg and drag the application to your 'Applications' folder.",
+                "notes": "Optimized for macOS and supports Apple Silicon. Popular among illustrators and comic artists."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iPadOS", "iOS", "Android"],
+            "installation_methods": [
+              {
+                "method_name": "App Store / Google Play Store",
+                "instructions": "Download 'Clip Studio Paint' from the Apple App Store or Google Play Store. Offers a limited free trial, then requires a monthly/annual plan or one-time purchase (iPad).",
+                "notes": "Full-featured versions on tablets, providing a professional mobile drawing experience with pen support (e.g., Apple Pencil, S Pen). Syncs work across devices."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Procreate",
+        "category": "Digital Painting and Illustration",
+        "description": "An award-winning raster graphics editor for digital painting, illustration, and animation, exclusive to iPad. Known for its intuitive interface, powerful brush engine, extensive layer system, and robust animation features. Highly popular with professional and amateur artists.",
+        "homepage": "https://procreate.com/",
+        "versions": [
+          {
+            "supported_oses": ["iPadOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Purchase and download Procreate from the Apple App Store on your iPad.",
+                "notes": "One-time purchase. Optimized for Apple Pencil and multitouch gestures. The definitive drawing app for iPad, with continuous updates."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Krita",
+        "category": "Digital Painting and Illustration",
+        "description": "A free and open-source raster graphics editor, primarily designed for digital painting, 2D animation, and concept art. It offers a comprehensive set of tools for artists, including a wide range of brushes, blending modes, and a customizable interface.",
+        "homepage": "https://krita.org/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the latest stable .exe installer from the official Krita website (https://krita.org/en/download/krita-desktop/). Run the installer and follow the on-screen instructions.",
+                "notes": "Recommended for most Windows users. Current stable version is Krita 5.x.x."
+              },
+              {
+                "method_name": "Microsoft Store",
+                "instructions": "Search for 'Krita' in the Microsoft Store and click 'Get' to install. (Note: This is a paid version in the MS Store, a donation to the project, but the free installer is available from their website).",
+                "notes": "Convenient for Microsoft Store users, but direct download is free."
+              },
+              {
+                "method_name": "Steam",
+                "instructions": "Search for 'Krita' on Steam and purchase/install it. (Note: This is also a paid version, contributing to development).",
+                "notes": "For users who prefer Steam's platform for managing applications."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the latest stable .dmg file from the official Krita website (https://krita.org/en/download/krita-desktop/). Open the .dmg and drag the Krita application to your 'Applications' folder.",
+                "notes": "Standard macOS application installation method. Supports both Intel and Apple Silicon Macs. Current stable version is Krita 5.x.x."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux (Various Distributions)"],
+            "installation_methods": [
+              {
+                "method_name": "AppImage (Recommended for latest stable)",
+                "instructions": "Download the Krita AppImage from the official website (https://krita.org/en/download/krita-desktop/). Make it executable (`chmod +x Krita-*.AppImage`) and run it.",
+                "notes": "Self-contained executable that runs on most Linux distributions without installation, providing the latest stable version. Ideal for users who want to avoid dependency issues."
+              },
+              {
+                "method_name": "Flatpak",
+                "instructions": "Ensure Flatpak is installed and Flathub remote is added. Then: `flatpak install flathub org.kde.krita`",
+                "notes": "Provides a sandboxed, up-to-date version. Good for consistency across distributions."
+              },
+              {
+                "method_name": "Snap",
+                "instructions": "Open Terminal and run: `sudo snap install krita`",
+                "notes": "Another universal Linux packaging system. Convenient for Ubuntu users."
+              },
+              {
+                "method_name": "Distribution Repositories (APT, DNF, Pacman etc.)",
+                "instructions": "Use your distribution's package manager: e.g., `sudo apt install krita` (Debian/Ubuntu), `sudo dnf install krita` (Fedora), `sudo pacman -S krita` (Arch Linux).",
+                "notes": "Installs from official distribution repositories. May not be the absolute latest version but integrates well with the system."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Android"],
+            "installation_methods": [
+              {
+                "method_name": "Google Play Store",
+                "instructions": "Search for 'Krita' on the Google Play Store and install.",
+                "notes": "Currently in beta for Android, performance may vary depending on device."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Productivity_and_Asset_Management": [
+      {
+        "name": "Adobe Bridge",
+        "category": "Productivity and Asset Management",
+        "description": "A powerful media browser and digital asset management application that helps creative professionals organize, browse, locate, and preview creative assets. It works seamlessly with other Adobe Creative Cloud applications.",
+        "homepage": "https://www.adobe.com/products/bridge.html",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App. Log in with your Adobe ID. Locate Adobe Bridge in the 'Apps' tab and click 'Install'.",
+                "notes": "Often included with Creative Cloud subscriptions, or available as a standalone download. Essential for managing vast libraries of creative files."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App",
+                "instructions": "Download and install the Adobe Creative Cloud Desktop App. Log in with your Adobe ID. Locate Adobe Bridge in the 'Apps' tab and click 'Install'.",
+                "notes": "Seamless integration with macOS Finder and other Adobe applications."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Eagle",
+        "category": "Productivity and Asset Management",
+        "description": "A powerful and intuitive asset management tool designed for designers and creatives to collect, organize, and browse images, videos, audio, fonts, and other design assets. Features include smart folders, tagging, and powerful search.",
+        "homepage": "https://eagle.cool/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Purchase Eagle and download the installer from their website. Run the installer and follow the instructions.",
+                "notes": "One-time purchase license. Excellent for building and managing personal design libraries and mood boards."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Purchase Eagle and download the .dmg from their website. Drag the application to your 'Applications' folder.",
+                "notes": "One-time purchase license. Well-integrated with macOS features."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Milanote",
+        "category": "Productivity and Asset Management (Visual Workspace)",
+        "description": "An online creative workspace for designers and creative teams. It allows users to organize ideas, notes, files, and visual content on flexible boards. Ideal for mood boards, brainstorms, project planning, and visual research.",
+        "homepage": "https://www.milanote.com/",
+        "versions": [
+          {
+            "supported_oses": ["Web-based (Browser)"],
+            "installation_methods": [
+              {
+                "method_name": "Web Application (No Installation)",
+                "instructions": "Access Milanote through your web browser by visiting https://www.milanote.com/. Sign up for a free or paid account.",
+                "notes": "Most common way to use Milanote. Offers real-time collaboration. Free tier with limitations, paid subscriptions for more space/features."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (.exe)",
+                "instructions": "Download the Milanote desktop app from their website (https://www.milanote.com/download-app). Run the installer.",
+                "notes": "Provides a dedicated application experience, often with better performance and integration than the browser for heavy use."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Desktop App (.dmg)",
+                "instructions": "Download the Milanote desktop app from their website. Drag the application to your 'Applications' folder.",
+                "notes": "Provides a dedicated application experience."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["iOS"],
+            "installation_methods": [
+              {
+                "method_name": "Apple App Store",
+                "instructions": "Download the 'Milanote' app from the Apple App Store on your iPhone or iPad.",
+                "notes": "For on-the-go access and capturing ideas. Syncs with desktop/web versions."
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "Font_Management": [
+      {
+        "name": "Adobe Fonts",
+        "category": "Font Management",
+        "description": "A font service included with Adobe Creative Cloud subscriptions, providing access to a vast library of high-quality fonts for desktop and web use. Fonts can be easily activated and synced across all Creative Cloud applications.",
+        "homepage": "https://fonts.adobe.com/",
+        "versions": [
+          {
+            "supported_oses": ["Web-based (Browser) & Integrated into Creative Cloud"],
+            "installation_methods": [
+              {
+                "method_name": "Adobe Creative Cloud Desktop App (Automatic Sync)",
+                "instructions": "Browse and activate fonts on the Adobe Fonts website. They will automatically sync and become available in your Adobe Creative Cloud applications (e.g., Photoshop, Illustrator, InDesign) and other desktop applications.",
+                "notes": "Requires an active Adobe Creative Cloud subscription. No manual installation of font files needed. Fonts are cloud-synced."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "FontBase",
+        "category": "Font Management",
+        "description": "A free and professional font manager for designers. It allows users to organize, preview, and activate/deactivate fonts with ease. Supports Google Fonts integration and variable fonts.",
+        "homepage": "https://fontba.se/",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.exe)",
+                "instructions": "Download the FontBase installer from the official website. Run the installer and follow the instructions.",
+                "notes": "Free for basic features, with a paid 'Awesome' plan for advanced features (e.g., Google Fonts auto-sync, nested folders)."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["macOS"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.dmg)",
+                "instructions": "Download the FontBase .dmg from the official website. Drag the application to your 'Applications' folder.",
+                "notes": "Free for basic features, with a paid 'Awesome' plan for advanced features."
+              }
+            ]
+          },
+          {
+            "supported_oses": ["Linux"],
+            "installation_methods": [
+              {
+                "method_name": "Official Installer (.deb / .AppImage)",
+                "instructions": "Download the appropriate package (e.g., .deb for Debian/Ubuntu, or AppImage) from the official website. For .deb, install with `sudo dpkg -i fontbase-*.deb`. For AppImage, make executable and run.",
+                "notes": "Provides a robust font management solution for Linux users."
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "NexusFont",
+        "category": "Font Management (Windows Only)",
+        "description": "A free font manager for Windows that allows users to preview, install, uninstall, and categorize fonts. Useful for designers who manage a large number of local font files.",
+        "homepage": "https://www.xiles.net/downloads/#nexusfont",
+        "versions": [
+          {
+            "supported_oses": ["Windows"],
+            "installation_methods": [
+              {
+                "method_name": "Portable (No Installation Required)",
+                "instructions": "Download the .zip file from the official website. Extract the contents to a folder of your choice and run `NexusFont.exe`.",
+                "notes": "No installation needed, making it highly portable. Good for quick font previews and management."
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
